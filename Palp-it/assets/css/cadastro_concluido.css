@@ -1,0 +1,34 @@
+.cadastro-cabecalho {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0.5rem;
+}
+
+.cadastro-cabecalho__logo {
+    width: 3.5rem;
+    margin-bottom: 1rem;
+}
+.cadastro-cabecalho__titulo{
+    font-size: var(--fonte-tamanho-titulo);
+}
+
+.cadastro-cartao {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.cadastro-cartao__titulo{
+    margin-bottom: 0.25rem;
+}
+.cadastro-cartao__icone-concluido {
+    display: block;
+    width: 2rem;
+    height: 2rem;
+    margin-top: 1rem;
+    background-image: url(../img/checkmark.svg);
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+

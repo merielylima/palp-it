@@ -1,0 +1,28 @@
+:root {
+    --fonte-familia-corpo: 'Roboto', sans-serif;
+    --fonte-familia-logo: 'Pacifico', cursive;
+    --fonte-tamanho-primaria: 16px;
+    --fonte-tamanho-secundaria: 14px;
+    --fonte-tamanho-input-titulo: 12px;
+    --fonte-tamanho-titulo:24px;
+    --fonte-tamanho-logo: 18px;
+
+    --fonte-peso-input: 300;
+
+    --cor-fundo--cabecalho: #3E5063;
+    --cor-fundo--transparente: rgba(187,221,255, 0.25);
+    --cor-fundo: #F2F3F5;
+    --cor-borda: #E1E4E8;
+    --contraste-escuro: #424242;
+    --contraste-claro: #ffffff;
+    --fundo--input: #FAFBFC;
+    
+    --borda-input--focus: #0366D6;
+    --sombra-input--focus:rgba(200,225,255,1);
+    --cor-input--placeholder: rgba(36,54, 77, 0.4);
+    --cor-aviso: #df2525;
+    --cor-sucesso: #047900;
+    --fundo-botao--primario: #2EA44F ;
+    --borda-botao--primario: #2C9149;
+
+}
