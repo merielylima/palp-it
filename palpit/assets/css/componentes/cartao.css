@@ -1,0 +1,28 @@
+.cartao--container{
+    box-sizing: border-box;
+    border-radius: 8px;
+    background-color: var(--contraste-claro);
+    padding: 1rem;
+    margin:1rem 0.5rem 0;
+}
+
+.cartao-xs{
+    text-align: center;
+    padding: 1rem;
+}
+.cartao-xl{
+    padding:1.5rem 2rem;
+}
+
+
+.content{
+    margin: 0.5rem 0 2rem;
+}
+@media screen and (min-width: 768px) {
+   .content{
+       margin: 3.5rem 0;
+   }
+   .cartao-xs{
+    padding: 2rem;
+}
+}

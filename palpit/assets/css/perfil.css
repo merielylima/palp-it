@@ -1,0 +1,60 @@
+.avatar{
+  border-radius: 50%;
+}
+.ordenar{
+  visibility: hidden;
+}
+
+.item{
+  margin: 0.5rem;
+}
+.col-2{
+  width: 16.66667%;
+}
+.avatar{
+  display: inline-block;
+  box-shadow: 0 0 0 1px var(--cinza-4);
+  flex-shrink: 0;
+  height: auto;
+  line-height: 1;
+  overflow: hidden;
+  vertical-align: middle;
+}
+
+.vcard-fullname{
+  font-size: 26px;
+  line-height: 1.25;
+}
+.vcard-username{
+  color: var(--cinza-2);
+  font-size: 20px;
+  font-weight: var( --fonte-peso-light);
+  line-height: 24px;
+}
+@media screen and (min-width: 768px) {
+	.left-side{
+    width: 25%;
+    padding: 2rem;
+    
+  }
+  .right-side{
+    width: 75%;
+    padding: 2rem;
+    position: relative;
+  }
+  .ordenar{
+    visibility: visible;
+    position: absolute;
+    top: 1.75rem;
+    right: 1rem;
+  }
+.d-block{
+  display: block;
+}
+.col-2{
+  width: 100%;
+}
+.vcartao-nome{
+  padding: 1rem 0;
+}
+}

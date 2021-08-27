@@ -1,0 +1,79 @@
+.row-content{
+  margin: 0.5rem 0;
+}
+
+.table{
+  box-sizing: border-box;
+  width: 100%;
+  table-layout: fixed;
+}
+.table__cabecalho{
+  background-color:var(--azul-2);
+  color: var(--contraste-claro);
+  font-weight: var(--fonte-peso-medium);
+}
+.row-table{
+  margin: 0;
+  border: 2px solid var(--azul-5);
+  text-align: center;
+  vertical-align: middle;
+  height: 2.15rem;
+  padding-top: 0.2rem;
+}
+.input-envio{
+  margin-top: 0.25rem;
+  box-sizing: border-box;
+  min-width: 17.25rem;
+  max-width: 100%;
+  margin-right: 1.5rem;
+}
+
+.input-cheio{
+  width: 100%;
+}
+.botao-envio{
+  margin-left: 1rem;
+}
+.button-remove{
+  background-image: url(../../assets/img/lixeira-icon.svg);
+    background-repeat: no-repeat;
+    width: 20%;
+    height: 30px;
+    cursor: pointer;
+    background-position-x: 50%;
+    background-position-y: 5px;
+    background-color: var(--azul-4);
+    border-radius: 5px;
+    outline: none;
+    margin: auto;
+}
+
+.row--file{
+	position: relative;
+	overflow: hidden;
+	white-space: nowrap;
+  cursor: pointer;
+  align-items: center;
+}
+.content-files{
+  width: 50%;
+}
+.input--file{
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+.input--file-text{
+  margin: 0 0.75rem;
+  color: var(--cinza-3);
+
+}
+.input--file-button{
+	width: 10rem;
+}
+.obrigatorio{
+  color: var(--cor-aviso);
+  margin-left: 0.25rem;
+}

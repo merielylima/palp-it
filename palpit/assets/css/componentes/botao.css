@@ -1,0 +1,42 @@
+.botao--container{
+    box-sizing: border-box;
+    display: flex;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    outline: none;
+    padding: 0 1rem ;
+    cursor: pointer;
+    font-size: var(--fonte-tamanho-botao);
+    margin: 0.25rem 0;
+}
+
+.botao--primario{
+    background-color: var(--azul-1);
+    color: var(--contraste-claro);    
+    margin-top: 0.5rem
+}
+.botao--secundario{
+    background-color: var(--azul-10);
+    color: var(--azul-1);
+    border: 1px solid var(--cinza-4);
+    margin-top: 0.5rem
+}
+.botao--terciario{
+    background-color: var(--azul-5);
+    color: var(--azul-1);
+    
+}
+
+
+.botao-envio{
+    display: flex;
+    width: 10rem;
+}
+.botao-aviso:hover{
+    color: var(--cor-aviso);
+    background-color: var(--cor-aviso-fundo);
+    box-shadow: var(--borda-aviso);
+    border: none;
+}
