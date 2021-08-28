@@ -4,11 +4,12 @@
   ini_set("error_log", "C:/xampp/htdocs/Palp-it/php-error.log");
   error_log( "POST: " . print_r($_POST, true) );
 
-	if(isset($_POST['email']))
+	if(isset($_POST['email'])) //Verifica se a variável foi iniciada
 	{
+		//Recupera informações do formulario
 		$email = addslashes($_POST['email']);
 		$senha = addslashes($_POST['senha']);
-		$u->conectar(); //conectando ao banco
+		$u->conectar(); //cCnecta ao banco de dados
 			if($u->msgErro=="") // caso a mensagem esteja vazia, login ok
 			{
 				if ($u->logar($email, $senha))
