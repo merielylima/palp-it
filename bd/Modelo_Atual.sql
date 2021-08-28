@@ -43,7 +43,7 @@ CREATE TABLE IF NOT EXISTS `palpit`.`arquivo` (
   `id_arquivo` INT NOT NULL AUTO_INCREMENT,
   `descricao` TEXT NOT NULL,
   `foto_v` VARCHAR(100) NOT NULL,
-  `status` INT NOT NULL DEFAULT 'P',
+  `status` INT NOT NULL DEFAULT '0',
   `titulo` VARCHAR(45) NULL,
   `q_download` INT NULL,
   `q_acesso` INT NULL,
