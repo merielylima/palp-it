@@ -67,7 +67,6 @@ CREATE TABLE IF NOT EXISTS `palpit`.`tag` (
   `key_words` VARCHAR(50) NOT NULL,
   `id_arquivo_fk` INT NOT NULL,
   PRIMARY KEY (`id_tag`),
-  UNIQUE INDEX `nome_tag_UNIQUE` (`key_words` ASC) ,
   INDEX `fk_tag_arquivo1_idx` (`id_arquivo_fk` ASC) ,
   CONSTRAINT `fk_tag_arquivo1`
     FOREIGN KEY (`id_arquivo_fk`)
