@@ -45,7 +45,7 @@
 		
 		//Tratamento em armazenamento tabela tag
 		$newtag = preg_replace('/\W{2,}/'," ",$tag);
-		foreach(explode(" ",trim($newtag,)) as $values){
+		foreach(explode(" ",trim($newtag)) as $values){
 			$sql = $pdo->prepare('INSERT INTO tag (key_words, id_arquivo_fk) VALUES (:kw,:fka)');
 			$sql->bindValue(":kw", $values);
 			$sql->bindValue(":fka", $_SESSION['id_arquivo']);
