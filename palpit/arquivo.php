@@ -2,15 +2,16 @@
   require_once 'classes/usuarios.php';
   $u = new Usuarios;
   
-  session_start();
+  session_start(); //iniciando sessão
   
-  $u->conectar(); //conectando ao banco
+  $u->conectar(); //conexão banco de dados
   
-  $titulo = addslashes($_POST['titulo']);
-  $descricao = addslashes($_POST['descricao']);
-  $tag = addslashes($_POST['palavra-chave']);
-  $foto_v;
-  $foto_t;
+	//recuperação das informações formulario
+	$titulo = addslashes($_POST['titulo']);
+	$descricao = addslashes($_POST['descricao']);
+	$tag = addslashes($_POST['palavra-chave']);
+	$foto_v;
+	$foto_t;
 
 
   	if (isset ($_FILES ['imagem_visual']) && $_FILES ['imagem_visual']['name'] != '') {
@@ -35,12 +36,14 @@
 		move_uploaded_file ($_FILES ['imagem_tatil']['tmp_name'], $foto_t);
 	} 
 	
+	//armazenando informação no banco de dados
 	try{
 		$pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);//Ativa o lançamento de exceptions para erros
-		$pdo->beginTransaction();
+		$pdo->beginTransaction(); //inicia uma transação
 		
-		$u->enviar($titulo,$descricao,$foto_v,$foto_t);
-
+		$u->enviar($titulo,$descricao,$foto_v,$foto_t); //chamada função armazenamento tabela arquivo
+		
+		//Tratamento em armazenamento tabela tag
 		$newtag = preg_replace('/\W{2,}/'," ",$tag);
 		foreach(explode(" ",trim($newtag,)) as $values){
 			$sql = $pdo->prepare('INSERT INTO tag (key_words, id_arquivo_fk) VALUES (:kw,:fka)');
@@ -49,30 +52,29 @@
 			$sql->execute();
 		}
 
+			//Percorrer tabela do formulario de nivel, e disciplina
 			$e=0;
-			//adiciona nivel e disciplina de acordo quantidade da tabela
 			while(isset($_POST['nivel_'.$e])){
-				//recupero id da escolaridade
+				//Recupera o id do nivel de escolaridade
 				$nivel = $_POST['nivel_'.$e];
 				$sql= $pdo->prepare("SELECT id_escolaridade FROM escolaridade WHERE nivel=:n");
 				$sql->bindValue(":n", $nivel);
 				$sql->execute();
 				$dado = $sql->fetchAll(PDO::FETCH_OBJ);
 				$id_escolaridade = (int)$dado[0]->id_escolaridade;
-				//recupero id de disciplina
+				//Recupera o id da disciplina
 				$disciplina=$_POST['disciplina_'.$e];
 				$sql= $pdo->prepare("SELECT id_disciplina FROM disciplina WHERE nome_disciplina=:dc");
 				$sql->bindValue(":dc", $disciplina);
 				$sql->execute();
 				$dado = $sql->fetchAll(PDO::FETCH_OBJ);
-				//$id_disciplina = (int)$dado[0]->id_disciplina;
-				//Se a disciplina nao existir no banco retorna null 
+				//Se a disciplina retornar null insere, senão recupera o id da disciplina
 				if($dado == null){
-					//Inserir nova disciplina
+					//Inserida a disciplina no banco
 					$sql = $pdo->prepare('INSERT INTO disciplina (nome_disciplina) VALUES (:nd)');
 					$sql->bindvalue(":nd", $disciplina);
 					$sql->execute();
-					//recupero id da disciplina
+					//Recupera o id da disciplina inserida
 					$disciplina=$_POST['disciplina_'.$e];
 					$sql= $pdo->prepare("SELECT id_disciplina FROM disciplina WHERE nome_disciplina=:dc");
 					$sql->bindValue(":dc", $disciplina);
@@ -82,20 +84,20 @@
 				}else{ 
 					$id_disciplina = (int)$dado[0]->id_disciplina;
 				}
-				//recupero id da associação disciplina escolalridade
+				//REcupera o id da associação escolaridade/disciplina
 				$sql= $pdo->prepare("SELECT id_assoc_ed FROM assoc_ed WHERE id_disciplina_fk=:fkd AND id_escolaridade_fk=:fke");
 				$sql->bindValue(":fkd", $id_disciplina);
 				$sql->bindValue(":fke", $id_escolaridade);
 				$sql->execute();
 				$dado = $sql->fetchAll(PDO::FETCH_OBJ);
-				//Se a associação nao existe retorna null
+				//Se a associação retorna null insere, senão recupera o id da associação
 				if($dado == null){
-					//Inserir associação disciplina/escolaridade
+					//Insere associação escolaridade/disciplina
 					$sql = $pdo->prepare('INSERT INTO assoc_ed (id_disciplina_fk, id_escolaridade_fk) VALUES (:fkd,:fke)');
 					$sql->bindValue(":fkd", $id_disciplina);
 					$sql->bindValue(":fke", $id_escolaridade);
 					$sql->execute();
-					//recupero id disciplina escolaridade
+					//Recupera o id da associação inserida
 					$sql= $pdo->prepare("SELECT id_assoc_ed FROM assoc_ed WHERE id_disciplina_fk=:fkd AND id_escolaridade_fk=:fke");
 					$sql->bindValue(":fkd", $id_disciplina);
 					$sql->bindValue(":fke", $id_escolaridade);
@@ -105,6 +107,7 @@
 				}else{
 					$id_esc_disc = (int)$dado[0]->id_assoc_ed;		
 				}
+				//Insere a associação arquivo/ed
 				$sql = $pdo->prepare('INSERT INTO assoc_arquivo (id_arquivo_fk, id_assoc_ed_fk) VALUES (:fka,:fke)');
 				$sql->bindValue(":fka", $_SESSION['id_arquivo']);
 				$sql->bindValue(":fke", $id_esc_disc);
@@ -113,10 +116,10 @@
 				$e++;
 			}
 
-	$pdo->commit();
+	$pdo->commit(); //envia uma transação
 	
 	}catch(PDOException $exception){
-		$pdo->rollback();
+		$pdo->rollback();  //reverte uma transação
 		die('Erro ao armamzenar');
 	}
 
