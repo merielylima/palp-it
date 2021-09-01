@@ -3,8 +3,8 @@
 	private $pdo;  /*criando variavel para usar nas funçoes*/
 	public $msgErro="";
 	public $id=0;
-	public function conectar()
-  	{
+	
+	public function conectar(){
   		global $pdo;
       	global $msgErro;
 		//Credenciais de acesso BD
@@ -13,32 +13,28 @@
 		define('PASS', '');
 		define('DBNAME', 'palpit');
 
-  		try
-  		{
+  		try{
 		  	$pdo = new PDO('mysql:host='.HOST.';dbname='.DBNAME.';',USER,PASS);
-  		} catch (PDOException $e) {
+
+			return $pdo;
+  		} catch (PDOException $e){
   			$msgErro - $e->getMessage(); /*pega a mensagem de erro do php e joga na variavel msegErro e mostra pro usuario.*/
   		}
   	}
 
-  	public function cadastrar($nome, $email, $senha, $area, $receber)
-  	{
-  		global $pdo;
+  	public function cadastrar($nome, $email, $senha, $area, $receber, $confirmacao){
+  	  global $pdo;
       global $msgErro;
 	  $foto_p = "assets/img/def.jpg";
-	  
-	  $confirmacao = rand (1, getrandmax ());
   		//verificando se existe usuario cadastrado.
   		$sql = $pdo->prepare("SELECT id_usuario FROM usuario WHERE email=:e"); //pega o id do usuario buscando pelo emial preenchido no cadastro
   		$sql->bindValue(":e", $email);  //substitui o :e pelo email preenchido no cadastro
   		$sql->execute();
 		
-  		if($sql->rowCount()>0) //verificando houve resposta na consulta
-  		{
+  		if($sql->rowCount()>0){ //verificando houve resposta na consulta
   			return false; // ja tem cadastro
   		}
-  		else
-  		{
+  		else{
   			//caso nao tenha
   			$sql = $pdo->prepare("INSERT INTO usuario (nome, email, senha, area, receber, confirmacao,foto_p) VALUES (:n, :e,:s, :a, :r, :c, :fp)");
 	  		$sql->bindValue(":n", $nome);
@@ -52,16 +48,12 @@
 			$sql->execute();
 					
 			return true;
-	  		
-			
   		}
 
-
-
   	}
-  	public function logar($email, $senha)
-  	{
-  		global $pdo;
+
+  	public function logar($email, $senha){
+  	  global $pdo;
       global $msgErro;
   		/*verificar se o email e senha estao cadastrados, se sim*/
   		$sql= $pdo->prepare("SELECT id_usuario, nome, email, area, profissao, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
@@ -87,7 +79,7 @@
   		}
   	}
 
-	  public function enviar($titulo, $descricao, $foto_v, $foto_t)
+	public function enviar($titulo, $descricao, $foto_v, $foto_t)
   	{
   		global $pdo;
       	global $msgErro;

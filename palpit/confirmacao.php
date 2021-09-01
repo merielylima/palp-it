@@ -9,11 +9,11 @@
 
     if ($u->confirmar($email, $codigo)){
         //echo("ok");
-        header ("Location: cadastro_concluido.html");
+        header ("Location: cadastro_concluido.php");
     }
     else{
         //echo("error");
-        header ("Location: cadastro_error.html");
+        header ("Location: cadastro_error.php");
     }
     
 ?>
