@@ -3,19 +3,19 @@
 require_once 'classes/usuarios.php';
 $u = new Usuarios;
 
-//verificar se variavel foi iniciada
+//verificar se clicou no botao
 if(isset($_POST['nome']))
 {
-	//Recupera informação do formulario
 	$nome = addslashes($_POST['nome']); //addslashes evita codigos maliciosos.
 	$email = addslashes($_POST['email']);
 	//$profissao = addslashes($_POST['profissao']);
 	$senha = addslashes($_POST['senha']);
 	$area = addslashes($_POST['area']);
 	$receber = addslashes($_POST['receber']);
+	//verificando se todos os campos nao estao vazios
 	
-		$u->conectar(); //Conecta ao banco de dados
-		if ($u->msgErro=="") 
+		$u->conectar();
+		if ($u->msgErro=="") //conectado normalmente;
 		{
 			if ($u->cadastrar($nome, $email, $senha, $area, $receber))
 				{
