@@ -77,3 +77,9 @@
   color: var(--cor-aviso);
   margin-left: 0.25rem;
 }
+.imagem{
+  width: 130px;
+  position: absolute;
+  top: -3.4rem;
+  right: 0;
+}
