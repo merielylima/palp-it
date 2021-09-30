@@ -9,7 +9,6 @@
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
   <link rel="stylesheet" href="./assets/css/base/base.css">
-  <link rel="stylesheet" href="./assets/css/login.css">
   <link rel="stylesheet" href="./assets/css/componentes/cartao.css">
   <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
   <link rel="stylesheet" href="./assets/css/componentes/botao.css">
@@ -21,24 +20,19 @@
       <section class=" cartao--container cartao-xs">
         <div class="border-bottom">
             <img src="assets/img/Logo-palp-it.svg" alt="Logo Palp-it"/>
-            <h2 class="container--titulo">Entre no Palp-it</h2>
+            <h2 class="container--titulo">Recuperar senha</h2>
         </div>
-        <form action="logar.php">
-          <div class="input-container ">
-            <input name="email" id="email" class="input width-full" type="email" placeholder="Email" required>
-            <!--<span class="input-mensagem-erro">Este campo não está válido</span>-->
-        </div>
-        <div class="input-container "> 
-            <input name="senha" id="senha" class="input width-full" type="password" placeholder="Senha" title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos." required>
-            <!--<span class="input-mensagem-erro">Este campo não está válido</span>-->
+        <form action="./reset_senha_concluido.phps">
+          <div class="input-container">
+            <input name="senha" id="senha" class="input width-full" type="password" placeholder="Senha" title="A senha deve conter entre 6 a 12 caracteres, com uma letra maiúscula e um número." required>
+            <!--<span class="input-mensagem-erro">Este campo não está válido</span> -->
           </div>
-          <a href="reset_senha_email.php" class="reset-senha link"> Esqueceu sua senha?</a>
-        <button class="botao--container botao--primario width-full"> Entrar </button>
-        
+          <div class="input-container">
+              <input name="senha" id="senha" class="input width-full" type="password" placeholder="Confirmação de senha" title=""A senha deve conter entre 6 a 12 caracteres, com uma letra maiúscula e um número." required>
+              <!--<span class="input-mensagem-erro">Este campo não está válido</span> -->
+          </div>
+          <button class="botao--container botao--primario width-full"> Redefinir senha</button>
         </form>
-      </section>
-      <section class=" cartao--container cartao-xs">
-        <p> Ainda não é membro?</p> <a href="cadastro.php" class="link link-externo"> Cadastre-se já </a>
       </section>
     </div>
   </main>

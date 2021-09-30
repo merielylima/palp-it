@@ -24,7 +24,7 @@
                     <h2 class="container--titulo">Cadastro concluído</h2>
                 </div>
                 <p class="centro my-3"> Seu email foi validado com sucesso <span class="material-icons sucesso">task_alt</span></p>
-                <a href="login.html" > <button class="botao--container botao--primario width-full">Entrar na sua conta</button></a>
+                <a href="login.php" > <button class="botao--container botao--primario width-full">Entrar na sua conta</button></a>
             </section>
         </div>
     </main>

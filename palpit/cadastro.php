@@ -56,7 +56,7 @@
                 </form>
             </section>
              <section class=" cartao--container cartao-xs">
-                <p> Já é membro?</p> <a href="login.html" class="link link-externo"> Entre já </a>
+                <p> Já é membro?</p> <a href="login.php" class="link link-externo"> Entre já </a>
             </section>
         </div>
     </main>

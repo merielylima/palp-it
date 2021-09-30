@@ -51,7 +51,7 @@ if(isset($_POST['nome'])){
 													<h2 class="container--titulo">Falta pouco...</h2>
 												</div>
 												<p class="justificado  my-3">  Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link" > <?php echo $email ?> </a>. </p>
-												<a href="inicio_cadastro.html"> <button class="botao--container botao--primario width-full">  Voltar para página inicial </button></a>
+												<a href="inicio.php"> <button class="botao--container botao--primario width-full">  Voltar para página inicial </button></a>
 											</section>
 										</div>
 									</main>
