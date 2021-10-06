@@ -1,18 +1,6 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Palp-it</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
-    <link rel="stylesheet" href="./assets/css/base/base.css">
-    <link rel="stylesheet" href="./assets/css/componentes/cartao.css">
-    <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
-    <link rel="stylesheet" href="./assets/css/componentes/botao.css">
-</head>
+<?php
+ include ("head.php");
+?>
 <body>
     <main class="container container-xs">
         <div class="content flex flex--centro flex--coluna mt7">
@@ -22,7 +10,7 @@
                     <h2 class="container--titulo">Cadastre-se no Palp-it</h2>
                 </div>
                 <div class="divisao"></div>
-                <form action="cadastrar.php" method="POST">
+                <form action="cadastro_analise.php" method="POST">
                     <div class="input-container">
                         <input name="nome" id="nome" class="input input-full" type="text" placeholder="Nome" required>
                         <!-- <span class="input-mensagem-erro">Este campo não está válido</span> -->

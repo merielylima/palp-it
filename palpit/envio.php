@@ -1,7 +1,7 @@
 <?php
  include ("cabecalho.php");
 ?>
-<main  class="container container-xx my-xl" >
+  <main  class="container container-xx my-xl" >
     <div class="flex flex--centro flex--coluna flex--row  pl-5 pr-5 ">
       <section class="cartao--container cartao-xl width-full">
         <h2 class="container--titulo"> Novo envio </h2>
@@ -23,9 +23,9 @@
               <label class="row--file flex"> 
                 <span class="input--file-button   botao--terciario botao--container">Escolher arquivo</span>
               </label>
-              <input id="imagem_visual" name="imagem_visual" type="file" class="input--file" required/>
+              <input id="imagem_visual" onchange="readURL(this);" name="imagem_visual" type="file" class="input--file" required/>
             </div>
-            <img class="imagem" src="assets/img/publicacoes/modelo-atomico.png"/>
+            <img class="imagem" id="img_prev" src="assets/img/publicacoes/modelo-atomico.png"/>
           </div>
           <div class="my-2 flex">
             <div>
@@ -86,8 +86,8 @@
             <button class="botao--container botao--primario botao-envio "> Enviar </button>
           </div>
         </form>
-      </div>
-    </section>
+      </section>
+    </div>
   </main>
 <script src="js/formulario.js"></script>
 <?php

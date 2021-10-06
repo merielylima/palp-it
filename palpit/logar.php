@@ -11,30 +11,17 @@
 		$u->conectar(); //conectando ao banco
 			if($u->msgErro=="") // caso a mensagem esteja vazia, login ok
 			{
-				if ($u->logar($email, $senha))
-				{
-					//echo '0';
+				if ($u->logar($email, $senha)){
+					echo '0';
 					//echo $_SESSION['foto'];
-					header("location:inicio.php"); //encaminhado para proxima area apos verificar usuario e senha
 				}
-				else
-				{
-					?>
-					<div class="msg_erro">
-						Email e/ou senha estão incorretos!
-					</div>
-					<?php	
-					//echo '-1';
-
+				else{
+					echo '-1';
 				}
 			}
 			else
 			{
-				?>
-				<div class="msg_erro">
-					<?php echo "Erro: ".$u->msgErro; ?>
-				</div>
-				<?php
+				echo '-1';
 			}
     }
 ?>
