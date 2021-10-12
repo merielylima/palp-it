@@ -57,6 +57,32 @@ function adicionarItem(){
   });
 }
 
+function readURL(input) {
+    if (input.files && input.files [0]) {
+        var reader = new FileReader ();
+        reader.onload = function (e) {
+        $ ('#img_prev')
+            .attr ('src', e.target.result)
+            .width (75)
+            .height (100);
+        };
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function enviarFormulario () {
+    if (linha == 0) {
+        alert ("Adicione pelo menos uma disciplina");
+        return;
+    }
+    var form = document.getElementById ("form-adiciona");
+    form.submit ();
+}
+
+function voltarPrincipal () {
+    window.location.href = "index.php";
+}
+
 var fileInput = document.querySelector('.input--file');
 var fileInputText = document.querySelector('.input--file-text');
 fileInputTextContent = fileInputText.textContent;

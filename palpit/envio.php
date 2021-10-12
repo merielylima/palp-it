@@ -8,19 +8,21 @@
         <p class="card--description">
           Os arquivos submetidos são avaliados por um mediador, para então serem postados.
         </p>
-        <form id="form-adiciona" name="envio" action="XXXXXXXX" method="POST">
+        <form id="form-adiciona" name="envio" action="arquivo.php" enctype='multipart/form-data' method="POST">
           <div class="my-2 flex relative">
             <div class="content-files">
               <p  class="input--label">Imagem Tátil<span class="obrigatorio">*</span></p>
-              <label class="row--file flex"> 
+              
+              <label for="imagem_tatil" class="row--file flex"> 
                 <span class="input--file-button botao--terciario botao--container">Escolher arquivo</span>
                 <span class="input--file-text"> Nenhum arquivo selecionado</span>
               </label>
               <input id="imagem_tatil" name="imagem_tatil" type="file" class="input--file" required/>
+
             </div>
             <div class="content-files">
               <p class="input--label">Imagem Visual<span class="obrigatorio">*</span></p>
-              <label class="row--file flex"> 
+              <label for="imagem_visual" class="row--file flex"> 
                 <span class="input--file-button   botao--terciario botao--container">Escolher arquivo</span>
               </label>
               <input id="imagem_visual" onchange="readURL(this);" name="imagem_visual" type="file" class="input--file" required/>
@@ -82,8 +84,8 @@
           </table>
            
           <div class="my-2 flex flex--end">
-            <button class="botao--container botao--secundario botao-envio botao-aviso"> Cancelar </button>
-            <button class="botao--container botao--primario botao-envio "> Enviar </button>
+            <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio botao-aviso"> Cancelar </A>
+            <button onclick="enviarFormulario()" class="botao--container botao--primario botao-envio "> Enviar </button>
           </div>
         </form>
       </section>
