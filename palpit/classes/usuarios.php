@@ -18,7 +18,7 @@
 
 			return $pdo;
   		} catch (PDOException $e){
-  			$msgErro - $e->getMessage(); /*pega a mensagem de erro do php e joga na variavel msegErro e mostra pro usuario.*/
+  			echo ($msgErro . $e->getMessage()); /*pega a mensagem de erro do php e joga na variavel msegErro e mostra pro usuario.*/
   		}
   	}
 

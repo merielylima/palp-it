@@ -8,7 +8,7 @@
         <p class="card--description">
           Os arquivos submetidos são avaliados por um mediador, para então serem postados.
         </p>
-        <form id = form-adiciona name="envio" action="XXXXXXXX" method="POST">
+        <form id="form-adiciona" name="envio" action="XXXXXXXX" method="POST">
           <div class="my-2 flex relative">
             <div class="content-files">
               <p  class="input--label">Imagem Tátil<span class="obrigatorio">*</span></p>
@@ -65,7 +65,7 @@
               </select>
             </div>
             <div class="flex flex-items-end">
-              <button id="adiciona-lista" onClick="adicionarItem()" value="Adicionar" class="botao--container botao-envio botao--terciario">Adicionar</button>
+              <A id="adiciona-lista" onClick="adicionarItem()" value="Adicionar" class="botao--container botao-envio botao--terciario">Adicionar</A>
             </div>
           </div>
           <table class="table my-2">
@@ -73,7 +73,7 @@
               <tr>
                 <th class="row-table"> Nível </th>
                 <th class="row-table"> Disciplina </th>
-                <th class="row-table">Remover</th> 
+                <th class="row-table"> Remover </th> 
               </tr>
             </thead>
             <tbody id ="tabela" class="table__content">

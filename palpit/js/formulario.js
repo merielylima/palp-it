@@ -3,10 +3,11 @@
 function adicionarItem(){
   var nivel = document.getElementById("nivel").value;
   var disciplina = document.getElementById("disciplina").value;
-  console.log(nivel, disciplina)
 
   var tabela = document.getElementById("tabela");
   var newRow = document.createElement("tr");
+  newRow.classList.add ("removable-rows");
+  newRow.id = "row_" + linha;
   tabela.appendChild(newRow);
 
   var newTd = document.createElement("td");
@@ -30,20 +31,30 @@ function adicionarItem(){
   newInput.name = "disciplina_" + linha;
 
   newTd = document.createElement("td");
-  var newButton = document.createElement("button");
+  var newButton = document.createElement("a");
   newButton.id = "button_" + linha;
-  newButton.name = "button_" + linha;
+  newButton.id = "button_" + linha;
 
   newButton.classList.add("button");
   newTd.classList.add("row-table");
   newButton.classList.add("button-remove");
+  newButton.classList.add("botao--container");
+  newButton.classList.add("botao--terciario");
   newTd.appendChild(newButton);
   newRow.appendChild(newTd);
   linha = linha +1;
 
-  newButton.addEventListener("click", function(event, outro) {
-  console.log(event.relatedTarget);
- });
+  newButton.addEventListener ("click", function(event, outro) {
+    var l = event.target.id.substring (7);
+    var element = document.getElementById ("row_" + l);
+    element.parentNode.removeChild(element);
+    var rows = document.getElementsByClassName("removable-rows");
+    for (var i = 0; i < rows.length; i++) {
+        rows [i].getElementsByTagName("a") [0].id = "button_" + i;
+        rows [i].id = "row_" + i;
+    }
+    linha = rows.length;
+  });
 }
 
 var fileInput = document.querySelector('.input--file');
