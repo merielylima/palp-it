@@ -44,7 +44,7 @@
           <div  class="my-2">
             <div class="content-descripcion">
               <label for="descricao" class="input--label "> Descrição <span class="">(opcional)</span></label>
-              <textarea id="descricao" class="input input-envio textarea"></textarea>
+              <textarea name="descricao" id="descricao" class="input input-envio textarea"></textarea>
               <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
           </div>
