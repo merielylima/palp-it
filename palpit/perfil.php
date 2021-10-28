@@ -1,7 +1,7 @@
 <?php
  include ("cabecalho.php");
 ?>
-    
+
   <main  class="container container-xl my-xl" >
     <div class="flex flex--centro flex--coluna flex--row px-5  flex-start">
       <nav class="left-side  cartao--container flex-shrink-0 mb-4">
@@ -58,8 +58,8 @@
             <span class="">Circulo trigonométrico</span>
           </li>
         </ol>
-      </section>
-    </div>
+      </section>]
+    </div> 
   </main>
 
 <?php

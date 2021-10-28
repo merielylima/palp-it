@@ -4,7 +4,7 @@
       <div class="cabecalho__content">
         <div class="cabecalho__left-side flex flex-items-center">
           <a href="inicio.php" class=" flex flex-items-center">
-            <img src="assets/img/Logo-palp-it.svg" class="cabecalho--logo" alt="Logo Palp-it"/>
+            <img src="assets/img/icon/Logo-palp-it.svg" class="cabecalho--logo" alt="Logo Palp-it"/>
           </a>
           <div class="cabecalho--pesquisa">
               <input type="search" placeholder="Pesquisar" class="ml-4 search-icon input-pesquisa botao--container border">

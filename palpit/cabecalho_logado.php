@@ -1,8 +1,7 @@
-<body>    
   <header class="cabecalho py-1 px-2 px-5">
     <div class="cabecalho__content ">
       <div class="cabecalho__left-side flex flex-items-center ">
-        <a href="inicio.php" class=" flex flex-items-center"> <img src="assets/img/Logo-palp-it.svg" class="cabecalho--logo" alt="Logo Palp-it"/></a>
+        <a href="inicio.php" class=" flex flex-items-center"> <img src="assets/img/icon/Logo-palp-it.svg" class="cabecalho--logo" alt="Logo Palp-it"/></a>
             <div class="cabecalho--pesquisa px-4">
                 <input type="search" placeholder="Pesquisar" class=" search-icon input-pesquisa botao--container border">
             </div>
@@ -22,7 +21,7 @@
       </div>
       <div class="cabecalho__right-side flex flex-items-center">
         <div id="js-menu" class="botao--container menu">
-          <img src="assets/img/menu.svg" class="menu-icon" alt="Icone Menu">
+          <img src="assets/img/icon/menu.svg" class="menu-icon" alt="Icone Menu">
         </div>
         <div class="user lista-navegacao">
           <div class="user__menu"> 
@@ -35,7 +34,6 @@
             <img class="user__menu--photo" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
             <span class="material-icons">expand_more</span>
           </div>
-        </div>
         </div>
       </div>
     </div>

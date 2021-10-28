@@ -36,7 +36,7 @@
 .input--label{
     display: block;
     text-align: left;
-    font-weight: 500;
+    font-weight: var(--fonte-peso-bold);
     color: var(--cinza-1);
     margin-top: 0.25rem;
     margin-left: 0.25rem;
@@ -47,6 +47,7 @@
     padding-left: 5px;
   }
 .checkbox--label{
+    float: left;
     text-align: justify;
     font-size: var(--fonte-tamanho-secundaria);
 }

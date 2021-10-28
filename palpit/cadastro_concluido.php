@@ -6,7 +6,7 @@
         <div class="content flex flex--centro flex--coluna mt7">
             <section class=" cartao--container cartao-xs">
                 <div class="border-bottom">
-                    <img src="assets/img/Logo-palp-it.svg" alt="Logo Palp-it"/>
+                    <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
                     <h2 class="container--titulo">Cadastro concluído</h2>
                 </div>
                 <p class="centro my-3"> Seu email foi validado com sucesso <span class="material-icons sucesso">task_alt</span></p>

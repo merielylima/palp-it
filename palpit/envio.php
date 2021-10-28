@@ -12,13 +12,11 @@
           <div class="my-2 flex relative">
             <div class="content-files">
               <p  class="input--label">Imagem Tátil<span class="obrigatorio">*</span></p>
-              
               <label for="imagem_tatil" class="row--file flex"> 
                 <span class="input--file-button botao--terciario botao--container">Escolher arquivo</span>
                 <span class="input--file-text"> Nenhum arquivo selecionado</span>
               </label>
               <input id="imagem_tatil" name="imagem_tatil" type="file" class="input--file" required/>
-
             </div>
             <div class="content-files">
               <p class="input--label">Imagem Visual<span class="obrigatorio">*</span></p>
@@ -79,7 +77,6 @@
               </tr>
             </thead>
             <tbody id ="tabela" class="table__content">
-        
             </tbody>   
           </table>
            

@@ -6,7 +6,7 @@
     <div class="content flex flex--centro flex--coluna mt7">
       <section class=" cartao--container cartao-xs">
         <div class="border-bottom">
-            <img src="assets/img/Logo-palp-it.svg" alt="Logo Palp-it"/>
+            <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
             <h2 class="container--titulo">Recuperar senha</h2>
         </div>
         <form action="./reset_senha_concluido.phps">
