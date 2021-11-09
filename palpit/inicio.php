@@ -13,8 +13,8 @@
             <input name = "p_chave" type="search" placeholder="Pesquisar" class=" width-full input">
           </div>
           <div>
-            <label for = "nivel"class="input--label">Disciplina</label>
-            <select name="nivel" id="nivel" class=" option input width-full">
+            <label for = "disciplina"class="input--label">Disciplina</label>
+            <select name="disciplina" id="disciplina" class=" option input width-full">
               <option value="Fisica">Física</option>
               <option value="Quimica">QuimicaI</option>
               <option value="Biologia">Biologia</option>
@@ -22,19 +22,19 @@
             </select>
           </div>
           <div>
-            <label for = "grau"class="input--label">Grau de escolaridade</label>
+            <label class="input--label">Grau de escolaridade</label>
           <div class="flex flex--coluna">
             <label class="checkbox--label ">
-              <input type="checkbox" name="receber" checked> 
+              <input type="checkbox" name="nivel1" checked> 
               Ensino fundamental I
             </label>
             <label class="checkbox--label">
-              <input type="checkbox" name="receber" checked> 
+              <input type="checkbox" name="nivel2" checked> 
               Ensino fundamental II
             </label>
             <label class="checkbox--label">
-              <input type="checkbox" name="receber" checked> 
-              Ensino fundamental II
+              <input type="checkbox" name="nivel3" checked> 
+              Ensino Médio
             </label>
           </div>
         <button class="botao--container botao--primario width-full">Pesquisar </button>
