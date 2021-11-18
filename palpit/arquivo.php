@@ -15,7 +15,7 @@
 
 
   	if (isset ($_FILES ['imagem_visual']) && $_FILES ['imagem_visual']['name'] != '') {
-	$foto_v = "assets/img/visual/".time().'_'.basename ($_FILES ['imagem_visual']['name']);
+		$foto_v = "assets/img/visual/".time().'_'.basename ($_FILES ['imagem_visual']['name']);
 	}
 	else{
 		return -1;
@@ -44,7 +44,7 @@
 		$u->enviar($titulo,$descricao,$foto_v,$foto_t); //chamada função armazenamento tabela arquivo
 		
 		//Tratamento em armazenamento tabela tag
-		$newtag = preg_replace('/\W{2,}/'," ",$tag);
+		$newtag = preg_replace('/[^\w]+/'," ",$tag);
 		foreach(explode(" ",trim($newtag)) as $values){
 			$sql = $pdo->prepare('INSERT INTO tag (key_words, id_arquivo_fk) VALUES (:kw,:fka)');
 			$sql->bindValue(":kw", $values);

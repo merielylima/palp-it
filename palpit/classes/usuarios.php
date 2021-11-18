@@ -84,7 +84,7 @@
   		global $pdo;
       	global $msgErro;
 				  		
-  		$sql= $pdo->prepare("INSERT INTO arquivo (titulo, descricao, foto_t, foto_v, id_usuario_fk) VALUES (:t, :d, :fv, :ft,:fku)");
+  		$sql= $pdo->prepare("INSERT INTO arquivo (titulo, descricao, foto_v, foto_t, id_usuario_fk) VALUES (:t, :d, :fv, :ft,:fku)");
   		$sql->bindValue(":t", $titulo);
 		$sql->bindValue(":d", $descricao);
 		$sql->bindValue(":fv", $foto_v);
@@ -118,15 +118,6 @@
   			return false; //erro ao logar.
   		}
 
-	}
-
-	public function logado(){
-		session_start();
-		if (isset($_SESSION['id_usuario']) && $_SESSION['id_usuario']!=-1){
-			return 1;
-		}else{
-			header ("Location: inicio_cadastro.html");
-		}
 	}
 	
 }
