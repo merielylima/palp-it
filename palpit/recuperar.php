@@ -1,7 +1,7 @@
 <?php
     require_once 'classes/usuarios.php';
     $u = new Usuarios;
-    include('common.php');
+    include('email.php');
 
     $u->conectar(); //conexão banco de dados
 

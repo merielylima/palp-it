@@ -1,7 +1,7 @@
 
 <?php
 require_once 'classes/usuarios.php';
-include "common.php";
+include "email.php";
 
 $u = new Usuarios;
 session_start();

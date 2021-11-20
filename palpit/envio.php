@@ -8,7 +8,7 @@
         <p class="card--description">
           Os arquivos submetidos são avaliados por um mediador, para então serem postados.
         </p>
-        <form id="form-adiciona" name="envio" action="arquivo.php" enctype='multipart/form-data' method="POST">
+        <form id="form-adiciona" name="envio" action="armazenar.php" enctype='multipart/form-data' method="POST">
           <div class="my-2 flex relative">
             <div class="content-files">
               <p  class="input--label">Imagem Tátil<span class="obrigatorio">*</span></p>
