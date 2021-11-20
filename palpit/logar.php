@@ -4,7 +4,7 @@
   ini_set("error_log", "C:/xampp/htdocs/Palp-it/php-error.log");
   error_log( "POST: " . print_r($_POST, true) );
 
-	if(isset($_POST['email']))
+	if(isset($_POST['email']))//Verifica se variavel foi iniciada
 	{
 		$email = addslashes($_POST['email']);
 		$senha = addslashes($_POST['senha']);

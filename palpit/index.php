@@ -1,9 +1,9 @@
 <?php
  include ("cabecalho.php");
-?>
-
-//corpo do arqivo    
-
+?> 
+<?php
+header ("Location: inicio.php");
+?>    
 <?php
 include ("rodape.php");
 ?>
