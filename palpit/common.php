@@ -23,6 +23,7 @@
 	    $mail -> Subject = $assunto;
 	    $mail -> Body = $corpo;
 	    $mail -> AddAddress ($para);
+		$mail -> CharSet = 'UTF-8';                                  // Set email format to HTML
 		
 
 	    if (!$mail -> Send ()) {

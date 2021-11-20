@@ -7,6 +7,7 @@
 	public function conectar(){
   		global $pdo;
       	global $msgErro;
+		  session_start();
 		//Credenciais de acesso BD
 		define('HOST', 'localhost');
 		define('USER', 'root');
@@ -25,7 +26,7 @@
   	public function cadastrar($nome, $email, $senha, $area, $receber, $confirmacao){
   	  global $pdo;
       global $msgErro;
-	  $foto_p = "assets/img/def.jpg";
+	  $foto_p = "assets\img\icon\avatar.svg";
   		//verificando se existe usuario cadastrado.
   		$sql = $pdo->prepare("SELECT id_usuario FROM usuario WHERE email=:e"); //pega o id do usuario buscando pelo emial preenchido no cadastro
   		$sql->bindValue(":e", $email);  //substitui o :e pelo email preenchido no cadastro
@@ -64,7 +65,7 @@
   		{
   			//entrar no sistema criando uma (sessao)
   			$dado = $sql->fetch(); //transforma o retorno da query em array com os nomes das colunas
-  			session_start();  //iniciando a sessao
+  			//session_start();  //iniciando a sessao
   			$_SESSION['id_usuario'] = $dado['id_usuario']; //armazena o id do usuario na sessao.
 			$_SESSION['nome'] = $dado['nome'];
 			$_SESSION['email'] = $dado['email'];

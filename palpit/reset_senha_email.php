@@ -9,7 +9,7 @@
             <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
             <h2 class="container--titulo">Recuperar senha</h2>
         </div>
-        <form action="./reset_senha_analise.php" >
+        <form  action="recuperar.php"  method="POST">
           <div class="input-container ">
             <input name="email" id="email" class="input width-full" type="email" placeholder="Email" required>
             <!-- <span class="input-mensagem-erro">Este campo não está válido</span> !-->

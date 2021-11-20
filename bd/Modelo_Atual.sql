@@ -31,6 +31,7 @@ CREATE TABLE IF NOT EXISTS `palpit`.`usuario` (
   `confirmacao` VARCHAR(45) NULL,
   `foto_p` VARCHAR(245) NULL,
   `tipo_usuario` VARCHAR(20) NOT NULL DEFAULT 'C',
+  `criado_usuario` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_usuario`),
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) )
 ENGINE = InnoDB;
@@ -49,6 +50,7 @@ CREATE TABLE IF NOT EXISTS `palpit`.`arquivo` (
   `q_acesso` INT NULL,
   `foto_t` VARCHAR(100) NULL,
   `id_usuario_fk` INT NOT NULL,
+  `criado_arquivo` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
   PRIMARY KEY (`id_arquivo`),
   INDEX `fk_arquivo_usuario1_idx` (`id_usuario_fk` ASC) ,
   CONSTRAINT `fk_arquivo_usuario1`
