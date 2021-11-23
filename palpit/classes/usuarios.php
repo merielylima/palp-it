@@ -7,7 +7,7 @@
 	public function conectar(){
   		global $pdo;
       	global $msgErro;
-		  session_start();
+		  @session_start();
 		//Credenciais de acesso BD
 		define('HOST', 'localhost');
 		define('USER', 'root');

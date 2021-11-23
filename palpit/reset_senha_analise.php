@@ -9,7 +9,7 @@
                     <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
                     <h2 class="container--titulo">Recuperar senha</h2> 
                 </div>
-                <p class="justificado my-3">  Um email de confirmação foi enviado para o endereço <a class="link" > <?php echo $email ?> </a>. </p>
+                <p class="justificado my-3">  Um email de confirmação foi enviado para o endereço <a class="link" > <?php echo $_SESSION['email'] ?> </a>. </p>
                 <button class="botao--container botao--primario width-full"> <a href="inicio.php" >Voltar para página inicial</a></button>
             </section>
         </div>
