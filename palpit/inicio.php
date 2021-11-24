@@ -17,8 +17,8 @@
           <div>
             <label for = "disciplina"class="input--label">Disciplina</label>
             <select name="disciplina" id="disciplina" class=" option input width-full">
-              <option value="Fisica">Física</option>
-              <option value="Quimica">QuimicaI</option>
+              <option value="Física">Física</option>
+              <option value="Química">Química</option>
               <option value="Biologia">Biologia</option>
               <option value="Geografia">Geografia</option>
             </select>
@@ -28,11 +28,11 @@
           <div class="flex flex--coluna">
             <label class="checkbox--label ">
               <input type="checkbox" name="nivel1" checked> 
-              Ensino fundamental I
+              Ensino Fundamental I
             </label>
             <label class="checkbox--label">
               <input type="checkbox" name="nivel2" checked> 
-              Ensino fundamental II
+              Ensino Fundamental II
             </label>
             <label class="checkbox--label">
               <input type="checkbox" name="nivel3" checked> 

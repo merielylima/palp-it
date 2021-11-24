@@ -117,7 +117,8 @@
 			}
 
 	$pdo->commit(); //envia uma transação
-	
+	header ("Location: inicio.php"); 
+
 	}catch(PDOException $exception){
 		$pdo->rollback();  //reverte uma transação
 		die('Erro ao armamzenar');
