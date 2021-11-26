@@ -2,7 +2,10 @@
 <?php
 include ("head.php");
 
-session_start();
+if (session_status() !== PHP_SESSION_ACTIVE) {//Verificar se a sessão não já está aberta.
+    session_start();
+}
+
 if(isset($_SESSION["id_usuario"])){ //Verificando se variavel foi iniciada
 //true;
 include ("cabecalho_logado.php");

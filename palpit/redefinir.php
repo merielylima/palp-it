@@ -4,9 +4,13 @@ require_once 'classes/usuarios.php';
 require_once 'classes/usuarios.php';
 $u = new Usuarios;
    
-session_start(); //iniciando sessão
+//session_start(); //iniciando sessão
 $u->conectar(); //conexão banco de dados
-   
+
+if (session_status() !== PHP_SESSION_ACTIVE) {//Verificar se a sessão não já está aberta.
+    session_start();
+}
+
 //recuperação das informações formulario
 $email = addslashes($_POST['email']);
 $senha = addslashes($_POST['senha']);
