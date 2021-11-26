@@ -1,5 +1,11 @@
 <?php
  include ("cabecalho.php");
+ if (!isset($_SESSION['id_usuario'])) {
+  // Destrói a sessão por segurança
+  session_destroy();
+  // Redireciona o visitante de volta para o inicio
+  header("Location: index.php"); exit;
+}
 ?>
 
   <main  class="container container-xl my-xl" >

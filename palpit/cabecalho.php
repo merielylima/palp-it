@@ -8,6 +8,7 @@ if(isset($_SESSION["id_usuario"])){ //Verificando se variavel foi iniciada
 include ("cabecalho_logado.php");
 }else{
 //false;
+session_destroy();
 include ("cabecalho_deslogado.php");
 }
 //se 1 - Nao estou conectado
