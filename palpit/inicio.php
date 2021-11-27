@@ -27,15 +27,15 @@
             <label class="input--label">Grau de escolaridade</label>
           <div class="flex flex--coluna">
             <label class="checkbox--label ">
-              <input type="checkbox" name="nivel1" checked> 
+              <input type="checkbox" name="nivel1"> 
               Ensino Fundamental I
             </label>
             <label class="checkbox--label">
-              <input type="checkbox" name="nivel2" checked> 
+              <input type="checkbox" name="nivel2"> 
               Ensino Fundamental II
             </label>
             <label class="checkbox--label">
-              <input type="checkbox" name="nivel3" checked> 
+              <input type="checkbox" name="nivel3"> 
               Ensino Médio
             </label>
           </div>

@@ -15,15 +15,15 @@
           <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
           <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
           <div class="vcartao-nome">
-            <span class="vcard-fullname block"> <?php echo '"'.$_SESSION ['nome'].'"'?></span>
-            <span class="vcard-username block"><?php echo '"'.$_SESSION ['email'].'"'?></span>
+            <span class="vcard-fullname block"> <?php echo ''.$_SESSION ['nome'].''?></span>
+            <span class="vcard-username block"><?php echo ''.$_SESSION ['email'].''?></span>
           </div>
         </div>
         <div class="flex flex--coluna">
-          <p><?php echo '"'.$_SESSION ['profissao'].'"'?></p>
+          <p><?php echo ''.$_SESSION ['profissao'].''?></p>
           <ul class="my-2">
             <li> <spam class="material-icons">location_on </spam>Tucuruí - Pará</li> 
-            <li> <span class="material-icons"> mail</span><?php echo '"'.$_SESSION ['email'].'"'?></li>
+            <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
           </ul>
           <button class="botao--container botao--secundario width-full"> Editar perfil </button>  
         </div>
@@ -64,7 +64,7 @@
             <span class="">Circulo trigonométrico</span>
           </li>
         </ol>
-      </section>]
+      </section>
     </div> 
   </main>
 
