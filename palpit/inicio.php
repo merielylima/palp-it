@@ -54,7 +54,7 @@
         </div>
         <ol class="flex wrap-evenly">
         <?php
-          if(isset($_POST['p_chave']) && isset($_POST['disciplina']) && isset($_POST['nivel1']) && isset($_POST['nivel2']) && isset($_POST['nivel3'])){
+          if(isset($_POST['p_chave']) && isset($_POST['disciplina']) || isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3'])){
             //recuperação das informações formulario
             $busca = addslashes($_POST['p_chave']);
             $disciplina = addslashes($_POST['disciplina']);
@@ -116,9 +116,9 @@
 
           while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
         ?>
-            <li class="flex flex-items-center flex--coluna item">
-            <img src=<?php echo $lista["foto_v"];?>>
-            <span class=""><?php echo $lista["titulo"];?></span>
+          <li class="flex flex-items-center flex--coluna item">
+          <img src=<?php echo $lista["foto_v"];?>>
+          <span class=""><?php echo $lista["titulo"];?></span>
           </li>
         <?php
           endwhile;

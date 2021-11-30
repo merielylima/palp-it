@@ -1,5 +1,10 @@
 <?php
  include ("cabecalho.php");
+ require_once 'classes/usuarios.php';
+  $u = new Usuarios;
+  
+  $u->conectar();
+
  if (!isset($_SESSION['id_usuario'])) {
   // Destrói a sessão por segurança
   session_destroy();
@@ -39,30 +44,20 @@
           </select>
         </div>
         <ol class="flex wrap-evenly">
-          <li class="flex flex-items-center flex--coluna item">
-            <img src="assets/img/publicacoes/mapa-do-brasil.png" >
-            <span class="">Mapa do brasil</span>
-          </li>
-          <li class="flex flex-items-center flex--coluna item">
-            <img src="assets/img/publicacoes/modelo-atomico.png" >
-            <span class="">Molecula H2O</span>
-          </li>
-          <li class="flex flex-items-center flex--coluna item">
-            <img src="assets/img/publicacoes/rosa-dos-ventos.png" >
-            <span class="">Rosa dos ventos</span>
-          </li>
-          <li class="flex flex-items-center flex--coluna item">
-            <img src="assets/img/publicacoes/sistema-solar.png" >
-            <span class="">Sistema Solar</span>
-          </li>
-          <li class="flex flex-items-center flex--coluna item">
-            <img src="assets/img/publicacoes/modelo-atomico.png" >
-            <span class="">Modelo Atômico</span>
-          </li>
-          <li class="flex flex-items-center flex--coluna item">
-            <img src="assets/img/publicacoes/circulo-trigonometrico.png" >
-            <span class="">Circulo trigonométrico</span>
-          </li>
+          <?php 
+            $usuario = $_SESSION['id_usuario'];
+            $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
+            INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE u.id_usuario LIKE '$usuario'");
+            $sql->execute();
+            while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
+          ?>
+            <li class="flex flex-items-center flex--coluna item">
+            <img src=<?php echo $lista["foto_v"];?>>
+            <span class=""><?php echo $lista["titulo"];?></span>
+            </li>
+          <?php
+            endwhile;
+          ?>
         </ol>
       </section>
     </div> 
