@@ -58,9 +58,9 @@
             //recuperação das informações formulario
             $busca = addslashes($_POST['p_chave']);
             $disciplina = addslashes($_POST['disciplina']);
-            $fundamental1 = addslashes($_POST['nivel1']) ? true : null;
-            $fundamental2 = addslashes($_POST['nivel2']) ? true : null;
-            $medio = addslashes($_POST['nivel3']) ? true : null;
+            $fundamental1 = addslashes(isset($_POST['nivel1'])) ? true : null;
+            $fundamental2 = addslashes(isset($_POST['nivel2'])) ? true : null;
+            $medio = addslashes(isset($_POST['nivel3'])) ? true : null;
 
             $nivel="";
 		        $f1="'Fundamental I'";
