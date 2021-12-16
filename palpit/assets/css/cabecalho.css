@@ -9,6 +9,33 @@
     min-width: 320px;
     top:0;
   }
+  .desactive{
+    display: none;
+    visibility: hidden;
+  }
+
+  .caixa{
+    display: block;
+    position: absolute;
+    top: 64px;
+    border: 1px solid var(--cinza-6);
+    font-size: var(--fonte-tamanho-botao);
+    color: var(--azul-1);
+    right: 32px;
+    padding: 1rem;
+    text-align: center;
+    background-color: white;
+    border-radius: 8px;
+    line-height: 2;
+    width: 200px;
+    height: auto;
+  }
+  .btn-logout:hover{
+    background-color: var(--azul-5);
+    border-radius: 8px;
+    cursor: pointer;
+  }
+
 .cabecalho__content{
     display: flex;
     align-items: center;
@@ -17,11 +44,7 @@
 .menu-icon{
   width: 1.5rem;
 }
-.cabecalho__left-side{
 
-}
-.cabecalho__right-side{
-}
 .lista-navegacao{
   display: none;
 }
@@ -46,6 +69,7 @@
   .user__menu{
   align-items: center;
   display: flex;
+  cursor: pointer;
   }
   .user__menu--photo{
   border-radius: 100%;
@@ -76,7 +100,7 @@
 @media screen and (min-width: 450px){
   .input-pesquisa{
     display: inline-block;
-    background-image: url(../img/search.svg);
+    background-image: url(../img/icon/search-icon.svg);
     background-color: transparent;
     background-repeat: no-repeat;
     background-position: 95%;
@@ -90,6 +114,7 @@
     opacity: 50%;
   }
 }
+
 @media screen and (min-width: 768px){
   .input-pesquisa{
     display: inline-block;

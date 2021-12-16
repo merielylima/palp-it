@@ -14,8 +14,8 @@
   <link rel="stylesheet" href="./assets/css/componentes/cartao.css">
   <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
   <link rel="stylesheet" href="./assets/css/componentes/botao.css">
-  <link rel="stylesheet" href="./assets/css/cabecalho.css">
   <link rel="stylesheet" href="./assets/css/perfil.css">
+  <link rel="stylesheet" href="./assets/css/cabecalho.css">
   <link rel="stylesheet" href="./assets/css/envio.css">
   <link rel="stylesheet" href="./assets/css/login.css">
   <link rel="stylesheet" href="./assets/css/contribuicao.css">

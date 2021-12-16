@@ -9,7 +9,7 @@
                     <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
                     <h2 class="container--titulo">Cadastre-se no Palp-it</h2>
                 </div>
-                <div class="divisao"></div>
+                <div class="divisao">
                     <form action="cadastro_analise.php" method="POST">
                         <div class="input-container">
                             <input name="nome" id="nome" class="input input-full" type="text" placeholder="Nome" required>
@@ -44,11 +44,10 @@
                     </form>
                 </div>
             </section>
-             <section class=" cartao--container cartao-xs">
+            <section class=" cartao--container cartao-xs">
                 <p> Já é membro?</p> <a href="login.php" class="link link-externo"> Entre já </a>
             </section>
         </div>
     </main>
     <script src="./js/validacao.js"></script>
 </body>
-</html>

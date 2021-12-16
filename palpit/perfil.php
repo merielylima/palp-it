@@ -15,22 +15,52 @@
 
   <main  class="container container-xl my-xl" >
     <div class="flex flex--centro flex--coluna flex--row px-5  flex-start">
-      <nav class="left-side  cartao--container flex-shrink-0 mb-4">
-        <div class="info-user mb-3 flex-items-center d-block"> 
-          <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
-          <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
-          <div class="vcartao-nome">
-            <span class="vcard-fullname block"> <?php echo ''.$_SESSION ['nome'].''?></span>
-            <span class="vcard-username block"><?php echo ''.$_SESSION ['email'].''?></span>
+      <nav class="left-side cartao--container flex-shrink-0 mb-4">
+        <form class="hidden">
+          <div class="info-user mb-3 flex-items-center "> 
+            <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
+            <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+            <div class="">
+              <label for="user_profile_name" class="input--label  mb-1">Nome</label>
+              <input class="input width-full input-envio" id="user_profile_name"  aria-label="Name" name="user[profile_name]" value="">
+            </div>
           </div>
-        </div>
-        <div class="flex flex--coluna">
-          <p><?php echo ''.$_SESSION ['profissao'].''?></p>
-          <ul class="my-2">
-            <li> <spam class="material-icons">location_on </spam>Tucuruí - Pará</li> 
-            <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
-          </ul>
-          <button class="botao--container botao--secundario width-full"> Editar perfil </button>  
+          <div class="flex flex--coluna">
+            <label for="user_profile_bio" class="input--label  mb-1">Sobre</label>
+            <textarea class="input input-envio textarea" id="user_profile_bio" name="user[profile_bio]" placeholder="Conte mais sobre você" aria-label="Add a bio" rows="3" data-input-max-length="160"></textarea>
+          </div>
+          <div class="">
+              <label for="" class="input--label  mb-1">Cidade</label>
+              <input class="input width-full input-envio" id=""  aria-label="" name="" value="">
+            </div>
+          <div class="my-2 line1">
+            <label class="checkbox--label ">
+              <input type="checkbox" name="receber" checked> 
+              Receber uma notificação por email quando um novo gráfico da minha área de interesse for postado.
+            </label>
+          </div>
+          <div class="flex flex--row width-full">
+            <button id="btn-cancel" class="botao--container botao--secundario width-full mr-3 ml-3">Cancelar</button>  
+            <button id="btn-save"class="botao--container botao--primario mr-3 width-full">Salvar</button>  
+          </div>
+        </form>
+        <div class="left-side--active">
+          <div class="info-user mb-3 flex-items-center d-block"> 
+            <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
+            <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+            <div class="vcartao-nome">
+              <span class="vcard-fullname block"> <?php echo ''.$_SESSION ['nome'].''?></span>
+              <span class="vcard-username block"><?php echo ''.$_SESSION ['email'].''?></span>
+            </div>
+          </div>
+          <div class="flex flex--coluna">
+            <p><?php echo ''.$_SESSION ['profissao'].''?></p>
+            <ul class="my-2">
+              <li> <spam class="material-icons">location_on </spam>Tucuruí - Pará</li> 
+              <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
+            </ul>
+            <button id="btn-edit" class="botao--container botao--secundario width-full"> Editar perfil </button>  
+          </div>
         </div>
       </nav>
       <section class=" right-side cartao--container cartao-p2 flex-shrink-0 relative">
@@ -43,7 +73,8 @@
             <option value=""> Antigos</option>
           </select>
         </div>
-        <ol class="flex wrap-evenly">
+        <form>
+        <ol class="flex flex--wrap">
           <?php 
             $usuario = $_SESSION['id_usuario'];
             $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
@@ -51,17 +82,21 @@
             $sql->execute();
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
           ?>
-            <li class="flex flex-items-center flex--coluna item">
-            <img src=<?php echo $lista["foto_v"];?>>
-            <span class=""><?php echo $lista["titulo"];?></span>
+            <li class="px-2 item-post">
+              <div class=" flex flex--coluna flex-items-center ">
+                <img class="width-full" src=<?php echo $lista["foto_v"];?>>
+                <span class="block"><?php echo $lista["titulo"];?></span>
+              </div>
             </li>
           <?php
             endwhile;
           ?>
         </ol>
+        </form>
       </section>
     </div> 
   </main>
+  <script src="js/atualizar.js"></script>
 
 <?php
 include ("rodape.php");

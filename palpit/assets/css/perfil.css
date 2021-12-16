@@ -29,14 +29,16 @@
   font-weight: var( --fonte-peso-light);
   line-height: 24px;
 }
+
+
 @media screen and (min-width: 768px) {
 	.left-side{
     width: 25%;
-    padding: 2rem;
+    padding: 1rem;
   }
   .right-side{
     width: 75%;
-    padding: 2rem;
+    padding: 1rem;
     position: relative;
   }
   .ordenar{

@@ -31,7 +31,7 @@ body {
 	font-size: var(--fonte-tamanho-titulo);
 	font-weight: var(--fonte-peso-medium);
 	color: var(--cinza-2);
-	margin: 1rem 0;
+	margin: 0.5rem 0;
 }
 .a{
 	border: none;
@@ -98,6 +98,8 @@ body {
 	display: none;
 	visibility: hidden;
 }
+
+
 .bold{
 	font-weight: var(--fonte-peso-medium);
 }

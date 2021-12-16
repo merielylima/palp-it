@@ -35,7 +35,7 @@
   margin-left: 1rem;
 }
 .button-remove{
-  background-image: url(../../assets/img/lixeira-icon.svg);
+    background-image: url(../../assets/img/icon/lixeira-icon.svg);
     background-repeat: no-repeat;
     width: 20%;
     height: 30px;
