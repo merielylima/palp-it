@@ -110,7 +110,7 @@
             $sql->execute();
 
           }else{
-            $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a ORDER BY id_arquivo DESC LIMIT 3;");
+            $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a ORDER BY id_arquivo DESC;");
             $sql->execute();
           }
 

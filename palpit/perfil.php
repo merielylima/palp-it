@@ -16,22 +16,22 @@
   <main  class="container container-xl my-xl" >
     <div class="flex flex--centro flex--coluna flex--row px-5  flex-start">
       <nav class="left-side cartao--container flex-shrink-0 mb-4">
-        <form class="hidden">
+        <form class="hidden" action="alterarperfil.php" method="POST">
           <div class="info-user mb-3 flex-items-center "> 
             <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
             <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
             <div class="">
               <label for="user_profile_name" class="input--label  mb-1">Nome</label>
-              <input class="input width-full input-envio" id="user_profile_name"  aria-label="Name" name="user[profile_name]" value="">
+              <input class="input width-full input-envio" id="user_profile_name"  aria-label="Name" name="user_profile_name" value="">
             </div>
           </div>
           <div class="flex flex--coluna">
             <label for="user_profile_bio" class="input--label  mb-1">Sobre</label>
-            <textarea class="input input-envio textarea" id="user_profile_bio" name="user[profile_bio]" placeholder="Conte mais sobre você" aria-label="Add a bio" rows="3" data-input-max-length="160"></textarea>
+            <textarea class="input input-envio textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você" aria-label="Add a bio" rows="3" data-input-max-length="160"></textarea>
           </div>
           <div class="">
               <label for="" class="input--label  mb-1">Cidade</label>
-              <input class="input width-full input-envio" id=""  aria-label="" name="" value="">
+              <input class="input width-full input-envio" id="cidade"  aria-label="" name="cidade" value="">
             </div>
           <div class="my-2 line1">
             <label class="checkbox--label ">

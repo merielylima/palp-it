@@ -124,5 +124,20 @@
   		}
 
 	}
+
+	public function alterarperfil($nome, $sobre, $cidade){
+		global $pdo;
+		global $msgErro;
+						
+		$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c WHERE id_usuario = :id");
+		$sql->bindValue(":n", $nome);
+	  	$sql->bindValue(":s", $sobre);
+		$sql->bindValue(":c", $cidade);
+	  	$sql->bindValue(":id", $_SESSION['id_usuario']);
+		$sql->execute();
+	  	return true;  
+		header ("Location: perfil.php");
+
+  	}
 	
 }
