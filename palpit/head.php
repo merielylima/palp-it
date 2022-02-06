@@ -18,12 +18,13 @@
   <link rel="stylesheet" href="./assets/css/cabecalho.css">
   <link rel="stylesheet" href="./assets/css/envio.css">
   <link rel="stylesheet" href="./assets/css/login.css">
-  <link rel="stylesheet" href="./assets/css/contribuicao.css">
-  <link rel="stylesheet" href="./assets/css/inicio.css">
+  <link rel="stylesheet" href="./assets/css/base/padding.css">
+  <link rel="stylesheet" href="./assets/css/base/margin.css">
+ 
+
   <title>Palp-it</title>
   <script>
   function logar(){
-    console.log("entrando");
     $.post({
       url: "logar.php",
       data: {
@@ -31,14 +32,11 @@
         senha: document.getElementById ("senha").value,
       },
       success: function (result) {
-        console.log(result);
         if (result == 0) {
           window.location.href="index.php";
         }
         else {
-          //chamar classe de erro em input e mostrar mensagem 
-            //document.getElementById ("emailL").style.color = "#f00";
-            //document.getElementById ("passwordL").style.color = "#f00";
+          document.getElementById("login-erro").classList.remove("hidden");
         }
       }
     });

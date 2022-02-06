@@ -12,6 +12,7 @@
     padding-left: 1rem;
     height: 2.5rem;
 }
+
 .input-full{
     width: 100%;
 }
@@ -38,8 +39,9 @@
     text-align: left;
     font-weight: var(--fonte-peso-bold);
     color: var(--cinza-1);
-    margin-top: 0.25rem;
-    margin-left: 0.25rem;
+    padding-top: 0.25rem;
+    padding-left: 0.25rem;
+    line-height: 1;
 }
 .input--label::after{
     color: var(--cor-aviso);
@@ -47,9 +49,10 @@
     padding-left: 5px;
   }
 .checkbox--label{
-    float: left;
+    display: block;
     text-align: justify;
-    font-size: var(--fonte-tamanho-secundaria);
+    line-height: 1.25;
+
 }
 .option{
     font-family: var(--fonte-familia-corpo);

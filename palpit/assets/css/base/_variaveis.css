@@ -1,11 +1,11 @@
 :root {
     --fonte-familia-corpo:'Rubik', sans-serif;
     --fonte-familia-logo: 'Pacifico', cursive;
-    --fonte-tamanho-primaria: 16px;
-    --fonte-tamanho-secundaria: 14px;
+    --fonte-tamanho-primaria: 14px;
+    --fonte-tamanho-secundaria: 16px;
     --fonte-tamanho-input-titulo: 12px;
     --fonte-tamanho-titulo:24px;
-    --fonte-tamanho-botao: 18px;
+    --fonte-tamanho-botao: 16px;
 
     --fonte-peso-light: 300;
     --fonte-peso-regular: 400;

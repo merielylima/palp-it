@@ -2,14 +2,14 @@
  include ("head.php");
 ?>
 <body>
-    <main class="container container-xs">
-        <div class="content flex flex--centro flex--coluna mt7">
+    <main class="center container-xs">
+        <div class="flex flex--coluna px3">
             <section class=" cartao--container cartao-xs">
-                <div class="">
+                <div class="border-bottom">
                     <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
-                    <h2 class="container--titulo">Cadastre-se no Palp-it</h2>
+                    <h2 class="container--titulo mb-2">Cadastre-se no Palp-it</h2>
                 </div>
-                <div class="divisao">
+                <div>
                     <form action="cadastro_analise.php" method="POST">
                         <div class="input-container">
                             <input name="nome" id="nome" class="input input-full" type="text" placeholder="Nome" required>

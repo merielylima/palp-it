@@ -1,14 +1,17 @@
 .cabecalho{
     background-color: var(--azul-2);
     color: var(--contraste-claro);
-    box-sizing: border-box;
-    position: fixed;
-    width: 100vw;
+    width: 100%;
     z-index: 100;
     line-height: 1.5;
     min-width: 320px;
-    top:0;
+    padding: 0.5rem 1rem;
   }
+  .cabecalho__content{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
   .desactive{
     display: none;
     visibility: hidden;
@@ -36,11 +39,7 @@
     cursor: pointer;
   }
 
-.cabecalho__content{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
+
 .menu-icon{
   width: 1.5rem;
 }

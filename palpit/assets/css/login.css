@@ -1,4 +1,12 @@
-.reset-senha{
-  float: right;
-  margin-bottom: 0.5rem;
+
+.flex--right{
+  display: flex;
+  justify-content: right;
+}
+.mensagem-erro{
+  color: var(--cor-aviso);
+  margin-top: -0.5rem;
+  margin-bottom: 0.25rem;
+  font-size: var(--fonte-tamanho-secundaria);
+  font-weight: 700;
 }

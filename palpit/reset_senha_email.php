@@ -2,17 +2,19 @@
  include ("head.php");
 ?>
 <body>
-  <main class="container container-xs">
-    <div class="content flex flex--centro flex--coluna mt7">
+  <main class="center container-xs">
+    <div class="flex flex--coluna px3">
       <section class=" cartao--container cartao-xs">
         <div class="border-bottom">  
             <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
-            <h2 class="container--titulo">Recuperar senha</h2>
+            <h2 class="container--titulo mb-2">Recuperar senha</h2>
         </div>
-        <form  action="recuperar.php"  method="POST">
+        <form action="recuperar.php" method="POST">
+          <div id="login-erro" class="mensagem-erro hidden">
+            <span > Email ou senha inválido</span>
+          </div>
           <div class="input-container ">
             <input name="email" id="email" class="input width-full" type="email" placeholder="Email" required>
-            <!-- <span class="input-mensagem-erro">Este campo não está válido</span> !-->
           </div>
           <button class="botao--container botao--primario width-full"> Redefinir senha</button>
           </form>

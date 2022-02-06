@@ -12,8 +12,7 @@
   header("Location: index.php"); exit;
 }
 ?>
-
-  <main  class="container container-xl my-xl" >
+  <main class="center container-xl my-xl">
     <div class="flex flex--centro flex--coluna flex--row px-5  flex-start">
       <nav class="left-side cartao--container flex-shrink-0 mb-4">
         <form class="hidden" action="alterarperfil.php" method="POST">
@@ -74,24 +73,24 @@
           </select>
         </div>
         <form>
-        <ol class="flex flex--wrap">
-          <?php 
-            $usuario = $_SESSION['id_usuario'];
-            $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
-            INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE u.id_usuario LIKE '$usuario'");
-            $sql->execute();
-            while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
-          ?>
-            <li class="px-2 item-post">
-              <div class=" flex flex--coluna flex-items-center ">
-                <img class="width-full" src=<?php echo $lista["foto_v"];?>>
-                <span class="block"><?php echo $lista["titulo"];?></span>
-              </div>
-            </li>
-          <?php
-            endwhile;
-          ?>
-        </ol>
+          <ol class="flex flex--wrap">
+            <?php 
+              $usuario = $_SESSION['id_usuario'];
+              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
+              INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE u.id_usuario LIKE '$usuario'");
+              $sql->execute();
+              while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
+            ?>
+              <li class="px-2 item-post">
+                <div class=" flex flex--coluna flex-items-center ">
+                  <img class="width-full" src=<?php echo $lista["foto_v"];?>>
+                  <span class="block"><?php echo $lista["titulo"];?></span>
+                </div>
+              </li>
+            <?php
+              endwhile;
+            ?>
+          </ol>
         </form>
       </section>
     </div> 

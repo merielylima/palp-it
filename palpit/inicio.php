@@ -5,17 +5,17 @@
   
   $u->conectar();
 ?>  
-<main  class="container container-xl my-xl" >
+<main  class="center container-xl my-xl" >
     <div class="flex flex--centro flex--coluna flex--row px-5  flex-start">
       <nav class="left-side  cartao--container flex-shrink-0 mb-4">
         <div class="info-user mb-3 flex flex--coluna flex-items-center d-block"> 
-        <form  action="inicio.php"  method="POST">
+        <form  action="index.php"  method="POST">
           <div >
             <label for="p_chave" class="input--label">Palavras-chave</label>
-            <input name = "p_chave" type="search" placeholder="Pesquisar" class=" width-full input">
+            <input name = "p_chave" type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
           </div>
           <div>
-            <label for = "disciplina"class="input--label">Disciplina</label>
+            <label for = "disciplina" class="input--label">Disciplina</label>
             <select name="disciplina" id="disciplina" class=" option input width-full">
               <option value="Física">Física</option>
               <option value="Química">Química</option>

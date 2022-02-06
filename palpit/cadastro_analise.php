@@ -44,14 +44,14 @@ if(isset($_POST['nome'])){
 									<link rel="stylesheet" href="./assets/css/componentes/botao.css">
 								</head>
 								<body>
-									<main class="container container-xs">
-										<div class="content flex flex--centro flex--coluna mt7">
+									<main class="center container-xs">
+										<div class="flex flex--coluna px3">
 											<section class=" cartao--container cartao-xs">
 												<div class="border-bottom">
 													<img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
 													<h2 class="container--titulo">Falta pouco...</h2>
 												</div>
-												<p class="justificado  my-3">  Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link" > <?php echo $email ?> </a>. </p>
+												<p class="cartao-xs__txt my-3">  Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link" > <?php echo $email ?> </a>. </p>
 												<a href="inicio.php"> <button class="botao--container botao--primario width-full">  Voltar para página inicial </button></a>
 											</section>
 										</div>

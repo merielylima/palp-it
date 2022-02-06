@@ -8,7 +8,7 @@
   header("Location: index.php"); exit;
 }
 ?>
-  <main  class="container container-xx my-xl" >
+  <main  class="center container-xx my-xl" >
     <div class="flex flex--centro flex--coluna flex--row  pl-5 pr-5 ">
       <section class="cartao--container cartao-xl width-full">
         <h2 class="container--titulo"> Novo envio </h2>

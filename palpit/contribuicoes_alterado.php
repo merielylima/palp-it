@@ -2,7 +2,7 @@
  include ("cabecalho.php");
 ?>
 
-  <main class="container flex flex--centro">
+  <main class="center flex flex--centro">
 
     <nav class="cartao__perfil">
       
