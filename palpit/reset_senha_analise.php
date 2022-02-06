@@ -1,5 +1,6 @@
 <?php
  include ("head.php");
+ session_start();
 ?>
 <body>
     <main class="center container-xs">

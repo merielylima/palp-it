@@ -9,15 +9,15 @@
             <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
             <h2 class="container--titulo mb-2">Recuperar senha</h2>
         </div>
-        <form action="recuperar.php" method="POST">
-          <div id="login-erro" class="mensagem-erro hidden">
+        <div>
+          <div id="email-erro" class="mensagem-erro hidden">
             <span > Email ou senha inválido</span>
           </div>
           <div class="input-container ">
             <input name="email" id="email" class="input width-full" type="email" placeholder="Email" required>
           </div>
-          <button class="botao--container botao--primario width-full"> Redefinir senha</button>
-          </form>
+          <button onClick="recuperar()" class="botao--container botao--primario width-full"> Redefinir senha</button>
+        </div>
           <a href="login.php"> <button class="botao--container botao--secundario width-full ">Voltar</button></a> 
       </section>
     </div>

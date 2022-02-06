@@ -41,5 +41,25 @@
       }
     });
   }
+
+  function recuperar(){
+    $.post({
+      url: "recuperar.php",
+      data: {
+        email: document.getElementById("email").value,
+      },
+      success: function (result) {
+        console.log (result);
+        if (result == 0) {
+          console.log ("Email certo");
+          window.location.href="reset_senha_analise.php";
+        }
+        else {
+          console.log ("Email errado");
+          document.getElementById("email-erro").classList.remove("hidden");
+        }
+      }
+    });
+  }
 </script>
 </head>

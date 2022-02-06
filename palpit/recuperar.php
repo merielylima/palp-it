@@ -2,7 +2,6 @@
     require_once 'classes/usuarios.php';
     $u = new Usuarios;
     include('email.php');
-    include('head.php');
 
     $u->conectar(); //conexão banco de dados
 
@@ -20,7 +19,7 @@
                     
             $url = 'http://localhost/palp-it/palpit/reset_senha_senha.php';//url para redefinição
             //Corpo da mensagem do email
-            $corpo = 'Olá '.$info['nome'].', <br>
+            $corpo = 'Olá '.$info['nome'].',
             Foi solicitada uma redefinição da sua senha na "PALP-it". Acesse o link abaixo para redefinir sua senha.<br>
             <h3><a href="'.$url.'?token='.$_SESSION['token'].'&email='.$_SESSION['email'].'">Redefinir a sua senha</a></h3> 
             <br>            
@@ -34,29 +33,12 @@
                 $sql->bindValue(":c", ($token));
                 $sql->bindValue(":e", ($_POST['email']));
                 $sql->execute();
-?><!--HTML para quando email for enviado!-->
-            <body>
-                <main class="container container-xs">
-                    <div class="content flex flex--centro flex--coluna mt7">
-                        <section class=" cartao--container cartao-xs">
-                            <div class="border-bottom">
-                                <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
-                                <h2 class="container--titulo">Recuperar senha</h2> 
-                            </div>
-                            <p class="justificado my-3">  Um email de confirmação foi enviado para o endereço <a class="link" > <?php echo $_SESSION['email'] ?> </a>. </p>
-                            <button class="botao--container botao--primario width-full"> <a href="inicio.php" >Voltar para página inicial</a></button>
-                        </section>
-                    </div>
-                </main>
-                </body>
-            </html>
-<?php
+                echo '0';
             }else{
-                die('Erro ao enviar o email de confirmação contacte palp-it@ufpa.br');
+                echo '-1';
             }
-            
         }else{
-            die('Não encontramos esse ' .$_SESSION['email'].' em nossa base de dados.');
+            echo '-1';
         } 
     }
 ?>
