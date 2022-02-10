@@ -61,7 +61,7 @@
   	  global $pdo;
       global $msgErro;
   		/*verificar se o email e senha estao cadastrados, se sim*/
-  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, area, profissao, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
+  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, area, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
   		$sql->bindValue(":e", $email);
   		$sql->bindValue(":s", md5($senha));
   		$sql->execute();
@@ -74,7 +74,7 @@
 			$_SESSION['nome'] = $dado['nome'];
 			$_SESSION['email'] = $dado['email'];
 			$_SESSION['area'] = $dado['area'];
-			$_SESSION['profissao'] = $dado['profissao'];
+			//$_SESSION['profissao'] = $dado['profissao'];
 			$_SESSION['foto_p'] = $dado['foto_p'];
 			return true;  //logado com sucesso
   		}
