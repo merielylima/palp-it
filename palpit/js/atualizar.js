@@ -14,7 +14,7 @@ cancel.addEventListener('click',() =>{
     lsActive.classList.remove("hidden");
     lsHidden.classList.add("hidden");   
 })
-userMenu.addEventListener('click',() =>{
+Menu.addEventListener('click',() =>{
     lsActive.classList.remove("hidden");
     lsHidden.classList.add("hidden");   
 })
@@ -29,3 +29,7 @@ menu.addEventListener('click',() =>{
     menuHidden.classList.remove("desactive");
     menuActive.classList.add("caixa"); 
 })
+
+/*
+const active = document.querySelector(.lista-navegacao--item )
+nome da classe = active */

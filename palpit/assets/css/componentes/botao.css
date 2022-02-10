@@ -6,7 +6,7 @@
     align-items: center;
     height: 2.5rem;
     outline: none;
-    padding: 0 1rem ;
+    padding: 0 0.5rem ;
     cursor: pointer;
     font-size: var(--fonte-tamanho-botao);
 }
@@ -36,4 +36,9 @@
     background-color: var(--cor-aviso-fundo);
     box-shadow: var(--borda-aviso);
     border: none;
+}
+@media screen and (min-width: 324px) {
+    .botao--container{
+        padding:  0 1rem;
+    }
 }

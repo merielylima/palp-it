@@ -13,7 +13,7 @@
           <li class="lista-navegacao--item  botao--container mx-2 ">
             <a href="inicio.php"><span class="material-icons">home</span> Início</a>
           </li>
-          <li class="lista-navegacao--item  botao--container mx-2 active">
+          <li class="lista-navegacao--item  botao--container mx-2 ">
             <a href="perfil.php"> <span class="material-icons">person</span> Perfil</a>
           </li>
           <li class="lista-navegacao--item  botao--container mx-2">

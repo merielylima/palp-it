@@ -9,14 +9,13 @@
 }
 ?>
   <main  class="center container-xx my-xl" >
-    <div class="flex flex--centro flex--coluna flex--row  pl-5 pr-5 ">
-      <section class="cartao--container cartao-xl width-full">
-        <h2 class="container--titulo"> Novo envio </h2>
+    <section class="cartao--container cartao-xl width-full">
+      <h2 class="container--titulo"> Novo envio </h2>
         <p class="card--description">
           Os arquivos submetidos são avaliados por um mediador, para então serem postados.
         </p>
         <form id="form-adiciona" name="envio" action="armazenar.php" enctype='multipart/form-data' method="POST">
-          <div class="my-2 flex relative">
+          <div class="py-1 flex relative">
             <div class="content-files">
               <p  class="input--label">Imagem Tátil<span class="obrigatorio">*</span></p>
               <label for="imagem_tatil" class="row--file flex"> 
@@ -34,7 +33,7 @@
             </div>
             <img class="imagem" id="img_prev" src="assets/img/publicacoes/modelo-atomico.png"/>
           </div>
-          <div class="my-2 flex">
+          <div class="py-1 flex">
             <div>
               <label for="titulo"  class="input--label"> Título<span class="obrigatorio">*</span> </label>
               <input id="titulo" name="titulo" class="input input-envio" type="text" placeholder="ex: Mapa do Brasil" minlength="6" required> 
@@ -46,14 +45,14 @@
               <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
           </div>
-          <div  class="my-2">
+          <div  class="py-1">
             <div class="content-descripcion">
               <label for="descricao" class="input--label "> Descrição <span class="">(opcional)</span></label>
               <textarea name="descricao" id="descricao" class="input input-envio textarea"></textarea>
               <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
           </div>
-          <div id="conteudo" class="flex my-2">
+          <div id="conteudo" class="flex py-1">
             <div class="input-container ">
               <label for="nivel" class="input--label"> Grau de escolaridade <span class="obrigatorio">*</span></label>
               <select name="nivel" id="nivel" class="input-envio option input">
@@ -75,7 +74,7 @@
               <A id="adiciona-lista" onClick="adicionarItem()" value="Adicionar" class="botao--container botao-envio botao--terciario">Adicionar</A>
             </div>
           </div>
-          <table class="table my-2">
+          <table class="table py-1">
             <thead class="table__cabecalho">
               <tr>
                 <th class="row-table"> Nível </th>
@@ -87,14 +86,13 @@
             </tbody>   
           </table>
            
-          <div class="my-2 flex flex--end">
+          <div class="py-1 flex flex--end">
             <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio botao-aviso"> Cancelar </A>
             <button onclick="enviarFormulario()" class="botao--container botao--primario botao-envio "> Enviar </button>
           </div>
         </form>
-      </section>
-    </div>
-  </main>
+    </section>
+  </main> 
 <script src="js/formulario.js"></script>
 <?php
 include ("rodape.php");

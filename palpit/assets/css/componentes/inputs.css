@@ -37,7 +37,7 @@
 .input--label{
     display: block;
     text-align: left;
-    font-weight: var(--fonte-peso-bold);
+    font-weight: var(--fonte-peso-medium);
     color: var(--cinza-1);
     padding-top: 0.25rem;
     padding-left: 0.25rem;

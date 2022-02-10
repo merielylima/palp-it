@@ -12,9 +12,10 @@
   header("Location: index.php"); exit;
 }
 ?>
-  <main class="center container-xl my-xl">
-    <div class="flex flex--centro flex--coluna flex--row px-5  flex-start">
-      <nav class="left-side cartao--container flex-shrink-0 mb-4">
+  <main class="center container-xl">
+    <div class="flex flex--coluna flex--row flex-start p-os">
+      <nav class="cartao--container cartao-xxs">
+        <!-- Editar perfil = opacity: 0-->
         <form class="hidden" action="alterarperfil.php" method="POST">
           <div class="info-user mb-3 flex-items-center "> 
             <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
@@ -42,7 +43,7 @@
             <button id="btn-cancel" class="botao--container botao--secundario width-full mr-3 ml-3">Cancelar</button>  
             <button id="btn-save"class="botao--container botao--primario mr-3 width-full">Salvar</button>  
           </div>
-        </form>
+        </form> 
         <div class="left-side--active">
           <div class="info-user mb-3 flex-items-center d-block"> 
             <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
@@ -62,7 +63,7 @@
           </div>
         </div>
       </nav>
-      <section class=" right-side cartao--container cartao-p2 flex-shrink-0 relative">
+      <section class="cartao-xxl  cartao--container relative">
         <h2 class="container--titulo"> Mais populares</h2>
         <div class="flex flex--centro ordenar input-envio option input flex-items-center ">
           <label class="">Ordenar por: </label>
@@ -71,6 +72,9 @@
             <option value=""> Novos</option>
             <option value=""> Antigos</option>
           </select>
+        </div>
+        <div class="sem-conteudo" > 
+          <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
         </div>
         <form>
           <ol class="flex flex--wrap">
@@ -92,6 +96,7 @@
             ?>
           </ol>
         </form>
+
       </section>
     </div> 
   </main>

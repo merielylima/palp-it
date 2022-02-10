@@ -1,16 +1,34 @@
 .cartao--container{
     border-radius: 8px;
     background-color: var(--contraste-claro);
-
 }
+.cartao-xxs{
 
+    padding: 1rem 1rem;
+    margin-right: 0;
+}
 .cartao-xs{
     text-align: center;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
     margin-bottom: 1rem;
 }
+.cartao-xxl{
+    min-width: 73%;
+    padding: 1rem 1rem;
+    margin-top: .5rem;
+    height: 650px;
+}
 .cartao-xl{
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
 
+}
+.sem-conteudo{
+    position: absolute;
+    top:49%;
+    right:0%;
+    text-align: center;
+    width: 100%;
 }
 
 .cartao-xs__txt{
@@ -18,9 +36,46 @@
     font-size: var(--fonte-tamanho-secundaria);   
 }
 
-@media screen and (min-width: 768px) {
-
+@media screen and (min-width: 440px) {
    .cartao-xs{
+    padding: 1rem 2rem;
+    }
+    .cartao-xxs{
 
+        padding: 1rem 1.5rem;        
+    }   
+
+
+    .cartao-xxl{
+        min-width: 68%;
+        padding: 1rem 1.5rem;
+        position: relative;
+    }
+    
 }
+@media screen and (min-width: 768px) {
+    .cartao-xxs{
+        margin-right: 2%;
+        min-width:30%;
+    }
+    .cartao-xxl{
+        margin-top: 0;
+        min-width: 68%;
+ 
+    }
+    .cartao-xl{
+        padding: 1.5rem;
+
+    }
+}
+@media screen and (min-width: 1024px) {
+    .cartao-xxs{
+        min-width: 25%;
+        
+    }   
+    .cartao-xxl{
+
+        min-width: 73%;
+        
+    }  
 }

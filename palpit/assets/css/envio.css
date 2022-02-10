@@ -1,16 +1,12 @@
-.row-content{
-  margin: 0.5rem 0;
-}
 
 .table{
-  box-sizing: border-box;
   width: 100%;
   table-layout: fixed;
 }
 .table__cabecalho{
   background-color:var(--azul-2);
   color: var(--contraste-claro);
-  font-weight: var(--fonte-peso-medium);
+  font-size: var(--fonte-tamanho-secundaria);
 }
 .row-table{
   margin: 0;

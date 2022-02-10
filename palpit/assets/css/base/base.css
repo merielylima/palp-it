@@ -8,25 +8,33 @@ body {
 	color: var(--cinza-1);
 	font-family: var(--fonte-familia-corpo);
 	overflow-x: hidden;
-	letter-spacing: 0px;
-	line-height: 1.5;
+	letter-spacing: -0.5px;
+	line-height: 1.2;
 	font-size: var(--fonte-tamanho-primaria);
 }
+/*Presente em todas as paginas*/
 .center { 
 	margin-left: auto;
 	margin-right: auto;
 }
+/*Páginas com um cartão pequeno*/
 .container-xs{
-	margin-top: 5vw ;
+	margin-top: 5vw;
 	max-width: 27rem;
-    min-width: 22rem;
+    min-width: 15rem;
 }
+/*Páginas com um cartão grande */
 .container-xx{
 	max-width: 1000px;
+	min-width: 15rem;
 }
+/*Páginas com dois cartões, um pequeno e um grande*/
 .container-xl{
+	margin-top: 0.5rem;
 	max-width: 1280px;	
+	min-width: 15rem;
 }
+
 .container--titulo{
 	font-size: var(--fonte-tamanho-titulo);
 	font-weight: var(--fonte-peso-medium);
@@ -107,7 +115,6 @@ body {
 font-weight: var(--fonte-peso-bold);
   font-size: var( --fonte-tamanho-secundaria);
   text-transform: uppercase;
-  line-height: 1.5rem;
 }
 .material-icons{
 	vertical-align: middle;
@@ -119,9 +126,10 @@ font-weight: var(--fonte-peso-bold);
 
 
 @media screen and (min-width: 768px) {
-	 .flex--row {
+	.flex--row{
 		flex-direction: row;
 	}
+
 	.flex--centro {
 		justify-content: center;
 	}
@@ -132,5 +140,16 @@ font-weight: var(--fonte-peso-bold);
 
 	.flex-start{
 		align-items: flex-start;
+	}
+	.container-xl{
+		margin-top: 1rem;
+	}
+}
+@media screen and (min-width:  1024px) {
+	.container-xl{
+		margin-top: 1.5rem;
+	}
+	.container--titulo{
+		font-size: 22px;
 	}
 }
