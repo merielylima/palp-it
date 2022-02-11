@@ -15,7 +15,7 @@ if(isset($_POST['nome'])){
 	//$profissao = addslashes($_POST['profissao']);
 	$senha = addslashes($_POST['senha']);
 	$area = addslashes($_POST['area']);
-	$receber = addslashes($_POST['receber']);
+	$receber = addslashes($_POST['receber']) ? true : null;
 	$confirmacao = rand (1, getrandmax ());
 	
 		$u->conectar(); //Conecta ao banco de dados
@@ -24,7 +24,8 @@ if(isset($_POST['nome'])){
 			$pdo->beginTransaction(); //inicia uma transação
 			if ($u->cadastrar($nome, $email, $senha, $area, $receber, $confirmacao)){					
 
-				$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://localhost/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
+				//$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://localhost/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
+				$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://rnaat.ufpa.br/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
 					if ($enviaremail) {
 						$pdo->commit(); //envia uma transação
 						?>

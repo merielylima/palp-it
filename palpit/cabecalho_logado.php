@@ -42,7 +42,7 @@
   <div class="caixa">
     <ul class="">
       <li class="btn-edit"><a href="#" class="">Editar Perfil</a></li>
-      <li class="btn-logout"><a href="#" class="">Sair</a></li>
+      <li class="btn-logout"><a href="logout.php" class="">Sair</a></li>
     </ul>
   </div>
 </header>

@@ -54,9 +54,8 @@
             </div>
           </div>
           <div class="flex flex--coluna">
-            <p><?php echo ''.$_SESSION ['profissao'].''?></p>
-            <ul class="my-2">
-              <li> <spam class="material-icons">location_on </spam>Tucuruí - Pará</li> 
+              <ul class="my-2">
+              <li> <spam class="material-icons">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?></li> 
               <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
             </ul>
             <button id="btn-edit" class="botao--container botao--secundario width-full"> Editar perfil </button>  

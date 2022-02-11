@@ -11,7 +11,9 @@
 	$sobre = addslashes($_POST['user_profile_bio']);
 	$cidade = addslashes($_POST['cidade']);
 
-    $u->alterarperfil($nome,$sobre,$cidade); 
-	
+    $u->alterarperfil($nome,$sobre,$cidade);
+    
+    header("Location: perfil.php");
+
 ?>
  

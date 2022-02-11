@@ -5,6 +5,8 @@
 	public $id=0;
 	
 	public function conectar(){
+		error_reporting(E_ALL);
+        ini_set('display_errors',1);
   		global $pdo;
       	global $msgErro;
 		//@session_start();
@@ -28,6 +30,8 @@
   	}
 
   	public function cadastrar($nome, $email, $senha, $area, $receber, $confirmacao){
+      error_reporting(E_ALL);
+      ini_set('display_errors',1);
   	  global $pdo;
       global $msgErro;
 	  $foto_p = "assets\img\icon\avatar.svg";
@@ -58,10 +62,12 @@
   	}
 
   	public function logar($email, $senha){
+		error_reporting(E_ALL);
+        ini_set('display_errors',1);
   	  global $pdo;
       global $msgErro;
   		/*verificar se o email e senha estao cadastrados, se sim*/
-  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, area, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
+  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, cidade, area, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
   		$sql->bindValue(":e", $email);
   		$sql->bindValue(":s", md5($senha));
   		$sql->execute();
@@ -74,7 +80,7 @@
 			$_SESSION['nome'] = $dado['nome'];
 			$_SESSION['email'] = $dado['email'];
 			$_SESSION['area'] = $dado['area'];
-			//$_SESSION['profissao'] = $dado['profissao'];
+			$_SESSION['cidade'] = $dado['cidade'];
 			$_SESSION['foto_p'] = $dado['foto_p'];
 			return true;  //logado com sucesso
   		}
@@ -86,6 +92,8 @@
 
 	public function enviar($titulo, $descricao, $foto_v, $foto_t)
   	{
+		error_reporting(E_ALL);
+        ini_set('display_errors',1);
   		global $pdo;
       	global $msgErro;
 				  		
@@ -103,6 +111,8 @@
 	
 
 	public function confirmar($email, $codigo){
+		error_reporting(E_ALL);
+        ini_set('display_errors',1);
 		global $pdo;
 		
 		$sql= $pdo->prepare("SELECT id_usuario FROM usuario WHERE email=:e AND confirmacao=:c");
@@ -126,6 +136,8 @@
 	}
 
 	public function alterarperfil($nome, $sobre, $cidade){
+		error_reporting(E_ALL);
+        ini_set('display_errors',1);
 		global $pdo;
 		global $msgErro;
 						
@@ -135,9 +147,28 @@
 		$sql->bindValue(":c", $cidade);
 	  	$sql->bindValue(":id", $_SESSION['id_usuario']);
 		$sql->execute();
+
+		//atualizar dados
+		$_SESSION['nome'] = $nome;
+		$_SESSION['sobre'] = $sobre;
+		$_SESSION['cidade'] = $cidade;
+
 	  	return true;  
-		header ("Location: perfil.php");
 
   	}
+
+	public function logout(){
+		error_reporting(E_ALL);
+        ini_set('display_errors',1);
+		//remove as variaveis da sessão
+		unset($_SESSION['id_usuario']);
+		unset($_SESSION['nome']);
+		unset($_SESSION['email']);
+		unset($_SESSION['area']);
+		unset($_SESSION['cidade']);
+		unset($_SESSION['foto_p']);
+		unset($_SESSION['sobre']);
+
+	}
 	
 }
