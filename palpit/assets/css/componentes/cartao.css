@@ -35,6 +35,11 @@
     font-size: var(--fonte-tamanho-secundaria);   
 }
 
+.cartao-header{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
 @media screen and (min-width: 440px) {
    .cartao-xs{
     padding: 1rem 2rem;

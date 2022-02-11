@@ -63,6 +63,7 @@ body {
 }
 .space-between{
 	justify-content: space-between;
+}
 .flex-items-center{
 	align-items: center;
 }
