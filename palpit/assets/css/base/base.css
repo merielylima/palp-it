@@ -40,6 +40,7 @@ body {
 	font-weight: var(--fonte-peso-medium);
 	color: var(--cinza-2);
 }
+
 .a{
 	border: none;
 	outline: none;
@@ -60,6 +61,8 @@ body {
 .flex {
 	display: flex;
 }
+.space-between{
+	justify-content: space-between;
 .flex-items-center{
 	align-items: center;
 }

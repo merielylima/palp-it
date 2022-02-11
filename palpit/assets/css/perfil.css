@@ -41,12 +41,7 @@
     padding: 1rem;
     position: relative;
   }
-  .ordenar{
-    visibility: visible;
-    position: absolute;
-    top: 1.75rem;
-    right: 1rem;
-  }
+
 .d-block{
   display: block;
 }

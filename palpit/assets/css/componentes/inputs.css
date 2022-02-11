@@ -5,7 +5,6 @@
     box-sizing: border-box;
 }
 .input{
-    box-sizing: border-box;
     border: 2px solid var(--cinza-4);
     background-color: var(--contraste-claro);
     border-radius: 8px;
@@ -67,4 +66,33 @@
     width: 100%;
     resize: none;
     padding: 0.5rem 1rem;
+}
+
+
+
+
+.label--order{
+    display: flex;
+    align-items: center;
+    line-height: 2;
+
+}
+.dropdow--order{
+    margin-left: 0.5rem;
+    cursor: pointer;
+    border: 1px solid var(--cinza-4);
+    font-family: var(--fonte-familia-corpo);
+    background-color: var(--contraste-claro);
+    font-size: var(--fonte-tamanho-primaria);
+    padding: 0 0.75rem;
+    color: var(--cinza-2);
+    height: 100%;
+    line-height: 60px;
+    
+
+}
+
+.dropdow--order:focus {
+    outline: none;
+    line-height: 60px;
 }

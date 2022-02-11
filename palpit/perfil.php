@@ -63,15 +63,16 @@
         </div>
       </nav>
       <section class="cartao-xxl  cartao--container relative">
-        <h2 class="container--titulo"> Mais populares</h2>
-        <div class="flex flex--centro ordenar input-envio option input flex-items-center ">
-          <label class="">Ordenar por: </label>
-          <select name="" id="" class="a">
-            <option value=""> Populares</option>
-            <option value=""> Novos</option>
-            <option value=""> Antigos</option>
-          </select>
-        </div>
+      <div class="cartao-header"> 
+          <h2 class="container--titulo"> Resultados de filtro</h2>
+            <label class="label--order"> Ordenar por:
+              <select class="dropdow--order">
+                <option value=""> Populares</option>
+                <option value=""> Novos</option>
+                <option value=""> Antigos</option>
+              </select>
+            </label>
+          </div>
         <div class="sem-conteudo" > 
           <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
         </div>
