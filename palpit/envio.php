@@ -30,8 +30,9 @@
                 <span class="input--file-button   botao--terciario botao--container">Escolher arquivo</span>
               </label>
               <input id="imagem_visual" onchange="readURL(this);" name="imagem_visual" type="file" class="input--file" required/>
+              <img class="imagem" id="img_prev" src="assets/img/publicacoes/modelo-atomico.png"/>
             </div>
-            <img class="imagem" id="img_prev" src="assets/img/publicacoes/modelo-atomico.png"/>
+           
           </div>
           <div class="py-1 flex">
             <div>
