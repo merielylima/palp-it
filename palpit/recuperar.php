@@ -17,8 +17,8 @@
         if($sql->rowCount() == 1){
             $info = $sql->fetch();
                     
-            //$url = 'http://localhost/palp-it/palpit/reset_senha_senha.php';//url para redefinição
-            $url = 'http://rnaat.ufpa.br/palp-it/palpit/reset_senha_senha.php';//url para redefinição
+            $url = 'http://localhost/palp-it/palpit/reset_senha_senha.php';//url para redefinição
+            //$url = 'http://rnaat.ufpa.br/palp-it/palpit/reset_senha_senha.php';//url para redefinição
             //Corpo da mensagem do email
             $corpo = 'Olá '.$info['nome'].',
             Foi solicitada uma redefinição da sua senha na "PALP-it". Acesse o link abaixo para redefinir sua senha.<br>
