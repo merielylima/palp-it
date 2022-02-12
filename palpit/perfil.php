@@ -63,8 +63,8 @@
         </div>
       </nav>
       <section class="cartao-xxl  cartao--container relative">
-      <div class="cartao-header"> 
-          <h2 class="container--titulo"> Resultados de filtro</h2>
+        <div class="cartao-header"> 
+          <h2 class="container--titulo">Suas publicações</h2>
             <label class="label--order"> Ordenar por:
               <select class="dropdow--order">
                 <option value=""> Populares</option>
@@ -85,11 +85,9 @@
               $sql->execute();
               while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
-              <li class="px-2 item-post">
-                <div class=" flex flex--coluna flex-items-center ">
+              <li class="flex flex--coluna flex-items-center">
                   <img class="width-full" src=<?php echo $lista["foto_v"];?>>
                   <span class="block"><?php echo $lista["titulo"];?></span>
-                </div>
               </li>
             <?php
               endwhile;

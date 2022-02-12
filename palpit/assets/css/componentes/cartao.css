@@ -14,15 +14,21 @@
 .cartao-xxl{
     min-width: 73%;
     padding: 1rem 1rem;
-    margin-top: .5rem;
-    height: 650px;
+    margin: .5rem 0 ;
+    min-height: 650px;
+    position: relative;
 }
 .cartao-xl{
+    position: relative;
+    min-height: 325px;
     padding: 1rem 1rem;
     margin-bottom: 1rem;
 
 }
 .sem-conteudo{
+    font-size: var(--fonte-tamanho-secundaria);
+
+    color:var(--cinza-3);
     position: absolute;
     top:49%;
     right:0%;
@@ -39,6 +45,7 @@
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+    margin-bottom: 0.5rem;
 }
 @media screen and (min-width: 440px) {
    .cartao-xs{
@@ -53,7 +60,7 @@
     .cartao-xxl{
         min-width: 68%;
         padding: 1rem 1.5rem;
-        position: relative;
+
     }
     
 }
@@ -71,6 +78,10 @@
         padding: 1.5rem;
 
     }
+    .sem-conteudo{
+        font-size: var(--fonte-tamanho-titulo-secundario);
+    }
+    
 }
 @media screen and (min-width: 1024px) {
     .cartao-xxs{

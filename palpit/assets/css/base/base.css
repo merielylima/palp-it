@@ -39,8 +39,13 @@ body {
 	font-size: var(--fonte-tamanho-titulo);
 	font-weight: var(--fonte-peso-medium);
 	color: var(--cinza-2);
+	margin-right: 0.5rem;
 }
-
+a{
+	display: flex;
+    align-items: center;
+	justify-content: center;
+}
 .a{
 	border: none;
 	outline: none;
@@ -102,7 +107,9 @@ body {
 .width-full{
 	width: 100%;
 }
-
+.height-full{
+	height: 100%;
+}
 .text-center{
 	text-align: center;
 }

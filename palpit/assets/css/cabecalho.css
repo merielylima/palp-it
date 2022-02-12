@@ -1,4 +1,5 @@
 .cabecalho{
+  position: relative;
   background-color: var(--azul-2);
   color: var(--contraste-claro);
   width: 100%;
@@ -12,53 +13,16 @@
   align-items: center;
   justify-content: space-between;
 }
-
-.desactive{
-  display: none;
-  visibility: hidden;
+.cabecalho--pesquisa{
+  margin: 0 0.5rem;
 }
 
-.caixa{
-  display: block;
-  position: absolute;
-  top: 64px;
-  border: 1px solid var(--cinza-6);
-  font-size: var(--fonte-tamanho-botao);
-  color: var(--azul-1);
-  right: 32px;
-  padding: 1rem;
-  text-align: center;
-  background-color: white;
-  border-radius: 8px;
-  line-height: 2;
-  width: 200px;
-  height: auto;
-}
-.btn-logout:hover{
-  background-color: var(--azul-5);
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-
-.menu-icon{
-width: 1.5rem;
-}
-
-.lista-navegacao{
-display: none;
-}
 .input-pesquisa{
-display: none;
+  display: none;
 }
-.input-pesquisa:hover{
-  background-color: var(--azul-escuro-transparente);
-}
-.input-pesquisa:focus{
-  background-color: var(--azul-escuro-transparente);
-}
-.input-pesquisa::placeholder{
-  color: var(--azul-8);
+
+.items-xl{
+  display: none;
 }
 .user {
   margin-left: auto;
@@ -97,39 +61,123 @@ align-items: center;
   margin: 0 1rem;
 }
 
-@media screen and (min-width: 450px){
+.desactive{
+  display: none;
+  visibility: hidden;
+}
+
+.btn-logout:hover{
+  background-color: var(--azul-5);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.caixa{
+  display: block;
+  position: absolute;
+  top: 64px;
+  border: 1px solid var(--cinza-6);
+  font-size: var(--fonte-tamanho-botao);
+  color: var(--azul-1);
+  right: 32px;
+  padding: 1rem;
+  text-align: center;
+  background-color: white;
+  border-radius: 8px;
+  line-height: 2;
+  width: 200px;
+  height: auto;
+}
+
+.input-pesquisa{
+  display: flex;
+  border: none;
+  outline: none;
+  border-radius: 6px;
+  background-position: 50%;
+  background-color: transparent;
+  font-size: var(--fonte-tamanho-botao);
+  background-repeat: no-repeat;
+  background-image: url(../img/icon/search-icon.svg);
+  background-size: 75%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+.input-pesquisa:hover{
+  background-color: var(--azul-escuro-transparente);
+}
+.input-pesquisa::placeholder{
+  opacity: 0;
+}
+@media screen and (min-width: 768px){
+
+
+  .cabecalho__left-side{
+    display: flex;
+    align-items: center;
+    width: 100%;
+  
+  }
+  .cabecalho--navegacao{
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cabecalho__right-side{
+    display: flex;
+    align-items: center;
+    width: 60%; 
+    justify-content: flex-end;
+  }
+  .navegacao--item{
+    height: 100%;
+    padding: 0 0.5rem;
+  }
+  .menu{
+    display: none;
+  }
+  .items-xl{
+    display: flex;
+  }
+
+}
+@media screen and (min-width: 1024px){
+  .cabecalho--navegacao{
+    margin-left: 1rem;
+    justify-content: flex-start;
+
+  }
+  .cabecalho__right-side{
+    width: 50%; 
+  }
   .input-pesquisa{
-    display: inline-block;
-    background-image: url(../img/icon/search-icon.svg);
-    background-color: transparent;
-    background-repeat: no-repeat;
-    background-position: 95%;
-    width: 125px;
-    font-size: var(--fonte-tamanho-primaria) ;
+    background-size: auto;
+    border: 2px solid var(--azul-claro-transparente);
+    background-position: 90%;
+    justify-content: center;
+    align-items: center;
+    height: 2.5rem;
+    padding: 0 1rem ;
+    min-width: 40%;
+    width: 100%;
+  }
+  .input-pesquisa:focus{
+    background-color: var(--azul-escuro-transparente);
   }
   .input-pesquisa::placeholder{
     opacity: 80%;
+    color: var(--azul-8);
   }
   .input-pesquisa:focus::placeholder{
     opacity: 50%;
   }
-}
-
-@media screen and (min-width: 768px){
-.input-pesquisa{
-  width: 100%;
-}
-}
-@media screen and (min-width: 1200px){
 .cabecalho{
   padding: 0.5rem 2rem;
 }
-.lista-navegacao{
-  display: inline-block;
-}
-.menu{
-  visibility: hidden;
-}
+
+
 .active{
   border: 2px solid var(--azul-claro-transparente);
   background-color: var(--azul-escuro-transparente);

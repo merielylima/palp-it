@@ -42,21 +42,20 @@
         </form>
       </nav>
       <section class=" cartao-xxl cartao--container ">
-        <div class="cartao-header"> 
-          <h2 class="container--titulo"> Resultados de filtro</h2>
-            <label class="label--order"> Ordenar por:
-              <select class="dropdow--order">
-                <option value=""> Populares</option>
-                <option value=""> Novos</option>
-                <option value=""> Antigos</option>
-              </select>
-            </label>
+          <div class="cartao-header"> 
+            <h2 class="container--titulo"> Resultados de filtro</h2>
+              <label class="label--order"> Ordenar por:
+                <select class="dropdow--order">
+                  <option value=""> Populares</option>
+                  <option value=""> Novos</option>
+                  <option value=""> Antigos</option>
+                </select>
+              </label>
           </div>
           <div class="sem-conteudo" > 
             <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
           </div>
-        </div>
-        <ol class="flex wrap-evenly">
+        <ol class="flex  flex--wrap">
           <?php
             if(isset($_POST['p_chave']) && isset($_POST['disciplina']) || isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3'])){
               //recuperação das informações formulario
@@ -120,9 +119,9 @@
 
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
-              <li class="flex flex-items-center flex--coluna item">
-              <img src=<?php echo $lista["foto_v"];?>>
-              <span class=""><?php echo $lista["titulo"];?></span>
+              <li class="flex flex-items-center flex--coluna ">
+                <img src=<?php echo $lista["foto_v"];?>>
+                <span class=""><?php echo $lista["titulo"];?></span>
               </li>
             <?php
             endwhile;

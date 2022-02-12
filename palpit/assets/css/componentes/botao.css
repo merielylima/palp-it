@@ -1,7 +1,6 @@
 .botao--container{
-    box-sizing: border-box;
     display: flex;
-    border-radius: 8px;
+    border-radius: 6px;
     justify-content: center;
     align-items: center;
     height: 2.5rem;
@@ -37,7 +36,7 @@
     box-shadow: var(--borda-aviso);
     border: none;
 }
-@media screen and (min-width: 324px) {
+@media screen and (min-width: 1024px) {
     .botao--container{
         padding:  0 1rem;
     }
