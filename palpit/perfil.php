@@ -77,7 +77,7 @@
           <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
         </div>
         <form>
-          <ol class="flex flex--wrap">
+          <ol class="flex flex-wrap">
             <?php 
               $usuario = $_SESSION['id_usuario'];
               $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
@@ -85,9 +85,13 @@
               $sql->execute();
               while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
-              <li class="flex flex--coluna flex-items-center">
-                  <img class="width-full" src=<?php echo $lista["foto_v"];?>>
-                  <span class="block"><?php echo $lista["titulo"];?></span>
+              <li class="cartao__container--item">
+                <a class="flex flex-items-center flex--coluna">
+                  <div class="cartao--item">
+                    <img src=<?php echo $lista["foto_v"];?>>
+                  </div>
+                  <span class=""><?php echo $lista["titulo"];?></span>
+                </a>
               </li>
             <?php
               endwhile;

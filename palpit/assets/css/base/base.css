@@ -86,9 +86,8 @@ a{
 	margin-left: auto;
 	justify-content: flex-end;
 }
-.wrap-evenly{
+.flex-wrap{
 	flex-wrap: wrap;
-	justify-content: space-evenly;
 }
 
 .block{

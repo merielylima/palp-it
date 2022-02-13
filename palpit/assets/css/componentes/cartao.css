@@ -18,6 +18,31 @@
     min-height: 650px;
     position: relative;
 }
+
+.cartao--item{
+    height: 12rem;
+    width: 100%;
+    border-radius: 6px;
+    border: 1px solid var(--cinza-4);
+}
+
+.cartao--item img{
+    object-fit: cover;
+    object-position: center;
+    display: block;
+    height: 100%;
+    width: 100%;
+    border-radius: 6px;
+}
+.cartao__container--item span{
+    line-height: 1.5rem;
+    font-size: 16px;
+    color: var(--cinza-2);
+}
+.cartao__container--item:hover{
+    text-decoration: underline
+}
+
 .cartao-xl{
     position: relative;
     min-height: 325px;
@@ -27,7 +52,6 @@
 }
 .sem-conteudo{
     font-size: var(--fonte-tamanho-secundaria);
-
     color:var(--cinza-3);
     position: absolute;
     top:49%;
@@ -47,22 +71,34 @@
     flex-wrap: wrap;
     margin-bottom: 0.5rem;
 }
+.cartao__container--item{ /* Remover a margin dos elementos multiplos de 2*/
+    margin-left:0.5%;
+    margin-right: 0.5%;
+    cursor: pointer;
+    width: 49.5%;
+    margin-bottom: 0.5rem;
+}
+.cartao__container--item:nth-child(2n){
+    margin-right: 0;
+ }
+ .cartao__container--item:nth-child(2n+1){
+    margin-left: 0;
+}
+
 @media screen and (min-width: 440px) {
    .cartao-xs{
     padding: 1rem 2rem;
     }
     .cartao-xxs{
-
         padding: 1rem 1.5rem;        
     }   
-
-
     .cartao-xxl{
         min-width: 68%;
         padding: 1rem 1.5rem;
-
     }
-    
+
+}
+@media screen and (min-width: 640px) {
 }
 @media screen and (min-width: 768px) {
     .cartao-xxs{
@@ -81,16 +117,31 @@
     .sem-conteudo{
         font-size: var(--fonte-tamanho-titulo-secundario);
     }
+
     
 }
 @media screen and (min-width: 1024px) {
     .cartao-xxs{
         min-width: 25%;
-        
     }   
     .cartao-xxl{
-
         min-width: 73%;
         
     }  
+    .cartao__container--item{ /* Remover a margin dos elementos multiplos de 3*/
+        width: 32.66666666666667%;
+    }
+    .cartao__container--item:nth-child(2n){
+        margin-right: 0.5%;
+    }
+    .cartao__container--item:nth-child(2n+1){
+        margin-left: 0.5%;
+    }
+    .cartao__container--item:nth-child(3n){
+        margin-right: 0;
+    }
+    .cartao__container--item:nth-child(3n+1){
+        margin-left: 0;
+    }
+    
 }

@@ -55,7 +55,7 @@
           <div class="sem-conteudo" > 
             <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
           </div>
-        <ol class="flex  flex--wrap">
+        <ol class="flex flex-wrap">
           <?php
             if(isset($_POST['p_chave']) && isset($_POST['disciplina']) || isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3'])){
               //recuperação das informações formulario
@@ -119,9 +119,13 @@
 
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
-              <li class="flex flex-items-center flex--coluna ">
-                <img src=<?php echo $lista["foto_v"];?>>
-                <span class=""><?php echo $lista["titulo"];?></span>
+              <li class="cartao__container--item">
+                <a class="flex flex-items-center flex--coluna">
+                  <div class="cartao--item">
+                    <img src=<?php echo $lista["foto_v"];?>>
+                  </div>
+                  <span class=""><?php echo $lista["titulo"];?></span>
+                </a>
               </li>
             <?php
             endwhile;
