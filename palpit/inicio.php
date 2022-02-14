@@ -8,7 +8,7 @@
   <main  class="center container-xl" >
     <div class=" flex flex--coluna flex--row flex-start p-os"> 
       <nav class=" cartao--container cartao-xxs ">
-        <form  action="index.php"  method="POST">
+        <form  action="inicio.php"  method="POST">
           <div >
             <label for="p_chave" class="input--label">Palavras-chave</label>
             <input name = "p_chave" type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
@@ -16,10 +16,15 @@
           <div>
             <label for = "disciplina" class="input--label">Disciplina</label>
             <select name="disciplina" id="disciplina" class=" option input width-full">
-              <option value="Física">Física</option>
-              <option value="Química">Química</option>
-              <option value="Biologia">Biologia</option>
-              <option value="Geografia">Geografia</option>
+              <?php
+              $getdisciplina = $pdo->prepare("SELECT * FROM disciplina");
+              $getdisciplina->execute();
+              while($rows = $getdisciplina->fetch(PDO::FETCH_ASSOC)){
+                $nome_disciplina = $rows['nome_disciplina'];
+                $disciplina_id = $rows['id_disciplina'];
+                echo "<option value='$nome_disciplina'>$nome_disciplina</option>";
+              }
+              ?>         
             </select>
           </div>
           <div>
