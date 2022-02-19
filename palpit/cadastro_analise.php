@@ -24,8 +24,8 @@ if(isset($_POST['nome'])){
 			$pdo->beginTransaction(); //inicia uma transação
 			if ($u->cadastrar($nome, $email, $senha, $area, $receber, $confirmacao)){					
 
-				//$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://localhost/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
-				$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://rnaat.ufpa.br/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
+				$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://localhost/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
+				//$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://rnaat.ufpa.br/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
 					if ($enviaremail) {
 						$pdo->commit(); //envia uma transação
 						?>
@@ -46,8 +46,8 @@ if(isset($_POST['nome'])){
 								</head>
 								<body>
 									<main class="center container-xs">
-										<div class="flex flex--coluna px-3">
-											<section class=" cartao--container cartao-xs">
+										<div class="flex flex-coluna px-3">
+											<section class=" cartao__container cartao-xs">
 												<div class="border-bottom">
 													<img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
 													<h2 class="container--titulo">Falta pouco...</h2>
@@ -64,14 +64,14 @@ if(isset($_POST['nome'])){
 					} 
 					else {
 						$pdo->rollback();  //reverte uma transação
-						$_SESSION['erro'] = 'Email de confirmação não enviado <br> contacte palp-it@ufpa.br';
-						header("Location: cadastro.php");
+						echo "Erro ao enviar o email de confirmação contacte palp-it@ufpa.br";
 					}
 			}
 			else{
-				$_SESSION['erro'] = 'Já existe um usuário com o mesmo email.';
-				header("Location: cadastro.php");
 				?>
+				<div class="msg_erro">
+					Email já cadastrado, retorne e faça login.
+				</div>
 				<?php
 			}
 			

@@ -25,6 +25,7 @@ body {
 }
 /*Páginas com um cartão grande */
 .container-xx{
+	margin-top: 0.5rem;
 	max-width: 1000px;
 	min-width: 15rem;
 }
@@ -75,7 +76,7 @@ a{
 .flex-items-end{
 	align-items: flex-end;
 }
-.flex--coluna {
+.flex-coluna {
 	flex-direction: column;
 }
 .flex-shrink-0{
@@ -156,9 +157,7 @@ font-weight: var(--fonte-peso-bold);
 	}
 }
 @media screen and (min-width:  1024px) {
-	.container-xl{
-		margin-top: 1.5rem;
-	}
+
 	.container--titulo{
 		font-size: 22px;
 	}

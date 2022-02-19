@@ -3,21 +3,11 @@
 ?>
 <body>
     <main class="center container-xs">
-        <div class="flex flex--coluna px-3">
-            <section class=" cartao--container cartao-xs">
+        <div class="flex flex-coluna px-3">
+            <section class=" cartao__container cartao-xs">
                 <div class="border-bottom">
-                    <a href="inicio.php" class=" flex">
-                        <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
-                    </a>
+                    <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
                     <h2 class="container--titulo mb-2">Cadastre-se no Palp-it</h2>
-                </div>
-                    <?php if(isset($_SESSION['erro'])):?>
-                        <div class="mensagem-erro">
-                            <?= $_SESSION['erro'] ?>
-                            <?php unset($_SESSION['erro']) ?>
-                        </div>
-                    <?php endif; ?>
-                <div>    
                 </div>
                 <div>
                     <form action="cadastro_analise.php" method="POST">
@@ -54,7 +44,7 @@
                     </form>
                 </div>
             </section>
-            <section class=" cartao--container cartao-xs">
+            <section class=" cartao__container cartao-xs">
                 <p> Já é membro?</p> <a href="login.php" class="link link-externo"> Entre já </a>
             </section>
         </div>

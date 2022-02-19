@@ -13,8 +13,8 @@
 }
 ?>
   <main class="center container-xl">
-    <div class="flex flex--coluna flex--row flex-start p-os">
-      <nav class="cartao--container cartao-xxs">
+    <div class="flex flex-coluna flex--row flex-start p-os">
+      <nav class="cartao__container cartao-xxs">
         <!-- Editar perfil = opacity: 0-->
         <form class="hidden" action="alterarperfil.php" method="POST">
           <div class="info-user mb-3 flex-items-center "> 
@@ -22,16 +22,16 @@
             <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
             <div class="">
               <label for="user_profile_name" class="input--label  mb-1">Nome</label>
-              <input class="input width-full input-envio" id="user_profile_name"  aria-label="Name" name="user_profile_name" value="<?php echo ''.$_SESSION ['nome'].''?>">
+              <input class="input width-full " id="user_profile_name"  aria-label="Name" name="user_profile_name" value="">
             </div>
           </div>
-          <div class="flex flex--coluna">
+          <div class="flex flex-coluna">
             <label for="user_profile_bio" class="input--label  mb-1">Sobre</label>
-            <textarea class="input input-envio textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você" aria-label="Add a bio" rows="3" data-input-max-length="200"><?php echo ''.$_SESSION ['sobre'].''?></textarea>
+            <textarea class="input  textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você" aria-label="Add a bio" rows="3" data-input-max-length="160"></textarea>
           </div>
           <div class="">
               <label for="" class="input--label  mb-1">Cidade</label>
-              <input class="input width-full input-envio" id="cidade"  aria-label="" name="cidade" value="<?php echo ''.$_SESSION ['cidade'].''?>">
+              <input class="input width-full " id="cidade"  aria-label="" name="cidade" value="">
             </div>
           <div class="my-2 line1">
             <label class="checkbox--label ">
@@ -53,7 +53,7 @@
               <span class="vcard-username block"><?php echo ''.$_SESSION ['email'].''?></span>
             </div>
           </div>
-          <div class="flex flex--coluna">
+          <div class="flex flex-coluna">
               <ul class="my-2">
               <li> <spam class="material-icons">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?></li> 
               <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
@@ -62,16 +62,17 @@
           </div>
         </div>
       </nav>
-      <section class="cartao-xxl  cartao--container relative">
+      <section class="cartao-xxl  cartao__container relative">
         <div class="cartao-header"> 
-          <h2 class="container--titulo">Suas publicações</h2>
-            <label class="label--order"> Ordenar por:
-              <select class="dropdow--order">
+            <h2 class="container--titulo"> Resultados de filtro</h2>
+            <div class="label--order">
+              <label for="dropdow_order" > Ordenar por: </label>
+              <select id="dropdow_order" class="dropdow--order">
                 <option value=""> Populares</option>
                 <option value=""> Novos</option>
                 <option value=""> Antigos</option>
               </select>
-            </label>
+            </div>
           </div>
         <div class="sem-conteudo" > 
           <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
@@ -86,7 +87,7 @@
               while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
               <li class="cartao__container--item">
-                <a href="posts.php" class="flex flex-items-center flex--coluna">
+                <a href="posts.php" class="flex flex-items-center flex-coluna">
                   <div class="cartao--item">
                     <img src=<?php echo $lista["foto_v"];?>>
                   </div>

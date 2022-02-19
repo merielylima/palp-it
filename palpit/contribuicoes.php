@@ -13,8 +13,8 @@
 }
 ?>
   <main  class="center container-xl" >
-    <div class=" flex flex--coluna p-os"> 
-      <section class="cartao--container cartao-xl width-full">
+    <div class=" flex flex-coluna p-os"> 
+      <section class="cartao__container cartao-xl width-full">
         <h2 class="cartao-header container--titulo"> Suas publicações</h2>
         <div class="sem-conteudo" > 
               <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          

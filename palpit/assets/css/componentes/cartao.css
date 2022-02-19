@@ -1,4 +1,4 @@
-.cartao--container{
+.cartao__container{
     border-radius: 8px;
     background-color: var(--contraste-claro);
 }
@@ -12,15 +12,21 @@
     margin-bottom: 1rem;
 }
 .cartao-xxl{
-    min-width: 73%;
+    min-width: 75%;
     padding: 1rem 1rem;
     margin: .5rem 0 ;
     min-height: 650px;
     position: relative;
 }
+.cartao-xl{
+    position: relative;
+    min-height: 325px;
+    padding: 1rem 1rem;
+    margin-bottom: 1rem;
 
+}
 .cartao--item{
-    height: 12rem;
+    height: 15rem;
     width: 100%;
     border-radius: 6px;
     border: 1px solid var(--cinza-4);
@@ -43,13 +49,7 @@
     text-decoration: underline
 }
 
-.cartao-xl{
-    position: relative;
-    min-height: 325px;
-    padding: 1rem 1rem;
-    margin-bottom: 1rem;
 
-}
 .sem-conteudo{
     font-size: var(--fonte-tamanho-secundaria);
     color:var(--cinza-3);
@@ -89,25 +89,17 @@
    .cartao-xs{
     padding: 1rem 2rem;
     }
-    .cartao-xxs{
-        padding: 1rem 1.5rem;        
-    }   
-    .cartao-xxl{
-        min-width: 68%;
-        padding: 1rem 1.5rem;
-    }
 
 }
-@media screen and (min-width: 640px) {
-}
+
 @media screen and (min-width: 768px) {
     .cartao-xxs{
-        margin-right: 2%;
+        margin-right: 1%;
         min-width:30%;
     }
     .cartao-xxl{
         margin-top: 0;
-        min-width: 68%;
+        min-width: 69%;
  
     }
     .cartao-xl{
@@ -122,12 +114,17 @@
 }
 @media screen and (min-width: 1024px) {
     .cartao-xxs{
-        min-width: 25%;
+        min-width: 23%;
+        padding: 1rem 1.5rem;
     }   
     .cartao-xxl{
-        min-width: 73%;
-        
+        padding: 1rem 1.5rem;
+        min-width: 76%;
+       
     }  
+    .cartao-header{
+        margin-top: 0.5rem;
+    }
     .cartao__container--item{ /* Remover a margin dos elementos multiplos de 3*/
         width: 32.66666666666667%;
     }

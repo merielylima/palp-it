@@ -2,60 +2,54 @@
   include ("cabecalho.php");
   require_once 'classes/usuarios.php';
     $u = new Usuarios;
-  
   $u->conectar();
 ?>  
   <main  class="center container-xl" >
-    <div class=" flex flex--coluna flex--row flex-start p-os"> 
-      <nav class=" cartao--container cartao-xxs ">
-        <form  action="inicio.php"  method="POST">
-          <div >
+    <div class=" flex flex-coluna flex--row flex-start p-os"> 
+      <nav class=" cartao__container cartao-xxs ">
+        <form  action="index.php"  method="POST">
+          <div class="mt-2">
             <label for="p_chave" class="input--label">Palavras-chave</label>
-            <input name = "p_chave" type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
+            <input name = "p_chave" id="p_chave"  type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
           </div>
-          <div>
+          <div class="mt-2">
             <label for = "disciplina" class="input--label">Disciplina</label>
             <select name="disciplina" id="disciplina" class=" option input width-full">
-              <?php
-              $getdisciplina = $pdo->prepare("SELECT * FROM disciplina");
-              $getdisciplina->execute();
-              while($rows = $getdisciplina->fetch(PDO::FETCH_ASSOC)){
-                $nome_disciplina = $rows['nome_disciplina'];
-                $disciplina_id = $rows['id_disciplina'];
-                echo "<option value='$nome_disciplina'>$nome_disciplina</option>";
-              }
-              ?>         
+              <option value="Física">Física</option>
+              <option value="Química">Química</option>
+              <option value="Biologia">Biologia</option>
+              <option value="Geografia">Geografia</option>
             </select>
           </div>
-          <div>
-            <label class="input--label">Grau de escolaridade</label>
-          <div class="flex flex--coluna">
+          <div class="mt-2 flex flex-coluna">
+            <p class="input--label mb-1">Grau de escolaridade</p>
             <label class="checkbox--label ">
-              <input type="checkbox" name="nivel1"> 
-              Ensino Fundamental I
+              <input type="checkbox" name="nivel1"> Ensino Fundamental I
             </label>
             <label class="checkbox--label">
-              <input type="checkbox" name="nivel2"> 
-              Ensino Fundamental II
+              <input type="checkbox" name="nivel2"> Ensino Fundamental II
             </label>
             <label class="checkbox--label">
-              <input type="checkbox" name="nivel3"> 
-              Ensino Médio
+              <input type="checkbox" name="nivel3"> Ensino Médio
+            </label>
+            <label class="checkbox--label">
+              <input type="checkbox" name="nivel4"> Ensino Superior
             </label>
           </div>
           <button class="botao--container botao--primario width-full">Pesquisar </button>
         </form>
       </nav>
-      <section class=" cartao-xxl cartao--container ">
+      <section class=" cartao-xxl cartao__container ">
           <div class="cartao-header"> 
             <h2 class="container--titulo"> Resultados de filtro</h2>
-              <label class="label--order"> Ordenar por:
-                <select class="dropdow--order">
-                  <option value=""> Populares</option>
-                  <option value=""> Novos</option>
-                  <option value=""> Antigos</option>
-                </select>
-              </label>
+            <div class="label--order">
+              <label for="dropdow_order" > Ordenar por: </label>
+              <select id="dropdow_order" class="dropdow--order">
+                <option value=""> Populares</option>
+                <option value=""> Novos</option>
+                <option value=""> Antigos</option>
+              </select>
+            </div>
           </div>
           <div class="sem-conteudo" > 
             <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
@@ -125,7 +119,7 @@
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
               <li class="cartao__container--item">
-                <a href="posts.php" class="flex flex-items-center flex--coluna">
+                <a href="posts.php" class="flex flex-items-center flex-coluna">
                   <div class="cartao--item">
                     <img src=<?php echo $lista["foto_v"];?>>
                   </div>

@@ -4,8 +4,8 @@
 ?>
 <body>
     <main class="center container-xs">
-        <div class="flex flex--coluna px-3">
-        <section class=" cartao--container cartao-xs">
+        <div class="flex flex-coluna px-3">
+        <section class=" cartao__container cartao-xs">
             <div class="border-bottom">  
                     <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
                     <h2 class="container--titulo mb-2">Recuperar senha</h2> 
