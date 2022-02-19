@@ -64,14 +64,14 @@ if(isset($_POST['nome'])){
 					} 
 					else {
 						$pdo->rollback();  //reverte uma transação
-						echo "Erro ao enviar o email de confirmação contacte palp-it@ufpa.br";
+						$_SESSION['erro'] = 'Email de confirmação não enviado <br> contacte palp-it@ufpa.br';
+						header("Location: cadastro.php");
 					}
 			}
 			else{
+				$_SESSION['erro'] = 'Já existe um usuário com o mesmo email.';
+				header("Location: cadastro.php");
 				?>
-				<div class="msg_erro">
-					Email já cadastrado, retorne e faça login.
-				</div>
 				<?php
 			}
 			
