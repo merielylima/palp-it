@@ -41,7 +41,7 @@
   		$sql->execute();
 		
   		if($sql->rowCount()>0){ //verificando houve resposta na consulta
-  			return false; // ja tem cadastro
+			return false; // ja tem cadastro
   		}
   		else{
   			//caso nao tenha
@@ -67,7 +67,7 @@
   	  global $pdo;
       global $msgErro;
   		/*verificar se o email e senha estao cadastrados, se sim*/
-  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, cidade, area, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
+  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, sobre, cidade, area, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
   		$sql->bindValue(":e", $email);
   		$sql->bindValue(":s", md5($senha));
   		$sql->execute();
@@ -79,8 +79,9 @@
   			$_SESSION['id_usuario'] = $dado['id_usuario']; //armazena o id do usuario na sessao.
 			$_SESSION['nome'] = $dado['nome'];
 			$_SESSION['email'] = $dado['email'];
-			$_SESSION['area'] = $dado['area'];
+			$_SESSION['sobre'] = $dado['sobre'];
 			$_SESSION['cidade'] = $dado['cidade'];
+			$_SESSION['area'] = $dado['area'];
 			$_SESSION['foto_p'] = $dado['foto_p'];
 			return true;  //logado com sucesso
   		}

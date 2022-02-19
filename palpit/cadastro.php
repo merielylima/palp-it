@@ -6,8 +6,18 @@
         <div class="flex flex--coluna px-3">
             <section class=" cartao--container cartao-xs">
                 <div class="border-bottom">
-                    <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
+                    <a href="inicio.php" class=" flex">
+                        <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
+                    </a>
                     <h2 class="container--titulo mb-2">Cadastre-se no Palp-it</h2>
+                </div>
+                    <?php if(isset($_SESSION['erro'])):?>
+                        <div class="mensagem-erro">
+                            <?= $_SESSION['erro'] ?>
+                            <?php unset($_SESSION['erro']) ?>
+                        </div>
+                    <?php endif; ?>
+                <div>    
                 </div>
                 <div>
                     <form action="cadastro_analise.php" method="POST">
