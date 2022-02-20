@@ -67,7 +67,7 @@
   	  global $pdo;
       global $msgErro;
   		/*verificar se o email e senha estao cadastrados, se sim*/
-  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, sobre, cidade, area, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
+  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, sobre, cidade, area, receber, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
   		$sql->bindValue(":e", $email);
   		$sql->bindValue(":s", md5($senha));
   		$sql->execute();
@@ -82,6 +82,7 @@
 			$_SESSION['sobre'] = $dado['sobre'];
 			$_SESSION['cidade'] = $dado['cidade'];
 			$_SESSION['area'] = $dado['area'];
+			$_SESSION['receber'] = $dado['receber'];
 			$_SESSION['foto_p'] = $dado['foto_p'];
 			return true;  //logado com sucesso
   		}
@@ -136,16 +137,17 @@
 
 	}
 
-	public function alterarperfil($nome, $sobre, $cidade){
+	public function alterarperfil($nome, $sobre, $cidade,$receber){
 		error_reporting(E_ALL);
         ini_set('display_errors',1);
 		global $pdo;
 		global $msgErro;
 						
-		$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c WHERE id_usuario = :id");
+		$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c, receber = :r WHERE id_usuario = :id");
 		$sql->bindValue(":n", $nome);
 	  	$sql->bindValue(":s", $sobre);
 		$sql->bindValue(":c", $cidade);
+		$sql->bindValue(":r", $receber);
 	  	$sql->bindValue(":id", $_SESSION['id_usuario']);
 		$sql->execute();
 
@@ -153,6 +155,7 @@
 		$_SESSION['nome'] = $nome;
 		$_SESSION['sobre'] = $sobre;
 		$_SESSION['cidade'] = $cidade;
+		$_SESSION['receber'] = $receber;
 
 	  	return true;  
 

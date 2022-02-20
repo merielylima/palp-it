@@ -35,7 +35,7 @@
             </div>
           <div class="my-2 line1">
             <label class="checkbox--label ">
-              <input type="checkbox" name="receber" checked> 
+              <input type="checkbox" id="receber" name="receber" <?php if($_SESSION ['receber'] == "t"){ echo "checked";}?>> 
               Receber uma notificação por email quando um novo gráfico da minha área de interesse for postado.
             </label>
           </div>

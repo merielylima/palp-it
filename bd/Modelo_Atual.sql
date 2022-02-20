@@ -25,10 +25,10 @@ CREATE TABLE IF NOT EXISTS `palpit`.`usuario` (
   `nome` VARCHAR(200) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
   `senha` VARCHAR(200) NOT NULL,
-  `sobre` VARCHAR(200) NOT NULL,
-  `cidade` VARCHAR(200) NOT NULL,
+  `sobre` VARCHAR(200) NULL DEFAULT '',
+  `cidade` VARCHAR(200) NULL DEFAULT '',
   `area` VARCHAR(100) NULL,
-  `receber` VARCHAR(1) NOT NULL DEFAULT 'N',
+  `receber` VARCHAR(1) NULL,
   `confirmacao` VARCHAR(45) NULL,
   `foto_p` VARCHAR(245) NULL,
   `tipo_usuario` VARCHAR(20) NOT NULL DEFAULT 'C',
@@ -109,6 +109,11 @@ CREATE TABLE IF NOT EXISTS `palpit`.`escolaridade` (
   `nivel` VARCHAR(45) NULL,
   PRIMARY KEY (`id_escolaridade`))
 ENGINE = InnoDB;
+
+INSERT INTO `palpit`.`escolaridade` (`id_escolaridade`, `nivel`) VALUES ('1', 'Fundamental I');
+INSERT INTO `palpit`.`escolaridade` (`id_escolaridade`, `nivel`) VALUES ('2', 'Fundamental II');
+INSERT INTO `palpit`.`escolaridade` (`id_escolaridade`, `nivel`) VALUES ('3', 'Médio');
+INSERT INTO `palpit`.`escolaridade` (`id_escolaridade`, `nivel`) VALUES ('4', 'Superior');
 
 
 -- -----------------------------------------------------

@@ -1,5 +1,6 @@
 <?php
  include ("head.php");
+
 ?>
 <body>
     <main class="center container-xs">
@@ -45,7 +46,7 @@
                             </select>
                         </div>
                         <label class="checkbox--label ">
-                            <input type="checkbox" name="receber" checked> 
+                            <input type="checkbox" name="receber"> 
                             Receber uma notificação por email quando um novo gráfico da minha área de interesse for postado.
                         </label>
                         <button class="botao--container botao--primario width-full"> Cadastrar </button>

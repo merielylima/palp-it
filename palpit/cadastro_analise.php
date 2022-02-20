@@ -15,7 +15,7 @@ if(isset($_POST['nome'])){
 	//$profissao = addslashes($_POST['profissao']);
 	$senha = addslashes($_POST['senha']);
 	$area = addslashes($_POST['area']);
-	$receber = addslashes($_POST['receber']) ? true : null;
+	$receber = addslashes(isset($_POST['receber'])) ? true : null;
 	$confirmacao = rand (1, getrandmax ());
 	
 		$u->conectar(); //Conecta ao banco de dados
