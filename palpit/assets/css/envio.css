@@ -64,14 +64,15 @@
 
 }
 .input--file-button{
-	width: 10rem;
+	
 }
 .obrigatorio{
   color: var(--cor-aviso);
   margin-left: 0.25rem;
 }
 .imagem{
-  width: 130px;
+  width: 100%;
+  height: 100%;
 
 }
 
@@ -81,3 +82,4 @@
   border-radius: 6px;
   border: 1px solid var(--cinza-4);
 }
+

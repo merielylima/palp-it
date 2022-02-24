@@ -16,13 +16,13 @@
     <div class="flex flex-coluna flex--row flex-start p-os">
       <nav class="cartao__container cartao-xxs">
         <!-- Editar perfil = opacity: 0-->
-        <form class="hidden" action="alterarperfil.php" method="POST">
+        <form id="perfil-edit" class="hidden" action="alterarperfil.php" method="POST">
           <div class="info-user mb-3 flex-items-center "> 
             <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
             <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
             <div class="">
               <label for="user_profile_name" class="input--label  mb-1">Nome</label>
-              <input class="input width-full " id="user_profile_name"  aria-label="Name" name="user_profile_name" value="<?php echo ''.$_SESSION ['nome'].''?>">
+              <input class="input width-full " id="user_profile_name" name="user_profile_name" value="<?php echo ''.$_SESSION ['nome'].''?>">
             </div>
           </div>
           <div class="flex flex-coluna">
@@ -31,7 +31,7 @@
           </div>
           <div class="">
               <label for="" class="input--label  mb-1">Cidade</label>
-              <input class="input width-full " id="cidade"  aria-label="" name="cidade" value="<?php echo ''.$_SESSION ['cidade'].''?>">
+              <input class="input width-full " id="cidade"  name="cidade" value="<?php echo ''.$_SESSION ['cidade'].''?>">
             </div>
           <div class="my-2 line1">
             <label class="checkbox--label ">
@@ -40,11 +40,11 @@
             </label>
           </div>
           <div class="flex flex--row width-full">
-            <button id="btn-cancel" class="botao--container botao--secundario width-full mr-3 ml-3">Cancelar</button>  
-            <button id="btn-save"class="botao--container botao--primario mr-3 width-full">Salvar</button>  
+            <button type="reset" id="btn-cancel" class="botao--container botao--secundario width-full mr-3 ml-3">Cancelar</button>  
+            <button type="submit" id="btn-save" class="botao--container botao--primario mr-3 width-full">Salvar</button>  
           </div>
         </form> 
-        <div class="left-side--active">
+        <div id="perfil-noedit">
           <div class="info-user mb-3 flex-items-center d-block"> 
             <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
             <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
@@ -53,10 +53,13 @@
               <span class="vcard-username block"><?php echo ''.$_SESSION ['email'].''?></span>
             </div>
           </div>
+          <div>
+            <p><span class="material-icons">info</span><?php echo ''.$_SESSION ['sobre'].''?></p>
+          </div>
           <div class="flex flex-coluna">
               <ul class="my-2">
-              <li> <spam class="material-icons">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?></li> 
-              <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
+                <li> <spam class="material-icons">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?></li> 
+                <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
             </ul>
             <button id="btn-edit" class="botao--container botao--secundario width-full"> Editar perfil </button>  
           </div>

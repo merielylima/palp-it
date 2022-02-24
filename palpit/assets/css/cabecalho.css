@@ -73,7 +73,7 @@ align-items: center;
 }
 
 .caixa{
-  display: block;
+  display: none;
   position: absolute;
   top: 64px;
   border: 1px solid var(--cinza-6);
@@ -173,13 +173,25 @@ align-items: center;
   .input-pesquisa:focus::placeholder{
     opacity: 50%;
   }
-.cabecalho{
-  padding: 0.5rem 2rem;
+  .cabecalho{
+    padding: 0.5rem 2rem;
+  }
+
+
+  .active{
+    border: 2px solid var(--azul-claro-transparente);
+    background-color: var(--azul-escuro-transparente);
+  }
 }
 
 
-.active{
-  border: 2px solid var(--azul-claro-transparente);
-  background-color: var(--azul-escuro-transparente);
+
+.dropbtn {
+  cursor: pointer;
 }
+
+
+
+.show {
+  display: block;
 }

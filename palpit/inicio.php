@@ -15,6 +15,7 @@
           <div class="mt-2">
             <label for = "disciplina" class="input--label">Disciplina</label>
             <select name="disciplina" id="disciplina" class=" option input width-full">
+              <option value="Todas">Todas</option>
               <option value="Física">Física</option>
               <option value="Química">Química</option>
               <option value="Biologia">Biologia</option>

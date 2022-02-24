@@ -1,35 +1,40 @@
 //por enquanto o editar não esta ativado, ou seja está h i d d e n
-var lsActive = document.querySelector(".left-side--active"); 
-var lsHidden = document.querySelector(".hidden"); 
+var perfil_edit = document.querySelector("#perfil-edit"); 
+var perfil_noedit = document.querySelector("#perfil-noedit"); 
 
 var edit = document.querySelector("#btn-edit"); 
 var cancel = document.querySelector("#btn-cancel");  
 
 edit.addEventListener('click',() =>{
-    lsActive.classList.add("hidden");
-    lsHidden.classList.remove("hidden");
+    perfil_noedit.classList.add("hidden");
+    perfil_edit.classList.remove("hidden");
 
 })
 cancel.addEventListener('click',() =>{
-    lsActive.classList.remove("hidden");
-    lsHidden.classList.add("hidden");   
-})
-Menu.addEventListener('click',() =>{
-    lsActive.classList.remove("hidden");
-    lsHidden.classList.add("hidden");   
+    perfil_edit.classList.add("hidden");
+    perfil_noedit.classList.remove("hidden");
+    
 })
 
 
-var menuActive = document.querySelector(".caixa"); 
-var menuHidden = document.querySelector(".desactive"); 
+/* When the user clicks on the button, 
+toggle between hiding and showing the dropdown content */
 
-var menu = document.querySelector("#menu_popup"); 
-
-menu.addEventListener('click',() =>{
-    menuHidden.classList.remove("desactive");
-    menuActive.classList.add("caixa"); 
-})
-
-/*
-const active = document.querySelector(.lista-navegacao--item )
-nome da classe = active */
+function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("caixa");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  
