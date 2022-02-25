@@ -27,7 +27,7 @@
                 <span class="input--file-button   botao--terciario botao--container">+</span>
                 <span class="input--file-text"> Nenhum arquivo selecionado</span>
               </label>
-              <input id="imagem_visual" onchange="readURL(this);" name="imagem_visual" type="file" class="input--file" required/>
+              <input id="imagem_visual" accept="image/*" onchange="readURL(this);" name="imagem_visual" type="file" class="input--file" required/>
             </div>
             <div class="filho 2" >
               <p class="input--label">Arquivo Tátil<span class="obrigatorio">*</span></p>
