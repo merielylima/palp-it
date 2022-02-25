@@ -34,13 +34,13 @@ $f = new Functions;
                 </div>
                 <nav class="cabecalho--navegacao items-xl">
                     <ul class="flex flex-items-center">
-                        <li id="btn-inicio" class="botao--container ">
+                        <li id="btn-inicio" class="botao--container <?php if($page_atual == 1){echo ("active");}?>">
                             <a href="inicio.php"><span class="material-icons ">home</span> Início</a>
                         </li>
-                        <li id="btn-perfil" class="botao--container">
+                        <li id="btn-perfil" class="botao--container <?php if($page_atual == 2){echo ("active");}?>">
                             <a href="perfil.php"> <span class="material-icons">person</span> Perfil</a>
                         </li>
-                        <li id="btn-contribuicoes" class="botao--container">
+                        <li id="btn-contribuicoes" class="botao--container <?php if($page_atual == 3){echo ("active");}?>">
                             <a href="contribuicoes.php"><span class="material-icons">file_upload</span> Contribuições</a>
                         </li>
                     </ul>

@@ -1,7 +1,8 @@
 <?php
+  $page_atual = 1;//pagina selecionada
   include ("cabecalho.php");
   require_once 'classes/usuarios.php';
-    $u = new Usuarios;
+  $u = new Usuarios;
   $u->conectar();
 ?>  
   <main  class="center container-xl" >

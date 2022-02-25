@@ -1,4 +1,5 @@
 <?php
+ $page_atual = 2;
  include ("cabecalho.php");
  require_once 'classes/usuarios.php';
   $u = new Usuarios;
