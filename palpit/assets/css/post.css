@@ -1,0 +1,6 @@
+.post-img{
+    display: flex;
+    justify-content: center;
+    height: 368px;
+    padding-bottom: 1rem;
+}

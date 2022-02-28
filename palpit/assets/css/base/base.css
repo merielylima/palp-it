@@ -42,11 +42,7 @@ body {
 	color: var(--cinza-2);
 	margin-right: 0.5rem;
 }
-a{
-	display: flex;
-    align-items: center;
-	justify-content: center;
-}
+
 .a{
 	border: none;
 	outline: none;
@@ -116,16 +112,20 @@ a{
 .text-justify{
 	text-align: justify;
 }
-.link{
-  color: var(--azul-1);
+.link-container{
   text-decoration: none;
   cursor: pointer;
 }
-
+.link-container:hover{
+	text-decoration: underline;
+}
+.link-color{
+	color: var(--azul-1);
+}
 .link-externo{
-font-weight: var(--fonte-peso-bold);
-  font-size: var( --fonte-tamanho-secundaria);
-  text-transform: uppercase;
+	font-weight: var(--fonte-peso-bold);
+	font-size: var( --fonte-tamanho-secundaria);
+	text-transform: uppercase;
 }
 .material-icons{
 	vertical-align: middle;

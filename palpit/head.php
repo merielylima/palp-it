@@ -28,8 +28,10 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   <link rel="stylesheet" href="./assets/css/cabecalho.css">
   <link rel="stylesheet" href="./assets/css/envio.css">
   <link rel="stylesheet" href="./assets/css/login.css">
+  <link rel="stylesheet" href="./assets/css/post.css">
   <link rel="stylesheet" href="./assets/css/base/padding.css">
   <link rel="stylesheet" href="./assets/css/base/margin.css">
+
  
   <title>Palp-it</title>
   <script>

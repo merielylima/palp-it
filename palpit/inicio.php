@@ -121,12 +121,17 @@
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
               <li class="cartao__container--item">
-                <a href="posts.php" class="flex flex-items-center flex-coluna">
-                  <div class="cartao--item">
+                <a href="posts.php" class="flex flex-coluna">
+                  <div class="item-img">
                     <img src=<?php echo $lista["foto_v"];?>>
                   </div>
-                  <span class=""><?php echo $lista["titulo"];?></span>
+                  <span class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>
+                <a class="link-container flex flex-items-center " href="perfil.php"> 
+                  <img src=<?php echo '"'.$_SESSION ['foto_p'].'"'?> alt="Foto de perfil">
+                  <span class="item-user"><?php echo ''.$_SESSION ['nome'].''?></span>
+                </a>
+                
               </li>
             <?php
             endwhile;

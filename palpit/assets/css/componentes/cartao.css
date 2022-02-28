@@ -23,16 +23,15 @@
     min-height: 325px;
     padding: 1rem 1rem;
     margin-bottom: 1rem;
-
 }
-.cartao--item{
+.item-img{
     height: 15rem;
     width: 100%;
     border-radius: 6px;
     border: 1px solid var(--cinza-4);
 }
 
-.cartao--item img{
+.item-img img{
     object-fit: cover;
     object-position: center;
     display: block;
@@ -40,14 +39,23 @@
     width: 100%;
     border-radius: 6px;
 }
-.cartao__container--item span{
+.item-titulo{
+    font-size: var(--fonte-tamanho-titulo);
+    font-weight: var(--fonte-peso-medium);
+    color:var(--cinza-2)
+
+}
+.item-user{
+    font-size: var(--fonte-tamanho-secundaria);
+    margin-left: 0.5rem;
+}
+.post span{
     line-height: 1.5rem;
-    font-size: 16px;
+    font-size: 20px;
+    font-weight: 500;
     color: var(--cinza-2);
 }
-.cartao__container--item:hover{
-    text-decoration: underline
-}
+
 
 
 .sem-conteudo{
