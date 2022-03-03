@@ -14,9 +14,9 @@
         </div>
         <h2 class="cartao-header container--titulo"> Modelo atômico </h2>
         <div>
-          <span></span>
-          <span></span>
-          <span></span>
+          <span>Disciplinas</span>
+          <span>Palavras chave</span>
+          <span>Nivel de escolaridade</span>
         </div>
         <div class=" post-img border-bottom">
             <img src="assets/img/publicacoes/post2.png" alt="">

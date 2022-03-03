@@ -56,12 +56,11 @@ $f = new Functions;
                 <span class="material-icons notifications">notifications_none </span>
                 <img class="user__menu--photo" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn material-icons"> expand_more
-                        
+                    <button onclick="myFunction()" class="dropbtn material-icons"> expand_more  
                     </button>
                     <div id="myDropdown" class="caixa user__menu "> 
                         <ul>
-                            <li><a >Editar Perfil</a></li>
+                            <li><a href="perfil.php?editar=1" >Editar Perfil</a></li>
                             <li><a href="logout.php" class="">Sair</a></li>
                         </ul>
                     </div>
