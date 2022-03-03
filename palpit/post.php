@@ -7,7 +7,7 @@
       <section class="cartao__container cartao-xl width-full">
         <div class="flex">
           <img src="/assets/img/icon/avatar.svg" class="user-img" >
-          <div class="flex flex-coluna">
+          <div class="flex flex-coluna ">
             <span class="user-name"> Meriely Lima</span>
             <span class="post-date">28/02/2018</span>
           </div>

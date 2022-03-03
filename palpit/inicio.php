@@ -127,10 +127,10 @@
                   </div>
                   <span class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>
-                <a class="link-container flex flex-items-center " href="perfil.php"> 
+                <div class="link-container flex flex-items-center "> 
                   <img src=<?php echo '"'.$_SESSION ['foto_p'].'"'?> alt="Foto de perfil">
                   <span class="item-user"><?php echo ''.$_SESSION ['nome'].''?></span>
-                </a>
+            </div>
                 
               </li>
             <?php
