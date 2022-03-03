@@ -23,7 +23,7 @@ $f = new Functions;
 <?php if($f->logado()):?>
     
     <!-- CABEÇALHO LOGADO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
-    <header class="cabecalho">
+    <header class="cabecalho ">
         <div class="cabecalho__content">
             <div class="cabecalho__left-side flex flex-items-center">
                 <a href="inicio.php" class=" flex">
@@ -54,23 +54,25 @@ $f = new Functions;
                     </a>
                 </div>
                 <span class="material-icons notifications">notifications_none </span>
-                <div id="menu_popup" class="user__menu "> 
-                <button  class="dropbtn">
-                    <img class="user__menu--photo" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
-                    <span class="material-icons">expand_more</span>
-                </button>
+                <img class="user__menu--photo" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
+                <div class="dropdown">
+                    <button onclick="myFunction()" class="dropbtn material-icons"> expand_more
+                        
+                    </button>
+                    <div id="myDropdown" class="caixa user__menu "> 
+                        <ul>
+                            <li><a >Editar Perfil</a></li>
+                            <li><a href="logout.php" class="">Sair</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div id="js-menu" class="botao--container menu">
                 <span class="menu-icon material-icons">menu</span>
             </div>
         </div>
-        <div id="myDropdown" class="caixa">
-            <ul onclick="myFunction()">
-                <li><a href="#" class="">Editar Perfil</a></li>
-                <li><a href="logout.php" class="">Sair</a></li>
-            </ul>
-        </div>
+        
+        
     </header>
 <script src="js/cabecalho.js"></script>        
 
@@ -101,5 +103,4 @@ $f = new Functions;
             </div>
         </div>
     </header>
-
 <?php endif;?>

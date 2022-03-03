@@ -1,4 +1,5 @@
 .cabecalho{
+  display: inline-block;
   position: relative;
   background-color: var(--azul-2);
   color: var(--contraste-claro);
@@ -74,6 +75,8 @@ align-items: center;
 
 .caixa{
   display: none;
+  overflow: auto;
+  z-index: 1;
   position: absolute;
   top: 64px;
   border: 1px solid var(--cinza-6);
@@ -87,6 +90,9 @@ align-items: center;
   line-height: 2;
   width: 200px;
   height: auto;
+}
+.caixa ul{
+  display: block;
 }
 
 .input-pesquisa{
@@ -189,8 +195,6 @@ align-items: center;
 .dropbtn {
   cursor: pointer;
 }
-
-
 
 .show {
   display: block;

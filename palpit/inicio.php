@@ -121,7 +121,7 @@
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
               <li class="cartao__container--item">
-                <a href="posts.php" class="flex flex-coluna">
+                <a href="post.php" class="flex flex-coluna">
                   <div class="item-img">
                     <img src=<?php echo $lista["foto_v"];?>>
                   </div>
