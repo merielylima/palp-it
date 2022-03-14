@@ -117,7 +117,6 @@
               $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a ORDER BY id_arquivo DESC;");
               $sql->execute();
             }
-
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
               <li class="cartao__container--item">
@@ -130,8 +129,7 @@
                 <div class="link-container flex flex-items-center "> 
                   <img src=<?php echo '"'.$_SESSION ['foto_p'].'"'?> alt="Foto de perfil">
                   <span class="item-user"><?php echo ''.$_SESSION ['nome'].''?></span>
-            </div>
-                
+                </div> 
               </li>
             <?php
             endwhile;

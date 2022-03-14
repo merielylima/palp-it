@@ -5,12 +5,15 @@
   <main  class="center container-xx" >
     <div class=" flex flex-coluna p-os"> 
       <section class="cartao__container cartao-xl width-full">
-        <div class="flex">
-          <img src="/assets/img/icon/avatar.svg" class="user-img" >
-          <div class="flex flex-coluna ">
-            <span class="user-name"> Meriely Lima</span>
-            <span class="post-date">28/02/2018</span>
+        <div class="flex space-between">
+          <div class="flex">
+            <img src="/assets/img/icon/avatar.svg" class="user-img" >
+            <div class="flex flex-coluna ">
+              <span class="user-name"> Meriely Lima</span>
+              <span class="post-date">28/02/2018</span>
+            </div>
           </div>
+          <button class="botao--container btn-download"> <span></span> Download</button>
         </div>
         <h2 class="cartao-header container--titulo"> Modelo atômico </h2>
         <div>

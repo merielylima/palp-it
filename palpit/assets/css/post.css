@@ -4,3 +4,11 @@
     height: 368px;
     padding-bottom: 1rem;
 }
+.btn-download{
+    color: var(--azul-1);
+    font-weight: var(--fonte-peso-medium);
+
+}
+.btn-download:hover{
+    background-color: var(--azul-4)
+}
