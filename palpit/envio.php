@@ -47,7 +47,7 @@
           </div>
           <div>
             <label for="p_chave"  class="input--label" > Palavras-chave <span class="obrigatorio">*</span></label>
-            <textarea id="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil; " minlength="6" required></textarea>
+            <textarea id="p_chave" name="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil; " minlength="6" required></textarea>
             <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
           </div>
           <div>

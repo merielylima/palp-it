@@ -11,13 +11,13 @@
         <form  action="index.php"  method="POST">
           <div class="mt-2">
             <label for="p_chave" class="input--label">Palavras-chave</label>
-            <input name = "p_chave" id="p_chave"  type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
+            <input name="p_chave" id="p_chave"  type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
           </div>
           <div class="mt-2">
             <label for = "disciplina" class="input--label">Disciplina</label>
             <select name="disciplina" id="disciplina" class=" option input width-full">
               <option value="Todas">Todas</option>
-              <option value="Física">Física</option>
+              <option value="Fisica">Física</option>
               <option value="Química">Química</option>
               <option value="Biologia">Biologia</option>
               <option value="Geografia">Geografia</option>
@@ -114,7 +114,7 @@
               $sql->execute();
 
             }else{
-              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a ORDER BY id_arquivo DESC;");
+              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p FROM arquivo a,usuario u WHERE u.id_usuario = a.id_usuario_fk ORDER BY id_arquivo DESC;");
               $sql->execute();
             }
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
@@ -127,8 +127,8 @@
                   <span class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>
                 <div class="link-container flex flex-items-center "> 
-                  <img src=<?php echo '"'.$_SESSION ['foto_p'].'"'?> alt="Foto de perfil">
-                  <span class="item-user"><?php echo ''.$_SESSION ['nome'].''?></span>
+                  <img src=<?php echo $lista["foto_p"];?> alt="Foto de perfil">
+                  <span class="item-user"><?php echo $lista["nome"];?></span>
                 </div> 
               </li>
             <?php
