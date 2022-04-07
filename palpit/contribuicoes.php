@@ -17,9 +17,10 @@
     <div class=" flex flex-coluna p-os"> 
       <section class="cartao__container cartao-xl width-full">
         <h2 class="cartao-header container--titulo"> Suas publicações</h2>
-        <div class="sem-conteudo" > 
-              <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
-            </div>
+        <div class="sem-conteudo flex flex-coluna" > 
+          <a href="envio.php" class="center botao--container botao--terciario btn-contribuicao mb-2"> <span class="material-icons-outlined ">add</span> Adicionar</a>
+          <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
+        </div>
       </section>
 
     </div>

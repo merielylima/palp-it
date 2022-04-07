@@ -3,7 +3,7 @@
  
 ?>
   <main  class="center container-xx" >
-    <div class=" flex flex-coluna p-os"> 
+    <div class="p-os"> 
       <section class="cartao__container cartao-xl width-full">
         <div class="flex space-between">
           <div class="flex">
@@ -13,7 +13,9 @@
               <span class="post-date">28/02/2018</span>
             </div>
           </div>
-          <button class="botao--container btn-download"> <span></span> Download</button>
+          <button class="botao--container btn-download">
+            <span class="material-icons-outlined">file_download </span> Download
+          </button>
         </div>
         <h2 class="cartao-header container--titulo"> Modelo atômico </h2>
         <div>
@@ -26,7 +28,7 @@
         </div>
       </section>
     </div>
-</main>
+  </main>
 <?php
   include ("rodape.php");
 ?>

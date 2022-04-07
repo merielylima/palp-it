@@ -18,7 +18,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"> 
-  <link href="https://fonts.googleapis.com/css2?family=Material+Icons"  rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Icons+Outlined"  rel="stylesheet">
   <script src="jquery-3.6.0.min.js"></script>
   <link rel="stylesheet" href="./assets/css/base/base.css">
   <link rel="stylesheet" href="./assets/css/componentes/cartao.css">

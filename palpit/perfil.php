@@ -55,12 +55,12 @@
             </div>
           </div>
           <div>
-            <p><span class="material-icons">info</span><?php echo ''.$_SESSION ['sobre'].''?></p>
+            <p><span class="material-icons-outlined">info</span><?php echo ''.$_SESSION ['sobre'].''?></p>
           </div>
           <div class="flex flex-coluna">
               <ul class="my-2">
-                <li> <spam class="material-icons">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?></li> 
-                <li> <span class="material-icons"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
+                <li> <spam class="material-icons-outlined">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?></li> 
+                <li> <span class="material-icons-outlined"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
             </ul>
             <button id="btn-edit" class="botao--container botao--secundario width-full"> Editar perfil </button>  
           </div>

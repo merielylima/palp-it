@@ -35,13 +35,13 @@ $f = new Functions;
                 <nav class="cabecalho--navegacao items-xl">
                     <ul class="flex flex-items-center">
                         <li id="btn-inicio" class="botao--container <?php if($page_atual == 1){echo ("active");}?>">
-                            <a href="inicio.php"><span class="material-icons ">home</span> Início</a>
+                            <a href="inicio.php"><span class="material-icons-outlined ">home</span> Início</a>
                         </li>
                         <li id="btn-perfil" class="botao--container <?php if($page_atual == 2){echo ("active");}?>">
-                            <a href="perfil.php"> <span class="material-icons">person</span> Perfil</a>
+                            <a href="perfil.php"> <span class="material-icons-outlined">person</span> Perfil</a>
                         </li>
                         <li id="btn-contribuicoes" class="botao--container <?php if($page_atual == 3){echo ("active");}?>">
-                            <a href="contribuicoes.php"><span class="material-icons">file_upload</span> Contribuições</a>
+                            <a href="contribuicoes.php"><span class="material-icons-outlined">file_upload</span> Contribuições</a>
                         </li>
                     </ul>
                 </nav>
@@ -49,14 +49,14 @@ $f = new Functions;
             <div class="items-xl cabecalho__right-side flex">
                 <div class=" botao-cabecalho botao--container border">
                     <a href="envio.php">
-                    <span class="material-icons">add</span> 
+                    <span class="material-icons-outlined">add</span> 
                     Novo envio
                     </a>
                 </div>
-                <span class="material-icons notifications">notifications_none </span>
+                <span class="material-icons-outlined notifications">notifications_none </span>
                 <img class="user__menu--photo" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
                 <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn material-icons"> expand_more  
+                    <button onclick="myFunction()" class="dropbtn material-icons-outlined"> expand_more  
                     </button>
                     <div id="myDropdown" class="caixa user__menu "> 
                         <ul>
@@ -67,7 +67,7 @@ $f = new Functions;
                 </div>
             </div>
             <div id="js-menu" class="botao--container menu">
-                <span class="menu-icon material-icons">menu</span>
+                <span class="menu-icon material-icons-outlined">menu</span>
             </div>
         </div>
         

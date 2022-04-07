@@ -56,13 +56,11 @@
     color: var(--cinza-2);
 }
 
-
-
 .sem-conteudo{
     font-size: var(--fonte-tamanho-secundaria);
     color:var(--cinza-3);
     position: absolute;
-    top:49%;
+    top:39%;
     right:0%;
     text-align: center;
     width: 100%;
