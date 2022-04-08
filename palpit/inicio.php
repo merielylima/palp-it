@@ -8,7 +8,7 @@
   <main  class="center container-xl" >
     <div class=" flex flex-coluna flex--row flex-start p-os"> 
       <nav class=" cartao__container cartao-xxs ">
-        <form  action="index.php"  method="POST">
+        <form  action="inicio.php"  method="POST">
           <div class="mt-2">
             <label for="p_chave" class="input--label">Palavras-chave</label>
             <input name="p_chave" id="p_chave"  type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
@@ -96,8 +96,9 @@
                 $querynivel="AND ($nivel)";
               };
 
-              $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v
+              $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p
               FROM arquivo a
+              INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
               INNER JOIN tag t ON t.id_arquivo_fk=a.id_arquivo
               INNER JOIN assoc_arquivo aa ON aa.id_arquivo_fk=a.id_arquivo
               INNER JOIN assoc_ed ae ON ae.id_assoc_ed=aa.id_assoc_ed_fk
@@ -120,7 +121,7 @@
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
               <li class="cartao__container--item">
-                <a href="post.php" class="flex flex-coluna">
+                <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
                   <div class="item-img">
                     <img src=<?php echo $lista["foto_v"];?>>
                   </div>
