@@ -1,6 +1,8 @@
 <?php
  include ("cabecalho.php");
- 
+ require_once 'classes/usuarios.php';
+  $u = new Usuarios;
+  $u->conectar();
  if (!isset($_SESSION['id_usuario'])) {
   // Destrói a sessão por segurança
   session_destroy();
@@ -62,18 +64,29 @@
           <div class="input-container ">
             <label for="nivel" class="input--label"> Grau de escolaridade <span class="obrigatorio">*</span></label>
             <select name="nivel" id="nivel" class="input-envio option input">
-              <option value="Fundamental I">Fundamental I</option>
-              <option value="Fundamental II">Fundamental II</option>
-              <option value="Médio">Médio</option>
-              <option value="Superior">Superior</option>
+              <?php
+                $getescolaridade = $pdo->prepare("SELECT * FROM escolaridade ORDER BY id_escolaridade");
+                $getescolaridade->execute();
+                while($rows = $getescolaridade->fetch(PDO::FETCH_ASSOC)){
+                  $nome_escolaridade = $rows['nivel'];
+                  $escolaridade_id = $rows['id_disciplina'];
+                  echo "<option value='$nome_escolaridade'>$nome_escolaridade</option>";
+                }
+              ?>
             </select>
           </div>
           <div class="input-container ">
             <label for="disciplina" class="input--label"> Disciplina<span class="obrigatorio">*</span> </label>
             <select name="disciplina" id="disciplina" class=" input-envio option input">
-              <option value="Química">Química</option>
-              <option value="Biologia">Biologia</option>
-              <option value="Fisica">Fisica</option>
+              <?php
+                $getdisciplina = $pdo->prepare("SELECT * FROM disciplina WHERE id_disciplina NOT LIKE 1 ORDER BY id_disciplina");
+                $getdisciplina->execute();
+                while($rows = $getdisciplina->fetch(PDO::FETCH_ASSOC)){
+                  $nome_disciplina = $rows['nome_disciplina'];
+                  $disciplina_id = $rows['id_disciplina'];
+                  echo "<option value='$nome_disciplina'>$nome_disciplina</option>";
+                }
+              ?>
             </select>
           </div>
           <div class="flex flex-items-end">

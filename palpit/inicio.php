@@ -16,11 +16,15 @@
           <div class="mt-2">
             <label for = "disciplina" class="input--label">Disciplina</label>
             <select name="disciplina" id="disciplina" class=" option input width-full">
-              <option value="Todas">Todas</option>
-              <option value="Fisica">Física</option>
-              <option value="Química">Química</option>
-              <option value="Biologia">Biologia</option>
-              <option value="Geografia">Geografia</option>
+            <?php
+              $getdisciplina = $pdo->prepare("SELECT * FROM disciplina ORDER BY id_disciplina");
+              $getdisciplina->execute();
+              while($rows = $getdisciplina->fetch(PDO::FETCH_ASSOC)){
+                $nome_disciplina = $rows['nome_disciplina'];
+                $disciplina_id = $rows['id_disciplina'];
+                echo "<option value='$nome_disciplina'>$nome_disciplina</option>";
+              }
+            ?>         
             </select>
           </div>
           <div class="mt-2 flex flex-coluna">
