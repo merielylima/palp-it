@@ -106,7 +106,8 @@
               INNER JOIN assoc_ed ae ON ae.id_assoc_ed=aa.id_assoc_ed_fk
               INNER JOIN disciplina d ON d.id_disciplina=ae.id_disciplina_fk
               INNER JOIN escolaridade e ON e.id_escolaridade=ae.id_escolaridade_fk
-              WHERE 
+              WHERE
+                a.status=0 AND
                 t.key_words LIKE '%$busca%'
                 AND d.nome_disciplina = '$disciplina'
                 $querynivel"
@@ -117,7 +118,7 @@
               $sql->execute();
 
             }else{
-              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p FROM arquivo a,usuario u WHERE u.id_usuario = a.id_usuario_fk ORDER BY id_arquivo DESC;");
+              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p FROM arquivo a,usuario u WHERE a.status = 0 AND u.id_usuario = a.id_usuario_fk ORDER BY id_arquivo DESC;");
               $sql->execute();
             }
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):

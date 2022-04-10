@@ -83,12 +83,12 @@
             <?php 
               $usuario = $_SESSION['id_usuario'];
               $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
-              INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE u.id_usuario LIKE '$usuario'");
+              INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE a.status=0 AND u.id_usuario LIKE '$usuario'");
               $sql->execute();
               while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
                <li class="cartao__container--item">
-                <a href="post.php" class="flex flex-coluna">
+                <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
                   <div class="item-img">
                     <img src=<?php echo $lista["foto_v"];?>>
                   </div>

@@ -3,7 +3,7 @@
  include ("cabecalho.php");
  require_once 'classes/usuarios.php';
   $u = new Usuarios;
-  
+  $public="";
   $u->conectar();
 
  if (!isset($_SESSION['id_usuario'])) {
@@ -19,8 +19,28 @@
         <h2 class="cartao-header container--titulo"> Suas publicações</h2>
         <div class="sem-conteudo flex flex-coluna" > 
           <a href="envio.php" class="center botao--container botao--terciario btn-contribuicao mb-2"> <span class="material-icons-outlined ">add</span> Adicionar</a>
-          <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
         </div>
+        <ol class="flex flex-wrap">
+            <?php 
+              $usuario = $_SESSION['id_usuario'];
+              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
+              INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE a.status=1 AND u.id_usuario LIKE '$usuario'");
+              $sql->execute();
+              while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
+            ?>
+               <li class="cartao__container--item">
+                <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
+                  <div class="item-img">
+                    <img src=<?php echo $lista["foto_v"];?>>
+                  </div>
+                  <span class="item-titulo"><?php echo $lista["titulo"];?></span>
+                </a>
+              </li>
+            <?php
+            $public = $lista;
+              endwhile;
+            ?>
+          </ol>         
       </section>
 
     </div>

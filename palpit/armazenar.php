@@ -12,6 +12,7 @@
 	$tag = addslashes($_POST['p_chave']);
 	$foto_v;
 	$foto_t;
+	$status=0;
 
 
   	if (isset ($_FILES ['imagem_visual']) && $_FILES ['imagem_visual']['name'] != '') {
@@ -41,7 +42,7 @@
 		$pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);//Ativa o lançamento de exceptions para erros
 		$pdo->beginTransaction(); //inicia uma transação
 		
-		$u->enviar($titulo,$descricao,$foto_v,$foto_t); //chamada função armazenamento tabela arquivo
+		$u->enviar($titulo,$descricao,$foto_v,$foto_t,$status); //chamada função armazenamento tabela arquivo
 		
 		//Tratamento em armazenamento tabela tag
 		$newtag = preg_replace('/[^\w]+/'," ",$tag);
