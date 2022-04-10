@@ -4,6 +4,7 @@
   require_once 'classes/usuarios.php';
   $u = new Usuarios;
   $u->conectar();
+  $public = "";
 ?>  
   <main  class="center container-xl" >
     <div class=" flex flex-coluna flex--row flex-start p-os"> 
@@ -56,9 +57,6 @@
                 <option value=""> Antigos</option>
               </select>
             </div>
-          </div>
-          <div class="sem-conteudo" > 
-            <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
           </div>
         <ol class="flex flex-wrap">
           <?php
@@ -137,9 +135,17 @@
                 </div> 
               </li>
             <?php
+            $public = $lista;
             endwhile;
           ?>
         </ol>
+        <div class="sem-conteudo" >
+          <?php
+          if(empty($public)){
+            echo "<spam> Não há publicações até o momento </spam>"; 
+          }
+          ?>
+        </div>
       </section>
     </div>
   </main>

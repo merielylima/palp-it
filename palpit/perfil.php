@@ -5,7 +5,7 @@
   $u = new Usuarios;
   
   $u->conectar();
-
+  $public = "";
  if (!isset($_SESSION['id_usuario'])) {
   // Destrói a sessão por segurança
   session_destroy();
@@ -78,9 +78,6 @@
               </select>
             </div>
           </div>
-        <div class="sem-conteudo" > 
-          <spam >Não há publicações até o momento</spam>  <!--  Se publicação > 1,remove classe(.sem conteudo) -->          
-        </div>
         <form>
           <ol class="flex flex-wrap">
             <?php 
@@ -99,11 +96,18 @@
                 </a>
               </li>
             <?php
+            $public = $lista;
               endwhile;
             ?>
           </ol>
         </form>
-
+        <div class="sem-conteudo" > 
+          <?php
+          if(empty($public)){
+            echo "<spam> Não há publicações até o momento </spam>"; 
+          }
+          ?>          
+        </div>
       </section>
     </div> 
   </main>
