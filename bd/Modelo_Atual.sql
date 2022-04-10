@@ -89,6 +89,10 @@ CREATE TABLE IF NOT EXISTS `palpit`.`disciplina` (
   UNIQUE INDEX `nome_disciplina_UNIQUE` (`nome_disciplina` ASC) )
 ENGINE = InnoDB;
 
+INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES ('1', 'Todas');
+INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES ('2', 'Física ');
+INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES ('3', 'Geografia');
+INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES ('4', 'Biologia');
 
 -- -----------------------------------------------------
 -- Table `palpit`.`area`
