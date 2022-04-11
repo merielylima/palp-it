@@ -1,5 +1,8 @@
 <?php
  include ("head.php");
+ require_once 'classes/usuarios.php';
+ $u = new Usuarios;
+ $u->conectar();
 
 ?>
 <body>
@@ -38,11 +41,16 @@
                         </div>
                         <div class="input-container"> 
                             <label id="area" class="input--label">Área de interesse</label>
-                            <select class="option input  input-full" name="area">        
-                                <option value="0">Ciências exatas</option>
-                                <option value="1">Ciências humanas</option>
-                                <option value="2">Ciências econômicas</option>
-                                <option value="3">Ciências da saúde</option>
+                            <select class="option input  input-full" name="area">
+                                <?php
+                                $getarea = $pdo->prepare("SELECT * FROM area ORDER BY id_area");
+                                $getarea->execute();
+                                while($rows = $getarea->fetch(PDO::FETCH_ASSOC)){
+                                    $nome_area = $rows['nome_area'];
+                                    $area_id = $rows['id_area'];
+                                    echo "<option value='$nome_area'>$nome_area</option>";
+                                }
+                                ?>
                             </select>
                         </div>
                         <label class="checkbox--label ">

@@ -104,6 +104,11 @@ CREATE TABLE IF NOT EXISTS `palpit`.`area` (
   UNIQUE INDEX `nome_area_UNIQUE` (`nome_area` ASC) )
 ENGINE = InnoDB;
 
+INSERT INTO `palpit`.`area` (`id_area`, `nome_area`) VALUES ('1', 'Ciências Exatas');
+INSERT INTO `palpit`.`area` (`id_area`, `nome_area`) VALUES ('2', 'Ciências Humanas');
+INSERT INTO `palpit`.`area` (`id_area`, `nome_area`) VALUES ('3', 'Ciências Econômicas');
+INSERT INTO `palpit`.`area` (`id_area`, `nome_area`) VALUES ('4', 'Ciências da Saúde');
+
 
 -- -----------------------------------------------------
 -- Table `palpit`.`escolaridade`
