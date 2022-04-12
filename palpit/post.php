@@ -44,6 +44,9 @@
         <div class=" post-img border-bottom">
             <img src="<?php echo $dados_arquivo["foto_v"];?>" alt="">
         </div>
+        <div> 
+          <span> <!--Descrição --> </span>
+        </div>
       </section>
     </div>
   </main>
