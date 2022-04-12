@@ -45,12 +45,11 @@
   		}
   		else{
   			//caso nao tenha
-  			$sql = $pdo->prepare("INSERT INTO usuario (nome, email, senha, area, receber, confirmacao,foto_p) VALUES (:n, :e,:s, :a, :r, :c, :fp)");
+  			$sql = $pdo->prepare("INSERT INTO usuario (nome, email, senha, receber, confirmacao, foto_p) VALUES (:n, :e,:s, :r, :c, :fp)");
 	  		$sql->bindValue(":n", $nome);
 	  		$sql->bindValue(":e", $email);
 			//$sql->bindValue(":p", $profissao);
 	  		$sql->bindValue(":s", md5($senha));
-			$sql->bindValue(":a", $area);
 			$sql->bindValue(":r", $receber);
 			$sql->bindValue(":c", $confirmacao);
 			$sql->bindValue(":fp", $foto_p);
@@ -67,7 +66,7 @@
   	  global $pdo;
       global $msgErro;
   		/*verificar se o email e senha estao cadastrados, se sim*/
-  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, sobre, cidade, area, receber, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
+  		$sql= $pdo->prepare("SELECT id_usuario, nome, email, sobre, cidade, receber, foto_p  FROM usuario WHERE email=:e AND senha=:s AND confirmacao=0");
   		$sql->bindValue(":e", $email);
   		$sql->bindValue(":s", md5($senha));
   		$sql->execute();
@@ -81,7 +80,6 @@
 			$_SESSION['email'] = $dado['email'];
 			$_SESSION['sobre'] = $dado['sobre'];
 			$_SESSION['cidade'] = $dado['cidade'];
-			$_SESSION['area'] = $dado['area'];
 			$_SESSION['receber'] = $dado['receber'];
 			$_SESSION['foto_p'] = $dado['foto_p'];
 			return true;  //logado com sucesso

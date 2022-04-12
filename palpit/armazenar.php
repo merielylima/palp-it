@@ -118,7 +118,8 @@
 			}
 
 	$pdo->commit(); //envia uma transação
-	header ("Location: inicio.php"); 
+	$id=$_SESSION['id_arquivo'];
+	header ("Location: post.php?id_arquivo=$id"); 
 
 	}catch(PDOException $exception){
 		$pdo->rollback();  //reverte uma transação
