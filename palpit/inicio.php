@@ -67,11 +67,13 @@
               $fundamental1 = addslashes(isset($_POST['nivel1'])) ? true : null;
               $fundamental2 = addslashes(isset($_POST['nivel2'])) ? true : null;
               $medio = addslashes(isset($_POST['nivel3'])) ? true : null;
+              $superior = addslashes(isset($_POST['nivel4'])) ? true : null;
 
               $nivel="";
               $f1="'Fundamental I'";
               $f2="'Fundamental II'";
               $m="'Médio'";
+              $s="'Superior'";
               $querynivel="";
 
               if($fundamental1==true){
@@ -94,8 +96,28 @@
                 };
               }
 
+              if($superior==true){
+                if($nivel==""){
+                  $nivel="e.nivel=$s";
+                }else{				
+                  $nivel=$nivel." OR "."e.nivel=$s";
+                };
+              }
+
               if($nivel!=""){
-                $querynivel="AND ($nivel)";
+                $querynivel="($nivel) AND";
+              };
+
+              if($disciplina == 'Todas'){
+                $querydisciplina = " ";
+              }else{
+                $querydisciplina = "d.nome_disciplina = '$disciplina' AND";
+              };
+
+              if($busca == ""){
+                $querybusca=" ";
+              }else{
+                $querybusca="a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
               };
 
               $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p
@@ -108,9 +130,9 @@
               INNER JOIN escolaridade e ON e.id_escolaridade=ae.id_escolaridade_fk
               WHERE
                 a.status=0 AND
-                t.key_words LIKE '%$busca%'
-                AND d.nome_disciplina = '$disciplina'
-                $querynivel"
+                $querynivel
+                $querydisciplina
+                $querybusca"
               );
 
               //$sql->bindValue(":b", $busca);
