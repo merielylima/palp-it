@@ -52,15 +52,15 @@
             <div class="label--order">
               <label for="dropdow_order" > Ordenar por: </label>
               <select id="dropdow_order" class="dropdow--order">
-                <option value=""> Populares</option>
-                <option value=""> Novos</option>
-                <option value=""> Antigos</option>
+                <option value="order1"> Novos</option>
+                <option value="order2"> Antigos</option>
+                <option value="order3"> Popuares</option>
               </select>
             </div>
           </div>
         <ol class="flex flex-wrap">
           <?php
-            if(isset($_POST['p_chave']) && isset($_POST['disciplina']) || isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3'])){
+            if(isset($_POST['p_chave']) && isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3']) || isset($_POST['nivel4'])){
               //recuperação das informações formulario
               $busca = addslashes($_POST['p_chave']);
               $disciplina = addslashes($_POST['disciplina']);
@@ -105,17 +105,19 @@
               }
 
               if($nivel!=""){
+                $querynivel="($nivel)";
+              }else{
                 $querynivel="($nivel) AND";
               };
 
-              if($disciplina == 'Todas'){
-                $querydisciplina = " ";
-              }else{
+              if($disciplina != 'Todas'){
                 $querydisciplina = "d.nome_disciplina = '$disciplina' AND";
+              }else{
+                $querydisciplina = "";
               };
 
               if($busca == ""){
-                $querybusca=" ";
+                $querybusca="";
               }else{
                 $querybusca="a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
               };
