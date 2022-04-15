@@ -18,8 +18,8 @@
       <nav class="cartao__container cartao-xxs">
         <!-- Editar perfil = opacity: 0-->
         <form id="perfil-edit" class="hidden" action="alterarperfil.php" method="POST">
-          <div class="info-user mb-3 flex-items-center "> 
-            <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
+          <div class="info-user mb-3 flex-items-center"> 
+            <input id="js-file-uploader" onchange="userPicture(this);" name="profile-picture" type="file" accept="image/png, image/jpeg" />
             <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
             <div class="">
               <label for="user_profile_name" class="input--label  mb-1">Nome</label>
@@ -48,7 +48,8 @@
         <div id="perfil-noedit">
           <div class="info-user mb-3 flex-items-center d-block"> 
             <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
-            <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+            <img class=" mr-3 avatar col-2 flex-shrink-0" src="assets/img/publicacoes/modelo-atomico.png">
+            <!--src=< ?php echo '"'.$_SESSION ['foto_p'].'"'?> -->
             <div class="vcartao-nome">
               <span class="vcard-fullname block"> <?php echo ''.$_SESSION ['nome'].''?></span>
               <span class="vcard-username block"><?php echo ''.$_SESSION ['email'].''?></span>
@@ -112,6 +113,7 @@
     </div> 
   </main>
   <script src="js/atualizar.js"></script>
+  <script src="js/profile.js"></script>
 <?php
 include ("rodape.php");
 ?>

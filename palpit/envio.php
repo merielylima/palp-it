@@ -18,30 +18,30 @@
       </div>
       <form id="form-adiciona" name="envio" action="armazenar.php" enctype='multipart/form-data' method="POST">
       <div class="flex flex-coluna flex--row">
-        <div class="width-full flex py-1">
+        <div class="flex py-1 pr-1 bloco-1">
           <div class="imagem-container">
             <img class="imagem" id="img_prev" src="assets/img/publicacoes/modelo-atomico.png"/>
           </div>
           <div class="pai">
-            <div class="filho 1">
+            <div class="filho">
             <p  class="input--label">Imagem Visual<span class="obrigatorio">*</span></p>
-              <label for="imagem_visual" class=""> 
-                <span class="input--file-button   botao--terciario botao--container">+</span>
-                <span class="input--file-text"> Nenhum arquivo selecionado</span>
+              <label for="imagem_visual" > 
+                <span class="input--file-button botao--terciario botao--container">+</span>
+                <p class="input--file-text"> Nenhum arquivo selecionado</p>
               </label>
               <input id="imagem_visual" accept="image/*" onchange="readURL(this);" name="imagem_visual" type="file" class="input--file" required/>
             </div>
-            <div class="filho 2" >
+            <div class="filho" >
               <p class="input--label">Arquivo Tátil<span class="obrigatorio">*</span></p>
-              <label for="imagem_tatil" class=""> 
+              <label for="imagem_tatil"> 
                 <span class="input--file-button botao--terciario botao--container">+</span>
-                <span class="input--file-text"> Nenhum arquivo selecionado</span>
+                <p class="input--file-text"> Nenhum arquivo selecionado</p>
               </label>
               <input id="imagem_tatil" name="imagem_tatil" type="file" class="input--file" required/>
             </div>
           </div>
         </div>
-        <div class="width-full  py-1">
+        <div class="width-full py-1 bloco-2">
           <div>
             <label for="titulo"  class="input--label"> Título<span class="obrigatorio">*</span> </label>
             <input id="titulo" name="titulo" class="input width-full input-envio" type="text" placeholder="ex: Mapa do Brasil" minlength="6" required> 
@@ -59,8 +59,7 @@
           </div>
         </div>
       </div>
-
-        <div id="conteudo" class="flex py-1">
+      <div id="conteudo" class="flex py-1 ">
           <div class="input-container ">
             <label for="nivel" class="input--label"> Grau de escolaridade <span class="obrigatorio">*</span></label>
             <select name="nivel" id="nivel" class="input-envio option input">

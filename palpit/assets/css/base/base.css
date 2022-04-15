@@ -155,10 +155,11 @@ body {
 	.container-xl{
 		margin-top: 1rem;
 	}
-}
-@media screen and (min-width:  1024px) {
-
 	.container--titulo{
 		font-size: 22px;
 	}
+}
+@media screen and (min-width:  1024px) {
+
+	
 }
