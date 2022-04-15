@@ -4,7 +4,9 @@ require_once 'classes/usuarios.php';
 include "email.php";
 
 $u = new Usuarios;
-session_start();
+//$u -> conectar();
+
+//session_start();
 
 //verificar se variavel foi iniciada
 if(isset($_POST['nome'])){
@@ -22,8 +24,17 @@ if(isset($_POST['nome'])){
 		if ($u->msgErro==""){
     		$pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);//Ativa o lançamento de exceptions para erros
 			$pdo->beginTransaction(); //inicia uma transação
-			if ($u->cadastrar($nome, $email, $senha, $area, $receber, $confirmacao)){					
-
+			if ($u->cadastrar($nome, $email, $senha, $receber, $confirmacao)){					
+				/*$interesse = $pdo->prepare("SELECT id_area FROM area WHERE nome_area=:na");
+				$interesse->bindValue(":na", $area);
+				$interesse->execute();
+				$resultado = $interesse->fetchAll(PDO::FETCH_OBJ);
+				$id_area =(int)$resultado[0]->id_area;
+				$id_usuario = $pdo->lastInsertId();
+				$assoc_a = $pdo->prepare("INSERT INTO assoc_area (id_usuario_fk, id_area_fk) VALUES (:ufk, :afk)");
+				$assoc_a->bindValue(":ufk", $id_area);
+				$assoc_a->bindValue(":afk", $id_usuario);
+				$assoc_a->execute();*/
 				//$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://localhost/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
 				$enviaremail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Email de confirmação PALP-it', 'Clique no link para confirmar o seu email http://rnaat.ufpa.br/palp-it/palpit/confirmacao.php?codigo='.$confirmacao.'&email='.$_POST ['email']);
 					if ($enviaremail) {

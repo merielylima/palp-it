@@ -29,7 +29,7 @@
   		}
   	}
 
-  	public function cadastrar($nome, $email, $senha, $area, $receber, $confirmacao){
+  	public function cadastrar($nome, $email, $senha, $receber, $confirmacao){
       error_reporting(E_ALL);
       ini_set('display_errors',1);
   	  global $pdo;
