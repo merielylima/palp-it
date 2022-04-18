@@ -35,12 +35,18 @@
     display: flex;
     min-width: 5rem;
     max-width: 100rem;
+    width: 10rem;
 }
+.botao-aviso{
+    margin-right: 0.5rem;
+}
+
 .botao-aviso:hover{
     color: var(--cor-aviso);
     background-color: var(--cor-aviso-fundo);
     box-shadow: var(--borda-aviso);
     border: none;
+   
 }
 @media screen and (min-width: 1024px) {
     .botao--container{

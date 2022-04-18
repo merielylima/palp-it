@@ -26,7 +26,7 @@
         <div class="flex space-between">
           <div class="flex">
             <img src="<?php echo $dados_arquivo["foto_p"];?>" class="user-img" >
-            <div class="flex flex-coluna ">
+            <div class="flex flex-coluna bloco-inf">
               <span class="user-name"> <?php echo $dados_arquivo["nome"];?> </span>
               <span class="post-date"> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
             </div>

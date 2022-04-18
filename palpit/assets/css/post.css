@@ -12,3 +12,7 @@
 .btn-download:hover{
     background-color: var(--azul-5)
 }
+.bloco-inf{
+    padding-left: 0.5rem;
+    justify-content: center;
+}
