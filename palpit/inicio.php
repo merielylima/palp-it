@@ -60,7 +60,7 @@
           </div>
         <ol class="flex flex-wrap">
           <?php
-            if(isset($_POST['p_chave']) && isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3']) || isset($_POST['nivel4'])){
+            if(isset($_POST['p_chave']) || isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3']) || isset($_POST['nivel4'])){
               //recuperação das informações formulario
               $busca = addslashes($_POST['p_chave']);
               $disciplina = addslashes($_POST['disciplina']);
@@ -104,8 +104,8 @@
                 };
               }
 
-              if($nivel!=""){
-                $querynivel="($nivel)";
+              if($nivel==""){
+                $querynivel=$nivel;
               }else{
                 $querynivel="($nivel) AND";
               };
