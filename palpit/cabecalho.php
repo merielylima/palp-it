@@ -60,8 +60,8 @@ $f = new Functions;
                     </button>
                     <div id="myDropdown" class="caixa user__menu "> 
                         <ul>
-                            <li><a href="perfil.php?editar=1" >Editar Perfil</a></li>
-                            <li><a href="logout.php" class="">Sair</a></li>
+                            <li class="caixa-item"><a href="perfil.php?editar=1" >Editar Perfil</a></li>
+                            <li class="caixa-item"><a href="logout.php" class="">Sair</a></li>
                         </ul>
                     </div>
                 </div>
@@ -94,7 +94,7 @@ $f = new Functions;
                         <li> 
                             <a href="login.php"class="botao--container"> Entrar </a>
                         </li>
-                        <li> 
+                        <li > 
                             <a href="cadastro.php"  class="botao--container border " > Criar conta </a>
                         </li>
                     </ul>

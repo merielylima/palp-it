@@ -75,6 +75,7 @@
   padding-left: 0.5rem;
 }
 .imagem{
+  cursor: pointer;
   object-fit: cover;
   object-position: center;
   display: block;
@@ -84,7 +85,6 @@
 }
 
 .imagem-container{
-
   height: 100%;
   min-width: 17rem;
   width: 50%;
@@ -163,6 +163,8 @@
   }
   .imagem-container{
     margin: 0 auto;
+    height: 251px;
+
   }
   .pai{
     margin-top: 0.25rem;

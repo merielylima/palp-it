@@ -68,15 +68,6 @@ function readURL(input) {
     }
 }
 
-function enviarFormulario () {
-    if (linha == 0) {
-        alert ("Adicione pelo menos uma disciplina");
-        return;
-    }
-    var form = document.getElementById ("form-adiciona");
-    form.submit ();
-}
-
 function voltarPrincipal () {
     window.location.href = "index.php";
 }
@@ -102,3 +93,11 @@ fileInput.addEventListener('change', function (e) {
 });
 
 
+function enviarFormulario () {
+    if (linha == 0) {
+        alert ("Adicione pelo menos uma disciplina");
+        return;
+    }
+    var form = document.getElementById ("form-adiciona");
+    form.submit ();
+}

@@ -60,7 +60,9 @@ if(isset($_POST['nome'])){
 										<div class="flex flex-coluna px-3">
 											<section class=" cartao__container cartao-xs">
 												<div class="border-bottom">
-													<img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
+													<a href="inicio.php">
+														<img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
+													</a> 
 													<h2 class="container--titulo">Falta pouco...</h2>
 												</div>
 												<p class="cartao-xs__txt my-3">  Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link" > <?php echo $email ?> </a>. </p>

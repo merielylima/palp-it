@@ -19,8 +19,15 @@
         <!-- Editar perfil = opacity: 0-->
         <form id="perfil-edit" class="hidden" action="alterarperfil.php" method="POST">
           <div class="info-user mb-3 flex-items-center"> 
-            <input id="js-file-uploader" onchange="userPicture(this);" name="profile-picture" type="file" accept="image/png, image/jpeg" />
-            <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+            <div class="avt-container">
+              <label for="avatar" >
+                <div class="avt-content avt-hover_container">
+                  <span class="avt-hover"> Atualizar <br/> foto de perfil</span>
+                  <img id="js-file-uploader" class="avt"  class="avt" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+                </div> 
+              </label>
+              <input id="avatar" multiple accept=".jpg, .jpeg, .png" onchange="userPicture(this);" type="file" class=" input--img input-hidden"/>   
+            </div>
             <div class="">
               <label for="user_profile_name" class="input--label  mb-1">Nome</label>
               <input class="input width-full " id="user_profile_name" name="user_profile_name" value="<?php echo ''.$_SESSION ['nome'].''?>">
@@ -41,17 +48,21 @@
             </label>
           </div>
           <div class="flex flex--row width-full">
-            <button type="reset" id="btn-cancel" class="botao--container botao--secundario width-full mr-3 ml-3">Cancelar</button>  
-            <button type="submit" id="btn-save" class="botao--container botao--primario mr-3 width-full">Salvar</button>  
+            <button type="reset" id="btn-cancel" class="botao--container botao--secundario width-full mr-2 ">Cancelar</button>  
+            <button type="submit" id="btn-save" class="botao--container botao--primario  width-full">Salvar</button>  
           </div>
         </form> 
         <div id="perfil-noedit">
           <div class="info-user mb-3 flex-items-center d-block"> 
-            <input id="js-file-uploader" class="hidden" name="profile-picture" type="file" accept="image/png, image/jpeg" />
-            <img class=" mr-3 avatar col-2 flex-shrink-0" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+          <div class="avt-container">
+              <div class="avt-content">
+                <img id="js-file-uploader" class="avt" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+              </div> 
+            </div>
+
             <div class="vcartao-nome">
               <span class="vcard-fullname block"> <?php echo ''.$_SESSION ['nome'].''?></span>
-              <span class="vcard-username block"><?php echo ''.$_SESSION ['email'].''?></span>
+              <span class="vcard-username block"> <?php echo ''.$_SESSION ['email'].''?></span>
             </div>
           </div>
           <div>
@@ -68,7 +79,7 @@
       </nav>
       <section class="cartao-xxl  cartao__container relative">
         <div class="cartao-header"> 
-            <h2 class="container--titulo"> Resultados de filtro</h2>
+            <h2 class="container--titulo"> Suas publicações</h2>
             <div class="label--order">
               <label for="dropdow_order" > Ordenar por: </label>
               <select id="dropdow_order" class="dropdow--order">

@@ -20,15 +20,18 @@
       <form id="form-adiciona" name="envio" action="armazenar.php" enctype='multipart/form-data' method="POST">
         <div class="flex flex-coluna flex--row">
           <div class="flex py-1 pr-1 bloco-1">
-            <div class="imagem-container ">
-              <img class="imagem" id="img_prev" src="assets/img/visual/default.svg"/>
+            <div class="imagem-container">
+              <label for="imagem_visual" >
+                <img class="imagem" id="img_prev" src="assets/img/visual/default.svg"/>
+              </label>
+              <input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" required/>  
             </div>
             <div class="pai">
               <div class="filho">
-              <p class="input--label lb-envio">Imagem Visual<span class="obrigatorio">*</span></p>
+                <p class="input--label lb-envio">Imagem Visual<span class="obrigatorio">*</span></p>
                 <label for="imagem_visual" >
                   <span class="input--file-button botao--terciario botao--container"> Enviar imagem</span>
-                  <div class=" input-text input--img-text "> Nenhum arquivo selecionado</div>
+                  <p class=" input-text input--img-text "> Nenhum arquivo selecionado</p>
                 </label>
                 <input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" required/>
               </div>
