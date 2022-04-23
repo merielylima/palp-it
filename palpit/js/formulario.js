@@ -80,6 +80,17 @@ function enviarFormulario () {
 function voltarPrincipal () {
     window.location.href = "index.php";
 }
+/** Alterar texto caminho imagem */
+var imgInput = document.querySelector('.input--img');
+var imgInputText = document.querySelector('.input--img-text');
+imgInputTextContent = imgInputText.textContent;
+
+imgInput.addEventListener('change', function (e) {
+	var value = e.target.value.length > 0 ? e.target.value : imgInputTextContent;
+	imgInputText.textContent = value.replace('C:\\fakepath\\', '');
+});
+
+/** Alterar texto caminho arquivo */
 
 var fileInput = document.querySelector('.input--file');
 var fileInputText = document.querySelector('.input--file-text');
@@ -89,3 +100,5 @@ fileInput.addEventListener('change', function (e) {
 	var value = e.target.value.length > 0 ? e.target.value : fileInputTextContent;
 	fileInputText.textContent = value.replace('C:\\fakepath\\', '');
 });
+
+

@@ -21,24 +21,24 @@
         <div class="flex flex-coluna flex--row">
           <div class="flex py-1 pr-1 bloco-1">
             <div class="imagem-container ">
-              <img class="imagem" id="img_prev" src="assets/img/publicacoes/modelo-atomico.png"/>
+              <img class="imagem" id="img_prev" src="assets/img/visual/default.svg"/>
             </div>
             <div class="pai">
               <div class="filho">
-              <p  class="input--label">Imagem Visual<span class="obrigatorio">*</span></p>
-                <label for="imagem_visual" > 
-                  <span class="input--file-button botao--terciario botao--container">+</span>
-                  <p class="input--file-text"> Nenhum arquivo selecionado</p>
+              <p class="input--label lb-envio">Imagem Visual<span class="obrigatorio">*</span></p>
+                <label for="imagem_visual" >
+                  <span class="input--file-button botao--terciario botao--container"> Enviar imagem</span>
+                  <div class=" input-text input--img-text "> Nenhum arquivo selecionado</div>
                 </label>
-                <input id="imagem_visual" accept="image/*" onchange="readURL(this);" name="imagem_visual" type="file" class="input--file" required/>
+                <input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" required/>
               </div>
               <div class="filho" >
-                <p class="input--label">Arquivo Tátil<span class="obrigatorio">*</span></p>
+                <p class="input--label lb-envio">Arquivo Tátil<span class="obrigatorio">*</span></p>
                 <label for="imagem_tatil"> 
-                  <span class="input--file-button botao--terciario botao--container">+</span>
-                  <p class="input--file-text"> Nenhum arquivo selecionado</p>
+                  <span class="input--file-button botao--terciario botao--container"> Enviar arquivo</span>
+                  <p class="input-text input--file-text"> Nenhum arquivo selecionado</p>
                 </label>
-                <input id="imagem_tatil" name="imagem_tatil" type="file" class="input--file" required/>
+                <input id="imagem_tatil" accept=".rar, .zip" name="imagem_tatil" type="file" class="input--file input-hidden" required/>
               </div>
             </div>
           </div>
@@ -49,7 +49,7 @@
                 <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
             <div>
-              <label for="p_chave"  class="input--label" > Palavras-chave <span class="obrigatorio">*</span></label>
+              <label for="p_chave"  class="input--label " > Palavras-chave <span class="obrigatorio">*</span></label>
               <textarea id="p_chave" name="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil; " minlength="6" required></textarea>
               <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>

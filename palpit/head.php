@@ -32,7 +32,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   <link rel="stylesheet" href="./assets/css/base/padding.css">
   <link rel="stylesheet" href="./assets/css/base/margin.css">
 
- 
   <title>Palp-it</title>
   <script>
   function logar(){
@@ -71,6 +70,5 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         }
       }
     });
-  }
-</script>
+  }</script>
 </head>

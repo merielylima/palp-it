@@ -40,30 +40,26 @@
     outline: none;
     margin: auto;
 }
-
-.row--file{
-	position: relative;
-	overflow: hidden;
-	white-space: nowrap;
-  cursor: pointer;
-  align-items: center;
-}
-
-.input--file{
-	opacity: 0;
+.input-hidden{
+  opacity: 0;
 	visibility: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
-.input--file-text{
+
+
+.input-text{
+  height: 24px;
+  padding-top: 0.25rem;
   padding-left:0.5rem;
   color: var(--cinza-3);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
 
-}
-.input--file-button{
-	
-}
+
 .obrigatorio{
   color: var(--cor-aviso);
   margin-left: 0.25rem;
@@ -88,6 +84,7 @@
 }
 
 .imagem-container{
+
   height: 100%;
   min-width: 17rem;
   width: 50%;
@@ -95,16 +92,20 @@
   border: 1px solid var(--cinza-4);
 }
 .pai{
+  height: 100%;
   width: 50%;
   padding-left: 0.5rem;
+  overflow: hidden;
   padding-right: 0.5rem;
 }
 .filho{
   height: 50%;
 }
 .input--file-button{
-  height: 70%;
+  height: 78px;
+  margin-top: 0.25rem;
 }
+
 .btn-adc{
   width: 100%;
   margin-bottom: 0.25rem;
@@ -155,10 +156,16 @@
 @media screen and (max-width: 550px) {
   .bloco-1{
     flex-direction: column  ;
-    height: 451px;
-    
+    height: 464px;
+  }
+  .input--file-button{
+    height: 55%;
   }
   .imagem-container{
-    height: 251px;
+    margin: 0 auto;
+  }
+  .pai{
+    margin-top: 0.25rem;
+    padding-left: unset;
   }
 }
