@@ -94,6 +94,28 @@ fileInput.addEventListener('change', function (e) {
 
 
 function enviarFormulario () {
+    var imgVisual = document.getElementById("imagem_visual");
+    var imgTatil = document.getElementById("imagem_tatil");
+    var titulo = document.getElementById("titulo");
+    var pChave = document.getElementById("p_chave"); 
+
+    if (imgVisual.value == ""){
+        alert ("Adicione uma imagem visual");
+        return;
+    }
+    if (imgTatil.value == ""){
+        alert ("Adicione o arquivo tatil");
+        return;
+    }
+
+    if (titulo.value == ""){
+        alert ("Adicione um titulo");
+        return;
+    }
+    if (pChave.value == ""){
+        alert ("Adicione uma palavra chave");
+        return;
+    }
     if (linha == 0) {
         alert ("Adicione pelo menos uma disciplina");
         return;

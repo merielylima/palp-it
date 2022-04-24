@@ -47,12 +47,12 @@ $f = new Functions;
                 </nav>
             </div>
             <div class="items-xl cabecalho__right-side flex">
-                <div class=" botao-cabecalho botao--container border">
-                    <a href="envio.php">
-                    <span class="material-icons-outlined">add</span> 
-                    Novo envio
-                    </a>
-                </div>
+                <a href="envio.php">
+                    <div class=" botao-cabecalho botao--container border">
+                        <span class="material-icons-outlined">add</span> 
+                        Novo envio
+                    </div>
+                </a>
                 <span class="material-icons-outlined notifications">notifications_none </span>
                 <img class="user__menu--photo" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
                 <div class="dropdown">

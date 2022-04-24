@@ -48,12 +48,12 @@
           <div class="width-full py-1 bloco-2">
             <div>
               <label for="titulo"  class="input--label"> Título<span class="obrigatorio">*</span> </label>
-              <input id="titulo" name="titulo" class="input width-full input-envio" type="text" placeholder="ex: Mapa do Brasil" minlength="6" > 
+              <input id="titulo" name="titulo" class="input width-full input-envio" type="text" placeholder="ex: Mapa do Brasil" > 
                 <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
             <div>
               <label for="p_chave"  class="input--label " > Palavras-chave <span class="obrigatorio">*</span></label>
-              <textarea id="p_chave" name="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil; " minlength="6" ></textarea>
+              <textarea id="p_chave" name="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil;  "></textarea>
               <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
             <div>
@@ -110,7 +110,7 @@
         </table>
         <div class="py-1 flex flex--end ">
           <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio botao-aviso"> Cancelar </A>
-          <button type="submit" class="botao--container botao--primario botao-envio "> Enviar </button>
+          <button onclick="enviarFormulario()" type="button" class="botao--container botao--primario botao-envio "> Enviar </button>
         </div>
       </form>
     </section>

@@ -8,7 +8,7 @@
   
 	//recuperação das informações formulario
 	$titulo = addslashes($_POST['titulo']);
-	$descricao = addslashes($_POST['descricao']);
+	$descricao = addslashes(isset($_POST['descricao']));
 	$tag = addslashes($_POST['p_chave']);
 	$foto_v;
 	$foto_t;
