@@ -17,7 +17,7 @@
     <div class="flex flex-coluna flex--row flex-start p-os">
       <nav class="cartao__container cartao-xxs">
         <!-- Editar perfil = opacity: 0-->
-        <form id="perfil-edit" class="hidden" action="alterarperfil.php" method="POST">
+        <form id="perfil-edit" class="hidden" action="alterarperfil.php" enctype='multipart/form-data' method="POST">
           <div class="info-user mb-3 flex-items-center"> 
             <div class="avt-container">
               <label for="avatar" >
@@ -26,7 +26,7 @@
                   <img id="js-file-uploader" class="avt"  class="avt" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
                 </div> 
               </label>
-              <input id="avatar" multiple accept=".jpg, .jpeg, .png" onchange="userPicture(this);" type="file" class=" input--img input-hidden"/>   
+              <input id="avatar" multiple accept=".jpg, .jpeg, .png" onchange="userPicture(this);" name="avatar" type="file" class=" input--img input-hidden"/>   
             </div>
             <div class="">
               <label for="user_profile_name" class="input--label  mb-1">Nome</label>

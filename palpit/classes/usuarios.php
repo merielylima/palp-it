@@ -136,17 +136,18 @@
 
 	}
 
-	public function alterarperfil($nome, $sobre, $cidade,$receber){
+	public function alterarperfil($nome,$sobre,$cidade,$receber,$foto_p){
 		error_reporting(E_ALL);
         ini_set('display_errors',1);
 		global $pdo;
 		global $msgErro;
 						
-		$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c, receber = :r WHERE id_usuario = :id");
+		$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c, receber = :r, foto_p = :fp WHERE id_usuario = :id");
 		$sql->bindValue(":n", $nome);
-	  	$sql->bindValue(":s", $sobre);
+		$sql->bindValue(":s", $sobre);
 		$sql->bindValue(":c", $cidade);
 		$sql->bindValue(":r", $receber);
+		$sql->bindValue(":fp", $foto_p);
 	  	$sql->bindValue(":id", $_SESSION['id_usuario']);
 		$sql->execute();
 
@@ -155,6 +156,7 @@
 		$_SESSION['sobre'] = $sobre;
 		$_SESSION['cidade'] = $cidade;
 		$_SESSION['receber'] = $receber;
+		$_SESSION['foto_p'] = $foto_p;
 
 	  	return true;  
 

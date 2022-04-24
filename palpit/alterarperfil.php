@@ -8,12 +8,23 @@
   
 	//recuperação das informações formulario
 	$nome = addslashes($_POST['user_profile_name']);
-	$sobre = addslashes($_POST['user_profile_bio']);
+  $sobre = addslashes($_POST['user_profile_bio']);
 	$cidade = addslashes($_POST['cidade']);
   $receber = addslashes(isset($_POST['receber'])) ? true : null;
+  $foto_p;
 
+    if (isset ($_FILES ['avatar']) && $_FILES ['avatar']['name'] != '') {
+      $foto_p = "assets/img/visual/".time().'_'.basename ($_FILES ['avatar']['name']);
+    }
+    else{
+      return -1;
+    }
 
-    $u->alterarperfil($nome,$sobre,$cidade,$receber);
+    if (isset ($_FILES ['avatar']) && $_FILES ['avatar']['name'] != '') {
+      move_uploaded_file ($_FILES ['avatar']['tmp_name'], $foto_p);
+    }
+
+    $u->alterarperfil($nome,$sobre,$cidade,$receber,$foto_p);
     
     header("Location: perfil.php");
 
