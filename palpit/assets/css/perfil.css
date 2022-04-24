@@ -9,6 +9,7 @@
 }
 .msg-alternativa{
   color: var(--cinza-3);
+  font-weight: 300;
 }
 .avt-container{
   margin: auto;
@@ -72,14 +73,14 @@
 
 
 .vcard-fullname{
-  font-size: 26px;
-  line-height: 1.25;
+  font-size: 24px;
+  line-height: 1;
 }
 .vcard-username{
   color: var(--cinza-2);
-  font-size: 20px;
+  font-size: 18px;
   font-weight: var( --fonte-peso-light);
-  line-height: 24px;
+  line-height: 1;
 }
 
 
@@ -103,6 +104,6 @@
   width: 100%;
 }
 .vcartao-nome{
-  padding: 1rem 0;
+  padding-top: 0.5rem;
 }
 }

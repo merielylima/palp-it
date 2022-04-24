@@ -32,7 +32,7 @@
             </div>  
             <div class="flex flex-coluna bloco-inf">
               <span class="item-user"> <?php echo $dados_arquivo["nome"];?> </span>
-              <span class=""> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
+              <span class="post-data"> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
             </div>
           </div>
           <div class="btn-order">
@@ -48,7 +48,7 @@
           <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
           <span> <?php echo $dados_arquivo["disciplinas"];?> </span>
           <span> <?php echo $dados_arquivo["tags"];?> </span>
-          <span> <?php echo $dados_arquivo["escolaridade"];?> </span>
+          <span class="msg-alternativa"> <?php echo $dados_arquivo["escolaridade"];?> </span>
 
           <div class=" post-img_container">
             <img class=" post-img" src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
