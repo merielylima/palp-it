@@ -36,10 +36,10 @@
                 <input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" />
               </div>
               <div class="filho" >
-                <p class="input--label lb-envio">Arquivo Tátil<span class="obrigatorio">*</span></p>
+                <p class="input--label lb-envio">Arquivo Tátil<span class="obrigatorio">*</span> </p>
                 <label for="imagem_tatil"> 
                   <span class="input--file-button botao--terciario botao--container"> Enviar arquivo</span>
-                  <p class="input-text input--file-text"> Nenhum arquivo selecionado</p>
+                  <p class="input-text input--file-text"> Nenhum arquivo selecionado </p>
                 </label>
                 <input id="imagem_tatil" accept=".rar, .zip" name="imagem_tatil" type="file" class="input--file input-hidden" />
               </div>

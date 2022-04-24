@@ -7,10 +7,18 @@
 .btn-download{
     color: var(--azul-1);
     font-weight: var(--fonte-peso-medium);
-
 }
 .btn-download:hover{
+    color: var(--azul-1);
     background-color: var(--azul-5)
+}
+.btn-excluir{
+    color: var(--cinza-2);
+    font-weight: var(--fonte-peso-medium);
+}
+.btn-excluir:hover{
+    color: var(--cor-aviso);
+    background-color: var(--cor-aviso-fundo);
 }
 .bloco-inf{
     padding-left: 0.5rem;

@@ -31,9 +31,14 @@
               <span class="post-date"> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
             </div>
           </div>
-          <button class="botao--container btn-download">
-            <span class="material-icons-outlined">file_download </span> Download
-          </button>
+          <div class="flex ">
+            <button class="botao--container btn-excluir">
+              <span class="material-icons-outlined">delete </span> Excluir
+            </button>
+            <button class="botao--container btn-download">
+              <span class="material-icons-outlined">file_download </span> Download
+            </button>
+            </div>
         </div>
         <h2 class="cartao-header container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
         <div>
