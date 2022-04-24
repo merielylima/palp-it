@@ -24,7 +24,7 @@
             <?php 
               $usuario = $_SESSION['id_usuario'];
               $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
-              INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE a.status=1 AND u.id_usuario LIKE '$usuario'");
+              INNER JOIN usuario u ON u.id_usuario=a.id_usuario_fk WHERE a.status=0 AND u.id_usuario LIKE '$usuario'");
               $sql->execute();
               while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
