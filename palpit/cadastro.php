@@ -64,7 +64,7 @@
                 </div>
             </section>
             <section class=" cartao__container cartao-xs">
-                <p> Já é membro?</p> <a href="login.php" class="link link-externo"> Entre já </a>
+                <p> Já é membro?</p> <a href="login.php" class="link link-color link-externo"> Entre já </a>
             </section>
         </div>
     </main>
