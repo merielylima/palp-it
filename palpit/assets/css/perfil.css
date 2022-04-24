@@ -7,6 +7,9 @@
 .item{
   margin: 0.5rem;
 }
+.msg-alternativa{
+  color: var(--cinza-3);
+}
 .avt-container{
   margin: auto;
   width: 237px;

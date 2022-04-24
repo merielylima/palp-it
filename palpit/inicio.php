@@ -48,7 +48,7 @@
       </nav>
       <section class=" cartao-xxl cartao__container ">
           <div class="cartao-header"> 
-            <h2 class="container--titulo"> Resultados de filtro</h2>
+            <h2 class="container--titulo"> Publicações</h2>
             <div class="label--order">
               <label for="dropdow_order" > Ordenar por: </label>
               <select id="dropdow_order" class="dropdow--order">
@@ -155,7 +155,11 @@
                   <span class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>
                 <div class="link-container flex flex-items-center "> 
-                  <img src=<?php echo $lista["foto_p"];?> alt="Foto de perfil">
+                <div class="avt-container avt-cab">
+                    <div class="avt-content">
+                        <img class="avt" src=<?php echo $lista["foto_p"];?> alt="Foto de perfil">
+                    </div>
+                  </div> 
                   <span class="item-user"><?php echo $lista["nome"];?></span>
                   <span class="hidden"><?php echo $lista["criado_arquivo"];?></span>
                 </div> 

@@ -28,21 +28,33 @@
               </label>
               <input id="avatar" multiple accept=".jpg, .jpeg, .png" onchange="userPicture(this);" name="avatar" type="file" class=" input--img input-hidden"/>   
             </div>
-            <div class="">
-              <label for="user_profile_name" class="input--label  mb-1">Nome</label>
+            <div class="mb-1">
+              <label for="user_profile_name" class="input--label  ">Nome</label>
               <input class="input width-full " id="user_profile_name" name="user_profile_name" value="<?php echo ''.$_SESSION ['nome'].''?>">
             </div>
           </div>
-          <div class="flex flex-coluna">
-            <label for="user_profile_bio" class="input--label  mb-1">Sobre</label>
+          <div class="mb-1 flex flex-coluna">
+            <label for="user_profile_bio" class="input--label  ">Sobre</label>
             <textarea class="input  textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você" aria-label="Add a bio" rows="3" data-input-max-length="160"><?php echo ''.$_SESSION ['sobre'].''?></textarea>
           </div>
-          <div class="">
-              <label for="" class="input--label  mb-1">Cidade</label>
+          <div class=" mb-1">
+              <label for="" class="input--label ">Cidade</label>
               <input class="input width-full " id="cidade"  name="cidade" value="<?php echo ''.$_SESSION ['cidade'].''?>">
-            </div>
-          <div class="my-2 line1">
-            <label class="checkbox--label ">
+          </div>
+          <div> 
+            <label id="area" class="input--label">Área de interesse</label>
+            <select class="option input input-full" name="area">
+              <?php
+                $getarea = $pdo->prepare("SELECT * FROM area ORDER BY id_area");
+                $getarea->execute();
+                while($rows = $getarea->fetch(PDO::FETCH_ASSOC)){
+                $nome_area = $rows['nome_area'];
+                $area_id = $rows['id_area'];
+                echo "<option value='$nome_area'>$nome_area</option>";
+                }
+              ?>
+            </select>
+            <label class="checkbox--label">
               <input type="checkbox" id="receber" name="receber" <?php if($_SESSION ['receber'] == "t"){ echo "checked";}?>> 
               Receber uma notificação por email quando um novo gráfico da minha área de interesse for postado.
             </label>
@@ -54,7 +66,7 @@
         </form> 
         <div id="perfil-noedit">
           <div class="info-user mb-3 flex-items-center d-block"> 
-          <div class="avt-container">
+            <div class="avt-container">
               <div class="avt-content">
                 <img id="js-file-uploader" class="avt" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
               </div> 

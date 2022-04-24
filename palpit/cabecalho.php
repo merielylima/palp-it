@@ -54,7 +54,11 @@ $f = new Functions;
                     </div>
                 </a>
                 <span class="material-icons-outlined notifications">notifications_none </span>
-                <img class="user__menu--photo" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
+                <div class="avt-container avt-cab">
+                    <div class="avt-content">
+                        <img class="avt " src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
+                    </div>
+                </div>
                 <div class="dropdown">
                     <button onclick="myFunction()" class="dropbtn material-icons-outlined"> expand_more  
                     </button>

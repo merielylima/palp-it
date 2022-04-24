@@ -40,6 +40,10 @@
 .p-os{
 	padding: 0 0.5rem;
 }
+.pt-1{
+	padding-top: 0.25rem;
+}
+
 
 @media screen and (min-width: 450px) {
 	.p-isl{

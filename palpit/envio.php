@@ -52,7 +52,7 @@
                 <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
             <div>
-              <label for="p_chave"  class="input--label " > Palavras-chave <span class="obrigatorio">*</span></label>
+              <label for="p_chave"  class="input--label" > Palavras-chave <span class="obrigatorio">*</span></label>
               <textarea id="p_chave" name="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil;  "></textarea>
               <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>

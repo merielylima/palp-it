@@ -20,18 +20,22 @@
     $sql->execute();
     $dados_arquivo = $sql->fetch(PDO::FETCH_ASSOC);
 ?>
-  <main  class="center container-xx" >
+  <main  class="center post-container" >
     <div class="p-os"> 
       <section class="cartao__container cartao-xl width-full">
-        <div class="flex space-between">
+        <div class="cartao-header my-0 reverse">
           <div class="flex">
-            <img src="<?php echo $dados_arquivo["foto_p"];?>" class="user-img" >
+            <div class="avt-container avt-post">
+              <div class="avt-content">
+                <img id="js-file-uploader" class="avt" src="<?php echo $dados_arquivo["foto_p"];?>" class="user-img" >
+              </div>
+            </div>  
             <div class="flex flex-coluna bloco-inf">
-              <span class="user-name"> <?php echo $dados_arquivo["nome"];?> </span>
-              <span class="post-date"> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
+              <span class="item-user"> <?php echo $dados_arquivo["nome"];?> </span>
+              <span class=""> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
             </div>
           </div>
-          <div class="flex ">
+          <div class="btn-order">
             <button class="botao--container btn-excluir">
               <span class="material-icons-outlined">delete </span> Excluir
             </button>
@@ -40,17 +44,16 @@
             </button>
             </div>
         </div>
-        <h2 class="cartao-header container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
-        <div>
+        <div class="flex flex-coluna border-bottom my-0">
+          <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
           <span> <?php echo $dados_arquivo["disciplinas"];?> </span>
           <span> <?php echo $dados_arquivo["tags"];?> </span>
           <span> <?php echo $dados_arquivo["escolaridade"];?> </span>
-        </div>
-        <div class=" post-img border-bottom">
-            <img src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
-        </div>
-        <div> 
-          <span> <?php echo $dados_arquivo["descricao"];?></span>
+
+          <div class=" post-img_container">
+            <img class=" post-img" src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
+          </div>
+          <span class="mb-2 post-descricao"> <?php echo $dados_arquivo["descricao"];?></span>
         </div>
       </section>
     </div>

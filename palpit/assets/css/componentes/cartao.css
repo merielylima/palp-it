@@ -47,7 +47,6 @@
 }
 .item-user{
     font-size: var(--fonte-tamanho-secundaria);
-    margin-left: 0.5rem;
 }
 .post span{
     line-height: 1.5rem;
