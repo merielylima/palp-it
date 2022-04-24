@@ -24,7 +24,7 @@
               <label for="imagem_visual" >
                 <img class="imagem" id="img_prev" src="assets/img/visual/default.svg"/>
               </label>
-              <input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" required/>  
+              <!--<input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" required/> --> 
             </div>
             <div class="pai">
               <div class="filho">
@@ -33,7 +33,7 @@
                   <span class="input--file-button botao--terciario botao--container"> Enviar imagem</span>
                   <p class=" input-text input--img-text "> Nenhum arquivo selecionado</p>
                 </label>
-                <input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" required/>
+                <input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" />
               </div>
               <div class="filho" >
                 <p class="input--label lb-envio">Arquivo Tátil<span class="obrigatorio">*</span></p>
@@ -41,19 +41,19 @@
                   <span class="input--file-button botao--terciario botao--container"> Enviar arquivo</span>
                   <p class="input-text input--file-text"> Nenhum arquivo selecionado</p>
                 </label>
-                <input id="imagem_tatil" accept=".rar, .zip" name="imagem_tatil" type="file" class="input--file input-hidden" required/>
+                <input id="imagem_tatil" accept=".rar, .zip" name="imagem_tatil" type="file" class="input--file input-hidden" />
               </div>
             </div>
           </div>
           <div class="width-full py-1 bloco-2">
             <div>
               <label for="titulo"  class="input--label"> Título<span class="obrigatorio">*</span> </label>
-              <input id="titulo" name="titulo" class="input width-full input-envio" type="text" placeholder="ex: Mapa do Brasil" minlength="6" required> 
+              <input id="titulo" name="titulo" class="input width-full input-envio" type="text" placeholder="ex: Mapa do Brasil" minlength="6" > 
                 <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
             <div>
               <label for="p_chave"  class="input--label " > Palavras-chave <span class="obrigatorio">*</span></label>
-              <textarea id="p_chave" name="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil; " minlength="6" required></textarea>
+              <textarea id="p_chave" name="p_chave" class="input textarea width-full input-envio" type="text" placeholder="ex: geografia; mapa-do-brasil; " minlength="6" ></textarea>
               <!-- <span class="input-message-erro"> Este campo não está válido</span> -->
             </div>
             <div>
@@ -110,7 +110,7 @@
         </table>
         <div class="py-1 flex flex--end ">
           <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio botao-aviso"> Cancelar </A>
-          <button onclick="enviarFormulario()" class="botao--container botao--primario botao-envio "> Enviar </button>
+          <button type="submit" class="botao--container botao--primario botao-envio "> Enviar </button>
         </div>
       </form>
     </section>
