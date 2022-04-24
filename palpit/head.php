@@ -57,7 +57,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
       }
     });
   }
-
   function logarkey(event){
     if (event.keyCode == 13) {
       logar();
