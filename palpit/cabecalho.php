@@ -76,7 +76,6 @@ $f = new Functions;
 <script src="js/cabecalho.js"></script>        
 
 <?php else:?>
-
     <!-- CABEÇALHO DESLOGADO!!!!!!!!!!!!!!!!!!!!!!!!!!!!!! -->
     <header class="cabecalho">
         <div class="cabecalho__content">

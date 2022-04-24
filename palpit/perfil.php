@@ -65,13 +65,19 @@
               <span class="vcard-username block"> <?php echo ''.$_SESSION ['email'].''?></span>
             </div>
           </div>
-          <div>
-            <p><span class="material-icons-outlined">info</span><?php echo ''.$_SESSION ['sobre'].''?></p>
-          </div>
+
           <div class="flex flex-coluna">
-              <ul class="my-2">
-                <li> <spam class="material-icons-outlined">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?></li> 
-                <li> <span class="material-icons-outlined"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
+            <ul class="my-2">
+              <li>
+                <span class="material-icons-outlined">info</span><?php echo ''.$_SESSION ['sobre'].''?>
+                <span class="msg-alternativa"> Conte mais sobre você... </span> 
+              </li>
+              <li>
+                <spam class="material-icons-outlined">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?>
+                <span class="msg-alternativa"> Onde você mora?  </span> 
+              </li> 
+              <li>
+                <span class="material-icons-outlined"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
             </ul>
             <button id="btn-edit" class="botao--container botao--secundario width-full"> Editar perfil </button>  
           </div>

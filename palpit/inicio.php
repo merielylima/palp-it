@@ -122,7 +122,7 @@
                 $querybusca="AND a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
               };
 
-              $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p
+              $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,a.criado_arquivo,u.nome,u.foto_p
               FROM arquivo a
               INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
               INNER JOIN tag t ON t.id_arquivo_fk=a.id_arquivo
@@ -142,7 +142,7 @@
               $sql->execute();
 
             }else{
-              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p FROM arquivo a,usuario u WHERE a.status = 0 AND u.id_usuario = a.id_usuario_fk ORDER BY id_arquivo DESC;");
+              $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v, a.criado_arquivo,u.nome,u.foto_p FROM arquivo a,usuario u WHERE a.status = 0 AND u.id_usuario = a.id_usuario_fk ORDER BY id_arquivo DESC;");
               $sql->execute();
             }
             while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
@@ -157,6 +157,7 @@
                 <div class="link-container flex flex-items-center "> 
                   <img src=<?php echo $lista["foto_p"];?> alt="Foto de perfil">
                   <span class="item-user"><?php echo $lista["nome"];?></span>
+                  <span class="hidden"><?php echo $lista["criado_arquivo"];?></span>
                 </div> 
               </li>
             <?php
@@ -167,7 +168,7 @@
         <div class="sem-conteudo" >
           <?php
           if(empty($public)){
-            echo "<spam> Não há publicações até o momento </spam>"; 
+            echo "<spam> Não há publicações para os critérios definidos </spam>"; 
           }
           ?>
         </div>

@@ -15,14 +15,14 @@
           <span > Email ou senha inválido</span>
         </div>
         <div class="input-container ">
-            <input name="email" id="email" class="input width-full" type="email" placeholder="Email" required>
+            <input  name="email"  id="email" class="input width-full" type="email" placeholder="Email" required>
         </div>
         <div class="input-container"> 
-            <input name="senha" id="senha" class="input width-full" type="password" placeholder="Senha" title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos." required>
+            <input onkeypress="logarkey(event)" name="senha" id="senha" class="input width-full" type="password" placeholder="Senha" title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos." required>
             
         </div>
         <a href="reset_senha_email.php" class="flex--right link-container link-color"> Esqueceu sua senha?</a>
-      <button onClick="logar()" class="botao--container botao--primario width-full"> Entrar </button>
+      <button onClick="logar()" onkeypress="logarkey(event)"  class="botao--container botao--primario width-full"> Entrar </button>
       </section>
       <section class=" cartao__container cartao-xs">
         <p> Ainda não é membro?</p> <a href="cadastro.php" class="link-container link-color link-externo"> Cadastre-se já </a>

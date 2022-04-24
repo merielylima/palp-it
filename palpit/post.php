@@ -6,7 +6,7 @@
 
  $id_arquivo = $_GET['id_arquivo']; 
 
- $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v, a.criado_arquivo,u.nome,u.foto_p,group_concat(distinct t.key_words) as tags,  group_concat(distinct d.nome_disciplina) as disciplinas, group_concat(distinct e.nivel) as escolaridade
+ $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v, a.descricao, a.criado_arquivo,u.nome,u.foto_p,group_concat(distinct t.key_words) as tags,  group_concat(distinct d.nome_disciplina) as disciplinas, group_concat(distinct e.nivel) as escolaridade
     FROM arquivo a
     INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
     INNER JOIN tag t ON t.id_arquivo_fk=a.id_arquivo
@@ -42,10 +42,10 @@
           <span> <?php echo $dados_arquivo["escolaridade"];?> </span>
         </div>
         <div class=" post-img border-bottom">
-            <img src="<?php echo $dados_arquivo["foto_v"];?>" alt="">
+            <img src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
         </div>
         <div> 
-          <span> <!--Descrição --> </span>
+          <span> <?php echo $dados_arquivo["descricao"];?></span>
         </div>
       </section>
     </div>

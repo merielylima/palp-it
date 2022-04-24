@@ -34,6 +34,12 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
 
   <title>Palp-it</title>
   <script>
+  $(document).on("click", "li", function() {
+    var aTag = $(this).find("a");
+    if ( aTag.attr("href") != undefined ){
+      window.location = aTag.attr("href");
+    }
+  });
   function logar(){
     $.post({
       url: "logar.php",
@@ -50,6 +56,12 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         }
       }
     });
+  }
+
+  function logarkey(event){
+    if (event.keyCode == 13) {
+      logar();
+    } 
   }
 
   function recuperar(){
