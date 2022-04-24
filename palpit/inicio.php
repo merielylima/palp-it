@@ -107,11 +107,11 @@
               if($nivel==""){
                 $querynivel=$nivel;
               }else{
-                $querynivel="($nivel) AND";
+                $querynivel="AND ($nivel)";
               };
 
               if($disciplina != 'Todas'){
-                $querydisciplina = "d.nome_disciplina = '$disciplina' AND";
+                $querydisciplina = "AND d.nome_disciplina = '$disciplina'";
               }else{
                 $querydisciplina = "";
               };
@@ -119,7 +119,7 @@
               if($busca == ""){
                 $querybusca="";
               }else{
-                $querybusca="a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
+                $querybusca="AND a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
               };
 
               $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,u.nome,u.foto_p
@@ -131,7 +131,7 @@
               INNER JOIN disciplina d ON d.id_disciplina=ae.id_disciplina_fk
               INNER JOIN escolaridade e ON e.id_escolaridade=ae.id_escolaridade_fk
               WHERE
-                a.status=0 AND
+                a.status=0
                 $querynivel
                 $querydisciplina
                 $querybusca"
