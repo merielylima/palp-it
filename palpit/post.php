@@ -51,7 +51,9 @@
           <span class="msg-alternativa"> <?php echo $dados_arquivo["escolaridade"];?> </span>
 
           <div class=" post-img_container">
-            <img class=" post-img" src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
+            <div class="post-img_content">
+              <img class=" post-img" src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
+            </div>
           </div>
           <span class="mb-2 post-descricao"> <?php echo $dados_arquivo["descricao"];?></span>
         </div>

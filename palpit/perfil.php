@@ -80,16 +80,20 @@
 
           <div class="flex flex-coluna">
             <ul class="my-2">
-              <li>
-                <span class="material-icons-outlined">info</span><?php echo ''.$_SESSION ['sobre'].''?>
+              <li class="info-content">
+                <span class="material-icons-outlined info-icon">info</span>
+                <span><?php echo ''.$_SESSION ['sobre'].''?></span>
                 <span class="msg-alternativa"> Conte mais sobre você... </span> 
               </li>
-              <li>
-                <spam class="material-icons-outlined">location_on </spam><?php echo ''.$_SESSION ['cidade'].''?>
+              <li class="info-content">
+                <spam class="material-icons-outlined info-icon">location_on </spam>
+                <span><?php echo ''.$_SESSION ['cidade'].''?></span>
                 <span class="msg-alternativa"> Onde você mora?  </span> 
               </li> 
-              <li>
-                <span class="material-icons-outlined"> mail</span><?php echo ''.$_SESSION ['email'].''?></li>
+              <li class="info-content">
+                <span class="material-icons-outlined info-icon">mail </span>
+                <span><?php echo ''.$_SESSION ['email'].''?></span>  
+              </li>
             </ul>
             <button id="btn-edit" class="botao--container botao--secundario width-full"> Editar perfil </button>  
           </div>
@@ -130,6 +134,9 @@
             ?>
           </ol>
         </form>
+        <div class="show-more">
+          <a href="contribuicoes.php" class="botao--container link-color btn-show-more"> Mostrar mais</a>
+        </div>
         <div class="sem-conteudo" > 
           <?php
           if(empty($public)){

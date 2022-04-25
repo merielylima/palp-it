@@ -130,6 +130,9 @@ body {
 .material-icons-outlined{
 	vertical-align: middle;
 	margin-right: 0.25rem;
+	width: 24px;
+	height: 24px;
+	text-align: center;
 }
 .sucesso{
 	color: var(--cor-sucesso);
