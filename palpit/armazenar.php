@@ -13,10 +13,11 @@
 	$foto_v;
 	$foto_t;
 	$status=0;
+	$time=time();
 
 
   	if (isset ($_FILES ['imagem_visual']) && $_FILES ['imagem_visual']['name'] != '') {
-		$foto_v = "assets/img/visual/".time().'_'.basename ($_FILES ['imagem_visual']['name']);
+		$foto_v = "assets/img/visual/".$time.'_'.basename ($_FILES ['imagem_visual']['name']);
 	}
 	else{
 		return -1;
@@ -25,16 +26,39 @@
 	if (isset ($_FILES ['imagem_visual']) && $_FILES ['imagem_visual']['name'] != '') {
 		move_uploaded_file ($_FILES ['imagem_visual']['tmp_name'], $foto_v);
 	}
+	
+
 
 	if (isset ($_FILES ['imagem_tatil']) && $_FILES ['imagem_tatil']['name'] != '') {
-		$foto_t = "assets/img/tatil/".time().'_'.basename ($_FILES ['imagem_tatil']['name']);
+		mkdir("assets/img/tatil/".$time);
+		$foto_t = "assets/img/tatil/".$time.'/'.basename($_FILES ['imagem_tatil']['name']);
 	}
 	else{
 		return -1;
 	}
 	
 	if (isset ($_FILES ['imagem_tatil']) && $_FILES ['imagem_tatil']['name'] != '') {
+		copy($foto_v,"assets/img/tatil/".$time.'/'.basename ($_FILES ['imagem_visual']['name']));
 		move_uploaded_file ($_FILES ['imagem_tatil']['tmp_name'], $foto_t);
+		$arquivo = fopen("assets/img/tatil/".$time.'/'.'info.txt','w'); if ($arquivo == false) die('Não foi possível criar o arquivo.');
+		fwrite($arquivo, "Titulo:".$titulo ."\n"); 
+		fwrite($arquivo, "Autor:" .$_SESSION['nome']."\n");
+		fwrite($arquivo, "Descrição:" .$descricao."\n");
+		fwrite($arquivo, "Palavras-chave:" .$tag."\n");
+		fclose($arquivo);
+		if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+			shell_exec("cd assets\\img\\tatil && \"C:\\Program Files\\Java\\jdk-18.0.1.1\\bin\\jar.exe\" -cMf ".$time.".zip ".$time);
+		} else {
+			shell_exec("zip assets/img/tatil/".$time.".zip assets/img/tatil/".$time);
+		}
+
+
+		unlink("assets/img/tatil/".$time.'/'.'info.txt');
+		unlink("assets/img/tatil/".$time.'/'.basename ($_FILES ['imagem_visual']['name']));
+		unlink($foto_t);
+		rmdir("assets/img/tatil/".$time);
+
+		$foto_t="assets/img/tatil/".$time.".zip";
 	} 
 	
 	//armazenando informação no banco de dados
