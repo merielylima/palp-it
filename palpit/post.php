@@ -39,9 +39,9 @@
             <button class="botao--container btn-excluir">
               <span class="material-icons-outlined">delete </span> Excluir
             </button>
-            <button class="botao--container btn-download">
+            <a href="" class="botao--container btn-download">
               <span class="material-icons-outlined">file_download </span> Download
-            </button>
+            </a>
             </div>
         </div>
         <div class="flex flex-coluna border-bottom my-0">

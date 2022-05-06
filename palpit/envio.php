@@ -24,7 +24,6 @@
               <label for="imagem_visual" >
                 <img class="imagem" id="img_prev" src="assets/img/visual/default.svg"/>
               </label>
-              <!--<input id="imagem_visual" multiple accept=".jpg, .jpeg, .png" onchange="readURL(this);" name="imagem_visual" type="file" class=" input--img input-hidden" required/> --> 
             </div>
             <div class="pai">
               <div class="filho">
