@@ -4,9 +4,12 @@
  $u = new Usuarios;
  $u->conectar();
 
- $id_arquivo = $_GET['id_arquivo']; 
+ $id_arquivo = $_GET['id_arquivo'];
+ 
+ $soma_acesso=$pdo->prepare("UPDATE arquivo a SET a.q_acesso= a.q_acesso+1 WHERE id_arquivo=$id_arquivo");
+ $soma_acesso->execute();
 
- $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v, a.descricao, a.criado_arquivo,u.nome,u.foto_p,group_concat(distinct t.key_words) as tags,  group_concat(distinct d.nome_disciplina) as disciplinas, group_concat(distinct e.nivel) as escolaridade
+ $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v, a.descricao, a.criado_arquivo,a.id_usuario_fk,u.nome,u.foto_p,group_concat(distinct t.key_words) as tags,  group_concat(distinct d.nome_disciplina) as disciplinas, group_concat(distinct e.nivel) as escolaridade
     FROM arquivo a
     INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
     INNER JOIN tag t ON t.id_arquivo_fk=a.id_arquivo
@@ -36,10 +39,14 @@
             </div>
           </div>
           <div class="btn-order">
-            <button class="botao--container btn-excluir">
-              <span class="material-icons-outlined">delete </span> Excluir
-            </button>
-            <a href="" class="botao--container btn-download">
+            <?php
+              if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']){
+                echo "<a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container btn-excluir'>
+                        <span class='material-icons-outlined'>delete </span> Excluir 
+                      </a>";
+              }
+            ?>
+            <a href="downloadarquivo.php?id_arquivo=<?php echo $id_arquivo; ?>" class="botao--container btn-download">
               <span class="material-icons-outlined">file_download </span> Download
             </a>
             </div>
