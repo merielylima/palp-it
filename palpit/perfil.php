@@ -45,12 +45,26 @@
             <label id="area" class="input--label">Área de interesse</label>
             <select class="option input input-full" name="area">
               <?php
-                $getarea = $pdo->prepare("SELECT * FROM area ORDER BY id_area");
+                $id_usuario = $_SESSION['id_usuario'];
+                $sel_area = $pdo->prepare("SELECT DISTINCT asa.id_assoc_area, ar.id_area
+                FROM assoc_area asa
+                INNER JOIN usuario u ON u.id_usuario = asa.id_usuario_fk
+                INNER JOIN area ar ON ar.id_area = asa.id_area_fk
+                WHERE
+                  u.id_usuario=$id_usuario");
+                $sel_area->execute();
+                $resultado = $sel_area->fetchAll(PDO::FETCH_OBJ);
+                $id_area_fk =(int)$resultado[0]->id_area;
+  				      $getarea = $pdo->prepare("SELECT * FROM area ORDER BY id_area");
                 $getarea->execute();
                 while($rows = $getarea->fetch(PDO::FETCH_ASSOC)){
                 $nome_area = $rows['nome_area'];
                 $area_id = $rows['id_area'];
-                echo "<option value='$nome_area'>$nome_area</option>";
+                  if($area_id != $id_area_fk){
+                    echo "<option value='$area_id'>$nome_area</option>";
+                  }else{
+                    echo "<option value='$area_id' selected > $nome_area</option>";
+                  }
                 }
               ?>
             </select>
@@ -82,13 +96,26 @@
             <ul class="my-2">
               <li class="info-content">
                 <span class="material-icons-outlined info-icon">info</span>
-                <span><?php echo ''.$_SESSION ['sobre'].''?></span>
-                <span class="msg-alternativa"> Conte mais sobre você... </span> 
+                <?php
+                if($_SESSION ['sobre'] == " "):
+                  echo "<span class='msg-alternativa'> Conte mais sobre você... </span>";
+                else:
+                  $sobre_atual= $_SESSION ['sobre'];
+                  echo "<span>$sobre_atual</span>";
+                endif; 
+                ?>
               </li>
               <li class="info-content">
                 <spam class="material-icons-outlined info-icon">location_on </spam>
-                <span><?php echo ''.$_SESSION ['cidade'].''?></span>
-                <span class="msg-alternativa"> Onde você mora?  </span> 
+                <?php
+                if($_SESSION ['cidade'] == " "):
+                  echo "<span class='msg-alternativa'> Onde você mora?</span>";
+                else:
+                  $cidade_atual = $_SESSION ['cidade'];
+                  echo "<span>$cidade_atual</span>";
+                endif; 
+                ?>               
+                 
               </li> 
               <li class="info-content">
                 <span class="material-icons-outlined info-icon">mail </span>

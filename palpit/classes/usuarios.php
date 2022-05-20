@@ -136,30 +136,53 @@
 
 	}
 
-	public function alterarperfil($nome,$sobre,$cidade,$receber,$foto_p){
+	public function alterarperfil($nome,$sobre,$cidade,$receber,$foto_p,$area){
 		error_reporting(E_ALL);
         ini_set('display_errors',1);
 		global $pdo;
 		global $msgErro;
-						
-		$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c, receber = :r, foto_p = :fp WHERE id_usuario = :id");
-		$sql->bindValue(":n", $nome);
-		$sql->bindValue(":s", $sobre);
-		$sql->bindValue(":c", $cidade);
-		$sql->bindValue(":r", $receber);
-		$sql->bindValue(":fp", $foto_p);
-	  	$sql->bindValue(":id", $_SESSION['id_usuario']);
-		$sql->execute();
 
-		//atualizar dados
-		$_SESSION['nome'] = $nome;
-		$_SESSION['sobre'] = $sobre;
-		$_SESSION['cidade'] = $cidade;
-		$_SESSION['receber'] = $receber;
-		$_SESSION['foto_p'] = $foto_p;
+		$uarea= $pdo->prepare("UPDATE assoc_area asa SET asa.id_area_fk = :afk WHERE id_usuario_fk = :ufk");
+		$uarea->bindValue(":afk", $area);
+		$uarea->bindValue(":ufk", $_SESSION['id_usuario']);
+		$uarea->execute();
+		
+		if($foto_p != null){
+			
+			$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c, receber = :r, foto_p = :fp WHERE id_usuario = :id");
+			$sql->bindValue(":n", $nome);
+			$sql->bindValue(":s", $sobre);
+			$sql->bindValue(":c", $cidade);
+			$sql->bindValue(":r", $receber);
+			$sql->bindValue(":fp", $foto_p);
+			$sql->bindValue(":id", $_SESSION['id_usuario']);
+			$sql->execute();
 
-	  	return true;  
+			//atualizar dados
+			$_SESSION['nome'] = $nome;
+			$_SESSION['sobre'] = $sobre;
+			$_SESSION['cidade'] = $cidade;
+			$_SESSION['receber'] = $receber;
+			$_SESSION['foto_p'] = $foto_p;
+			$_SESSION['area'] = $area;
+		 
+		}else{
+			$sql= $pdo->prepare("UPDATE usuario SET nome = :n, sobre = :s, cidade = :c, receber = :r WHERE id_usuario = :id");
+			$sql->bindValue(":n", $nome);
+			$sql->bindValue(":s", $sobre);
+			$sql->bindValue(":c", $cidade);
+			$sql->bindValue(":r", $receber);
+			$sql->bindValue(":id", $_SESSION['id_usuario']);
+			$sql->execute();
 
+			//atualizar dados
+			$_SESSION['nome'] = $nome;
+			$_SESSION['sobre'] = $sobre;
+			$_SESSION['cidade'] = $cidade;
+			$_SESSION['receber'] = $receber;
+			$_SESSION['area'] = $area;
+		}
+		return true; 
   	}
 
 	public function logout(){
