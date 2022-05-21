@@ -35,11 +35,11 @@
           </div>
           <div class="mb-1 flex flex-coluna">
             <label for="user_profile_bio" class="input--label  ">Sobre</label>
-            <textarea class="input  textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você" aria-label="Add a bio" rows="3" data-input-max-length="160"><?php echo ''.$_SESSION ['sobre'].''?></textarea>
+            <textarea class="input  textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você..." aria-label="Add a bio" rows="3" data-input-max-length="160"><?php echo ''.$_SESSION ['sobre'].''?></textarea>
           </div>
           <div class=" mb-1">
               <label for="" class="input--label ">Cidade</label>
-              <input class="input width-full " id="cidade"  name="cidade" value="<?php echo ''.$_SESSION ['cidade'].''?>">
+              <input class="input width-full " id="cidade"  name="cidade" placeholder="Onde você mora?" value="<?php echo ''.$_SESSION ['cidade'].''?>">
           </div>
           <div> 
             <label id="area" class="input--label">Área de interesse</label>
@@ -97,7 +97,7 @@
               <li class="info-content">
                 <span class="material-icons-outlined info-icon">info</span>
                 <?php
-                if($_SESSION ['sobre'] == " "):
+                if($_SESSION ['sobre'] == ""):
                   echo "<span class='msg-alternativa'> Conte mais sobre você... </span>";
                 else:
                   $sobre_atual= $_SESSION ['sobre'];
@@ -108,7 +108,7 @@
               <li class="info-content">
                 <spam class="material-icons-outlined info-icon">location_on </spam>
                 <?php
-                if($_SESSION ['cidade'] == " "):
+                if($_SESSION ['cidade'] == ""):
                   echo "<span class='msg-alternativa'> Onde você mora?</span>";
                 else:
                   $cidade_atual = $_SESSION ['cidade'];
@@ -162,7 +162,11 @@
           </ol>
         </form>
         <div class="show-more">
-          <a href="contribuicoes.php" class="botao--container link-color btn-show-more"> Mostrar mais</a>
+        <?php
+          if($public > 1){
+            echo "<a href='contribuicoes.php' class='botao--container link-color btn-show-more'> Mostrar mais</a>"; 
+          }
+          ?>     
         </div>
         <div class="sem-conteudo" > 
           <?php
