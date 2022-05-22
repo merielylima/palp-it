@@ -54,7 +54,7 @@
         <div class="flex flex-coluna border-bottom my-0">
           <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
           <span> <?php echo $dados_arquivo["disciplinas"];?> </span>
-          <span> <?php echo $dados_arquivo["tags"];?> </span>
+          <span> <?php $tag=$dados_arquivo["tags"]; $new = preg_replace('/[\,]+/'," #",$tag); echo "#".$new;?> </span>
           <span class="msg-alternativa"> <?php echo $dados_arquivo["escolaridade"];?> </span>
 
           <div class=" post-img_container">

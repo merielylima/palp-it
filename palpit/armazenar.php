@@ -69,8 +69,9 @@
 		$u->enviar($titulo,$descricao,$foto_v,$foto_t,$status); //chamada função armazenamento tabela arquivo
 		
 		//Tratamento em armazenamento tabela tag
-		$newtag = preg_replace('/[^\w]+/'," ",$tag);
-		foreach(explode(" ",trim($newtag)) as $values){
+		$newtag = preg_replace('/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-\'\s]+/'," ",$tag);
+		$newtag2 = preg_replace('/\s{1,}/'," ",$newtag);
+		foreach(explode(" ",trim($newtag2)) as $values){
 			$sql = $pdo->prepare('INSERT INTO tag (key_words, id_arquivo_fk) VALUES (:kw,:fka)');
 			$sql->bindValue(":kw", $values);
 			$sql->bindValue(":fka", $_SESSION['id_arquivo']);
