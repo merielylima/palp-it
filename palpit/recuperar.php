@@ -20,12 +20,14 @@
             //$url = 'http://localhost/palp-it/palpit/reset_senha_senha.php';//url para redefinição
             $url = 'http://rnaat.ufpa.br/palp-it/palpit/reset_senha_senha.php';//url para redefinição
             //Corpo da mensagem do email
-            $corpo = 'Olá '.$info['nome'].',
-            Foi solicitada uma redefinição da sua senha na "PALP-it". Acesse o link abaixo para redefinir sua senha.<br>
-            <h3><a href="'.$url.'?token='.$_SESSION['token'].'&email='.$_SESSION['email'].'">Redefinir a sua senha</a></h3> 
-            <br>            
-            Caso você não tenha solicitado essa redefinição, ignore esta mensagem.<br>
-            Qualquer problema ou dúvida entre em contato pelo email contato@contato.com';
+            $corpo = 
+            'Olá '.$info['nome'].',
+            Foi solicitada uma redefinição da sua senha na "PALP-it". Acesse o link abaixo para redefinir sua senha.
+            
+            Redefinir a sua senha
+            "'.$url.'?token='.$_SESSION['token'].'&email='.$_SESSION['email'].'"
+                
+            Qualquer problema ou dúvida entre em contato pelo email palpit@contato.com';
 
             $mail = smtpmailer ($_POST ['email'], 'baille.hub@gmail.com', 'PALP-it', 'Redefinição de senha PALP-it', $corpo);
             
