@@ -3,7 +3,7 @@
 ?>
 <body>
     <main class="center container-xs">
-        <div class="flex flex--coluna px-3">
+        <div class="flex flex-coluna px-3">
             <section class=" cartao__container cartao-xs">
                 <div class="border-bottom">
                     <a href="inicio.php">
