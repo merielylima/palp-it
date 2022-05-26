@@ -15,7 +15,7 @@
   $foto_p;
 
     if (isset ($_FILES ['avatar']) && $_FILES ['avatar']['name'] != '') {
-      $foto_p = "assets/img/visual/".time().'_'.basename ($_FILES ['avatar']['name']);
+      $foto_p = "assets/img/perfil/".time().'_'.basename ($_FILES ['avatar']['name']);
     }
     //else{
       //return -1;

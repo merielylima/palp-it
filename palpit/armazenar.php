@@ -49,7 +49,8 @@
 		if (strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
 			shell_exec("cd assets\\img\\tatil && \"C:\\Program Files\\Java\\jdk-18.0.1.1\\bin\\jar.exe\" -cMf ".$time.".zip ".$time);
 		} else {
-			shell_exec("zip assets/img/tatil/".$time.".zip assets/img/tatil/".$time);
+			//shell_exec("zip assets/img/tatil/".$time.".zip assets/img/tatil/".$time);
+			shell_exec("cd assets/img/tatil && zip ".$time.".zip ".$time.'/*');
 		}
 
 

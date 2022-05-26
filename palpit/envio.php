@@ -72,7 +72,7 @@
                   $getescolaridade->execute();
                   while($rows = $getescolaridade->fetch(PDO::FETCH_ASSOC)){
                     $nome_escolaridade = $rows['nivel'];
-                    $escolaridade_id = $rows['id_disciplina'];
+                    //$escolaridade_id = $rows['id_disciplina'];
                     echo "<option value='$nome_escolaridade'>$nome_escolaridade</option>";
                   }
                 ?>
