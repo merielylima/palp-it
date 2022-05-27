@@ -1,4 +1,4 @@
- var linha = 0;
+var linha = 0;
 
 function adicionarItem(){
   var nivel = document.getElementById("nivel").value;
@@ -96,7 +96,6 @@ fileInput.addEventListener('change', function (e) {
 	var value = e.target.value.length > 0 ? e.target.value : fileInputTextContent;
 	fileInputText.textContent = value.replace('C:\\fakepath\\', '');
 });
-
 
 function enviarFormulario () {
     var imgVisual = document.getElementById("imagem_visual");

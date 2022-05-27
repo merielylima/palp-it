@@ -115,7 +115,7 @@
     </section>
   <div>
 </main> 
-<script src="js/formulario.js"></script>
+<script src="js/envio.js"></script>
 <?php
 include ("rodape.php");
 ?>

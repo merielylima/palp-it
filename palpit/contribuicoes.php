@@ -42,8 +42,15 @@
           <div class="sem-conteudo flex flex-coluna" >
             <?php
             if(empty($public)){
-            echo "<a href='envio.php' class='center botao--container botao--terciario btn-contribuicao mb-2'> <span class='material-icons-outlined'>add</span> Adicionar</a>";
-            }
+            echo
+            "<div> 
+              <div> 
+                <a href='envio.php' class='center botao--container botao--terciario btn-contribuicao mb-2'> 
+                <span class='material-icons-outlined'>add</span> Adicionar</a>
+              </div>
+              <spam> Clique para adicionar sua primeira publicação </spam>
+            </div>";
+          }
             ?>  
             </div>         
       </section>

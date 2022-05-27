@@ -178,7 +178,6 @@
       </section>
     </div> 
   </main>
-  <script src="js/atualizar.js"></script>
   <script src="js/profile.js"></script>
 <?php
 include ("rodape.php");

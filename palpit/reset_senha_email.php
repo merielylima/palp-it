@@ -15,6 +15,7 @@
           <div id="email-erro" class="mensagem-erro hidden">
             <span > Email ou senha inválido</span>
           </div>
+          <p class="text-justify my-3"> Ao confirmar a redefinição da senha, será necessário seguir o procedimento a partir do e-mail enviado.</p>
           <div class="input-container ">
             <input name="email" id="email" class="input width-full" type="email" placeholder="Email" required>
           </div>
