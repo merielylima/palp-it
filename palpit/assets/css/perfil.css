@@ -41,6 +41,8 @@
 }
 .btn-show-more{
   width: 10rem;
+  position: absolute;
+  bottom: 0.5rem;
 }
 .info-content{
   display: flex;
@@ -88,6 +90,15 @@
   vertical-align: middle;
 }
 
+.info-resp{
+  display: flex;
+  align-items: center;
+}
+.avt-resp{
+  width: 16.66666666%;
+  flex-shrink: 0;
+  margin: 0 0.5rem 0 0 ;
+}
 
 .vcard-fullname{
   font-size: 24px;
@@ -96,7 +107,7 @@
 .vcard-username{
   color: var(--cinza-2);
   word-break: break-all;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: var( --fonte-peso-light);
   line-height: 1;
 }

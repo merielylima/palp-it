@@ -25,10 +25,11 @@
 .items-xl{
   display: none;
 }
+
 .avt-cab{
   height: 2rem;
   width: 2rem;
-  margin: 0 .5rem 0 0;
+  margin: 0 0.5rem 0 0;
 }
 .user{
   margin-left: auto;

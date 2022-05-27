@@ -27,7 +27,7 @@ $f = new Functions;
         <div class="cabecalho__content">
             <div class="cabecalho__left-side flex flex-items-center">
                 <a href="inicio.php" class=" flex">
-                    <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
+                    <img src="assets/img/icon/Logo.svg" alt="Logo Palp-it"/>
                 </a>
                 <div class="cabecalho--pesquisa">
                     <input type="search" placeholder="Pesquisar" class=" input-pesquisa">
@@ -35,13 +35,13 @@ $f = new Functions;
                 <nav class="cabecalho--navegacao items-xl">
                     <ul class="flex flex-items-center">
                         <li id="btn-inicio" class="botao--container <?php if($page_atual == 1){echo ("active");}?>">
-                            <a href="inicio.php" class="user__link"> <span class="material-icons-outlined ">home</span> Início</a>
+                            <a href="inicio.php" class="user__link"> <span class="material-icons ">home</span> Início</a>
                         </li>
                         <li id="btn-perfil" class="botao--container <?php if($page_atual == 2){echo ("active");}?>">
-                            <a href="perfil.php" class="user__link"> <span class="material-icons-outlined">person</span> Perfil</a>
+                            <a href="perfil.php" class="user__link"> <span class="material-icons">person</span> Perfil</a>
                         </li>
                         <li id="btn-contribuicoes" class="botao--container <?php if($page_atual == 3){echo ("active");}?>">
-                            <a href="contribuicoes.php" class="user__link "><span class="material-icons-outlined">file_upload</span> Contribuições</a>
+                            <a href="contribuicoes.php" class="user__link "><span class="material-icons">file_upload</span> Contribuições</a>
                         </li>
                     </ul>
                 </nav>
@@ -53,8 +53,8 @@ $f = new Functions;
                         Novo envio
                     </div>
                 </a>
-                <span class="material-icons-outlined notifications">notifications_none </span>
-                <div class="avt-container avt-cab">
+                 <!-- <span class="material-icons-outlined notifications">notifications_none </span> -->
+                <div class="avt-container avt-cab ml-3">
                     <div class="avt-content">
                         <img class="avt " src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
                     </div>
@@ -85,7 +85,7 @@ $f = new Functions;
         <div class="cabecalho__content">
             <div class="cabecalho__left-side flex flex-items-center">
                 <a href="inicio.php" class=" flex">
-                    <img src="assets/img/icon/Logo-palp-it.svg" alt="Logo Palp-it"/>
+                    <img src="assets/img/icon/Logo.svg" alt="Logo Palp-it"/>
                 </a>
                 <div class="cabecalho--pesquisa ">
                     <input type="search" placeholder="Pesquisar" class="search-icon input-pesquisa botao--container border">

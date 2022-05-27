@@ -1,0 +1,32 @@
+.erro-container{
+    display: block;
+    text-align: center;
+}
+.container-erro{
+	margin-top: 3vw;
+	max-width: 1024px;
+    min-width: 15rem;
+}
+.cartao-erro{
+    text-align: center;
+    padding: 5vw 1rem;
+    margin-bottom: 1rem;
+}
+.ops{
+    display: block;
+    margin: 0 auto;
+    font-size: 54px;
+    font-weight: 700;
+}
+.btn-erro{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+@media screen and (max-width: 495px) {
+    .btn-erro{
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

@@ -154,6 +154,7 @@
   }
   .bloco-btn{
     width: 50%;
+    margin-top: 0.5rem;
   }
 }
 @media screen and (max-width: 550px) {
@@ -166,7 +167,7 @@
   }
   .imagem-container{
     margin: 0 auto;
-    height: 251px;
+    min-height: 251px;
 
   }
   .pai{

@@ -16,7 +16,7 @@
   <main  class="center container-xl" >
     <div class=" flex flex-coluna p-os"> 
       <section class="cartao__container cartao-xl width-full">
-        <h2 class="cartao-header container--titulo"> Suas publicações</h2>
+        <h2 class="cartao-header container--titulo"> Suas contribuições</h2>
         
         <ol class="flex flex-wrap">
             <?php 
@@ -48,7 +48,7 @@
                 <a href='envio.php' class='center botao--container botao--terciario btn-contribuicao mb-2'> 
                 <span class='material-icons-outlined'>add</span> Adicionar</a>
               </div>
-              <spam> Clique para adicionar sua primeira publicação </spam>
+              <spam> Clique para adicionar sua primeira contribuição </spam>
             </div>";
           }
             ?>  

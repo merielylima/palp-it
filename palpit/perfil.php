@@ -79,8 +79,8 @@
           </div>
         </form> 
         <div id="perfil-noedit">
-          <div class="info-user mb-3 flex-items-center d-block"> 
-            <div class="avt-container">
+          <div class="info-user mb-3 d-block info-resp "> 
+            <div class="avt-container avt-resp">
               <div class="avt-content">
                 <img id="js-file-uploader" class="avt" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
               </div> 
@@ -128,7 +128,7 @@
       </nav>
       <section class="cartao-xxl  cartao__container relative">
         <div class="cartao-header"> 
-            <h2 class="container--titulo"> Suas publicações</h2>
+            <h2 class="container--titulo"> Destaques</h2>
             <div class="label--order">
               <label for="dropdow_order" > Ordenar por: </label>
               <select id="dropdow_order" class="dropdow--order">
@@ -171,7 +171,13 @@
         <div class="sem-conteudo" > 
           <?php
           if(empty($public)){
-            echo "<spam> Não há publicações até o momento </spam>"; 
+            
+            echo "
+            <div> 
+                <a href='envio.php' class='center botao--container botao--terciario btn-contribuicao mb-2'> 
+                <span class='material-icons-outlined'>add</span> Adicionar</a>
+              </div>
+              <spam> Clique para adicionar sua primeira contribuição </spam>"; 
           }
           ?>          
         </div>

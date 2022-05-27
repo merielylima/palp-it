@@ -18,6 +18,13 @@
     max-width: 100%;
     max-height: 100%;
 }
+.disciplina{
+    color: var(--azul-0);
+    background-color: var(--azul-claro-transparente);
+    margin-right: 0.5rem;
+    padding: 0.2rem 0.5rem;
+    line-height: 1.5;
+}
 .btn-download{
     font-size: 14px;
     color: var(--azul-1);

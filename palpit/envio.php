@@ -62,6 +62,16 @@
             </div>
           </div>
         </div>
+        <table class="table mt-1 ">
+          <thead class="table__cabecalho">
+            <tr>
+              <th class="row-table"> Nível </th>
+              <th class="row-table"> Disciplina </th>
+              <th class="row-table"> Remover </th> 
+            </tr>
+          </thead>
+          <tbody id ="tabela" class="table__content"></tbody>   
+        </table>
         <div id="conteudo" class="flex py-1 ">
           <div class="flex flex-coluna flex--row bloco-lbl">
             <div class="input-container bloco-lbl--f">
@@ -97,16 +107,7 @@
             <A id="adiciona-lista" onClick="adicionarItem()" value="Adicionar" class="botao--container btn-adc botao--terciario">Adicionar</A>
           </div>
         </div>
-        <table class="table py-1 ">
-          <thead class="table__cabecalho">
-            <tr>
-              <th class="row-table"> Nível </th>
-              <th class="row-table"> Disciplina </th>
-              <th class="row-table"> Remover </th> 
-            </tr>
-          </thead>
-          <tbody id ="tabela" class="table__content"></tbody>   
-        </table>
+
         <div class="py-1 flex flex--end ">
           <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio botao-aviso"> Cancelar </A>
           <button onclick="enviarFormulario()" type="button" class="botao--container botao--primario botao-envio "> Enviar </button>

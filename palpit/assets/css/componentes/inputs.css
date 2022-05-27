@@ -8,7 +8,7 @@
     border: 2px solid var(--cinza-4);
     background-color: var(--contraste-claro);
     border-radius: 6px;
-    padding-left: 1rem;
+    padding-left: 0.75rem;
     height: 2.5rem;
 }
 

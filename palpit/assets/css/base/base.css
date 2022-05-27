@@ -25,7 +25,7 @@ body {
 }
 /*Páginas com um cartão grande */
 .container-xx{
-	margin-top: 0.5rem;
+	margin-top: 1rem;
 	max-width: 1124px;
 	min-width: 15rem;
 }
@@ -127,7 +127,7 @@ body {
 	font-size: var( --fonte-tamanho-secundaria);
 	text-transform: uppercase;
 }
-.material-icons-outlined{
+.material-icons-outlined, .material-icons{
 	vertical-align: middle;
 	margin-right: 0.25rem;
 	width: 24px;

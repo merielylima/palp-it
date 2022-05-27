@@ -53,10 +53,15 @@
         </div>
         <div class="flex flex-coluna border-bottom my-0">
           <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
-          <span> <?php echo $dados_arquivo["disciplinas"];?> </span>
-          <span> <?php $tag=$dados_arquivo["tags"]; $new = preg_replace('/[\,]+/'," #",$tag); echo "#".$new;?> </span>
-          <span class="msg-alternativa"> <?php echo $dados_arquivo["escolaridade"];?> </span>
-
+          <div>
+            <span class="disciplina"> <?php echo $dados_arquivo["disciplinas"];?> </span>
+          </div>
+          <div>
+            <span class="tags" > <?php $tag=$dados_arquivo["tags"]; $new = preg_replace('/[\,]+/'," #",$tag); echo "#".$new;?> </span>
+          </div>
+          <div>
+            <span class="msg-alternativa"> <?php echo $dados_arquivo["escolaridade"];?> </span>
+          </div>
           <div class=" post-img_container">
             <div class="post-img_content">
               <img class=" post-img" src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
