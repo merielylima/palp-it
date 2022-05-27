@@ -72,7 +72,7 @@ if(isset($_POST['nome'])){
 													<a href="inicio.php">
 														<img src="assets/img/icon/Logo.svg" alt="Logo Palp-it"/>
 													</a> 
-													<h2 class="container--titulo">Falta pouco...</h2>
+													<h2 class="container--titulo mb-2">Falta pouco...</h2>
 												</div>
 												<p class="cartao-xs__txt my-3">  Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link" > <?php echo $email ?> </a>. </p>
 												<a href="inicio.php"> <button class="botao--container botao--primario width-full">  Voltar para página inicial </button></a>

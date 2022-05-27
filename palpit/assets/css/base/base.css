@@ -19,7 +19,7 @@ body {
 }
 /*Páginas com um cartão pequeno*/
 .container-xs{
-	margin-top: 5vw;
+	margin-top: 4vw;
 	max-width: 27rem;
     min-width: 15rem;
 }
