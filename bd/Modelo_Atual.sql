@@ -191,6 +191,9 @@ INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES (3
 INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES (4, 'Geografia');
 INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES (5, 'Física');
 INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES (6, 'Português');
+INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES (7, 'Química');
+INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES (8, 'Inglês');
+INSERT INTO `palpit`.`disciplina` (`id_disciplina`, `nome_disciplina`) VALUES (9, 'História');
 
 COMMIT;
 
