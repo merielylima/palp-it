@@ -6,7 +6,7 @@
 
  $id_arquivo = $_GET['id_arquivo'];
 
- $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v, a.descricao, a.criado_arquivo,a.id_usuario_fk,u.nome,u.foto_p,group_concat(distinct t.key_words) as tags,  group_concat(distinct d.nome_disciplina) as disciplinas, group_concat(distinct e.nivel) as escolaridade
+ $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v, a.descricao, a.criado_arquivo,a.id_usuario_fk,u.nome,u.foto_p,group_concat(distinct t.key_words ORDER BY t.id_tag) as tags,  group_concat(distinct d.nome_disciplina) as disciplinas, group_concat(distinct e.nivel) as escolaridade
     FROM arquivo a
     INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
     INNER JOIN tag t ON t.id_arquivo_fk=a.id_arquivo
@@ -81,7 +81,14 @@
         <div class="flex flex-coluna border-bottom my-0">
           <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
           <div>
-            <span class="disciplina"> <?php echo $dados_arquivo["disciplinas"];?> </span>
+          <?php 
+            $disciplina=$dados_arquivo["disciplinas"]; 
+            $array_d = explode(",",$disciplina);
+            $n_array = count($array_d);
+            for($i=0 ; $i < $n_array ; $i++ ){
+              echo "<span class='disciplina'> $array_d[$i] </span>";
+            }
+            ?>
           </div>
           <div>
             <span class="tags" > <?php $tag=$dados_arquivo["tags"]; $new = preg_replace('/[\,]+/'," #",$tag); echo "#".$new;?> </span>
