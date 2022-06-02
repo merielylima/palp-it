@@ -20,8 +20,8 @@
 .disciplina{
     color: var(--azul-0);
     background-color: var(--azul-claro-transparente);
-    margin-right: 0.5rem;
-    padding: 0.2rem 0.5rem;
+    margin-right: 0.25rem;
+    padding: 0.2rem 0.25rem;
     line-height: 1.5;
 }
 .btn-download{
