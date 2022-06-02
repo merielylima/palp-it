@@ -12,7 +12,6 @@
 .post-img_content{
     display: flex;
     justify-content: center;
-
 }
 .post-img {
     max-width: 100%;
@@ -63,6 +62,12 @@
     color: var(--cinza-3);
     font-weight: 300;
 }
+.tags{
+    color: var(--azul-0);
+    font-weight: 500;
+}
+
+
 @media screen and (min-width: 495px) {
 
     .btn-order{

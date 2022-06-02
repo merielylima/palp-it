@@ -154,15 +154,15 @@
                   </div>
                   <span class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>
-                <div class="link-container flex flex-items-center "> 
-                <div class="avt-container avt-cab">
-                    <div class="avt-content">
-                        <img class="avt" src=<?php echo $lista["foto_p"];?> alt="Foto de perfil">
-                    </div>
+                <a href="perfil.php" class="link-container flex flex-items-center "> 
+                  <div class="avt-container avt-cab">
+                      <div class="avt-content">
+                          <img class="avt" src=<?php echo $lista["foto_p"];?> alt="Foto de perfil">
+                      </div>
                   </div> 
                   <span class="item-user"><?php echo $lista["nome"];?></span>
                   <span class="hidden"><?php echo $lista["criado_arquivo"];?></span>
-                </div> 
+              </a> 
               </li>
             <?php
             $public = $lista;

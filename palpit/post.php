@@ -26,30 +26,57 @@
   <main  class="center post-container" >
     <div class="p-os"> 
       <section class="cartao__container cartao-xl width-full">
+        <div id="pp-del" class="popup-container">
+          <spam>Esta ação não poderá ser desfeita. Tem certeza que deseja apagar essa publicação?</spam>
+          <div class="btn-popup">
+              <spam onclick="closepp(this);" class="botao--container botao--primario botao-envio mx-1" >Cancelar</spam>
+              <?php echo" <a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container botao--secundario botao-envio botao-aviso mx-1'>Apagar</a>"; ?>
+          </div>
+        </div>
+        <div id="pp-dwn" class='popup-dwn'>
+            <spam> Você deve estar logado para concluir esta etapa.</spam> 
+            <button class="btn-close" type="button" onclick="clspp(this);"> fechar </button>
+              <div class='btn-popup'>
+                <a href='login.php' class='botao--container botao--primario botao-envio mx-1'> 
+                  Entrar
+                </a>
+                <a href='cadastro.php' class='botao--container botao--secundario botao-envio mx-1'>
+                  Cadastrar
+                </a>
+              </div>
+            </div>
         <div class="cartao-header my-0 reverse">
           <div class="flex">
-            <div class="avt-container avt-post">
+            <a href="perfil.php" class="link-container avt-container avt-post">
               <div class="avt-content">
                 <img id="js-file-uploader" class="avt" src="<?php echo $dados_arquivo["foto_p"];?>" class="user-img" >
               </div>
-            </div>  
+            </a>  
             <div class="flex flex-coluna bloco-inf">
-              <span class="item-user"> <?php echo $dados_arquivo["nome"];?> </span>
+              <a href="perfil.php" class="link-container item-user"> <?php echo $dados_arquivo["nome"];?> </a>
               <span class="post-data"> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
             </div>
           </div>
           <div class="btn-order">
             <?php
               if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):
-                echo "<a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container btn-excluir'>
-                        <span class='material-icons-outlined'>delete </span> Excluir 
-                      </a>";
+                echo "<button class='botao--container btn-excluir' type='button' onclick='openpp(this);'>
+                <span class='material-icons-outlined'>delete </span> Excluir
+              </button>";
               endif;
             ?>
-            <a href="downloadarquivo.php?id_arquivo=<?php echo $id_arquivo; ?>" class="botao--container btn-download">
-              <span class="material-icons-outlined">file_download </span> Download
-            </a>
-            </div>
+            <?php
+              if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):
+                echo "<a href='downloadarquivo.php?id_arquivo=$id_arquivo' class='botao--container btn-download'>
+                  <span class='material-icons-outlined'>file_download </span> Download
+              </a>";
+              else:
+                echo "<button class='botao--container btn-download' type='button' onclick='opnpp(this);'>
+                <span class='material-icons-outlined'>file_download </span> Download
+                </button>";
+              endif; 
+            ?>
+          </div>
         </div>
         <div class="flex flex-coluna border-bottom my-0">
           <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
@@ -72,6 +99,7 @@
       </section>
     </div>
   </main>
+  <script src="js/post.js"></script>
 <?php
   include ("rodape.php");
 ?>
