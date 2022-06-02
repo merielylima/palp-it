@@ -8,7 +8,6 @@ function closepp(button){
 
 var ppDwn = document.getElementById("pp-dwn");
 function opnpp(button){
-    alert('fui-mostrado')
     ppDwn.style.display = "block";
 }
 function clspp(button){
