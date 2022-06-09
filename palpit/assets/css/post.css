@@ -33,6 +33,12 @@
     color: var(--azul-1);
     background-color: var(--azul-5)
 }
+.pp-title{
+    font-weight: 700;
+    font-size:28px;
+    margin-bottom: 0.5rem;
+    color: var(--cinza-2);
+}
 .btn-excluir{
     font-size: 14px;
     color: var(--cinza-3);
@@ -40,7 +46,6 @@
 }
 .btn-excluir:hover{
     color: var(--cor-aviso);
-    
     background-color: var(--cor-aviso-fundo);
 }
 .bloco-inf{
@@ -66,7 +71,54 @@
     color: var(--azul-0);
     font-weight: 500;
 }
+.popup-container{
+    position: fixed;
+    font-size: 18px;
+    text-align: justify;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    min-width: 10rem;
+    max-width: 30rem;
+    height: fit-content;
+    border-radius: 6px;
+    background-color: white;
+    display: none;
+}
+.noborder{
+    border: none
+    
+}
+.noborder:hover{
+    border: 1px solid var(--cinza-4);;
+    
+}
+.btn-popup{
+    display: flex;
+    margin-top: 0.5rem;
+    flex-direction: column;
+    justify-content: center;
+}
 
+.btn-close{
+    position: absolute;
+    top: 0.5rem;
+    color: var(--cinza-2);
+    right: 1rem;
+    cursor: pointer;
+    font-size: 28px;
+    font-weight: 500;
+
+}
+.popup{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    position: relative;
+    padding: 3.5rem 3rem 2rem;
+}
 
 @media screen and (min-width: 495px) {
 

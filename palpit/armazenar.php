@@ -15,7 +15,6 @@
 	$status=0;
 	$time=time();
 
-
   	if (isset ($_FILES ['imagem_visual']) && $_FILES ['imagem_visual']['name'] != '') {
 		$foto_v = "assets/img/visual/".$time.'_'.basename ($_FILES ['imagem_visual']['name']);
 	}

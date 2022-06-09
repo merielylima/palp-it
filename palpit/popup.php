@@ -8,7 +8,8 @@
 
 
 <div class="popup-container ">
-    <spam> Você deve estar logado para concluir esta etapa.</spam>
+    <span class="pp-title">Não desista agora </span>
+    <span> Você deve estar logado para concluir esta etapa.</span>
     <div class="btn-popup">
         <a href="login.php" class="botao--container botao--primario botao-envio mx-1"> 
             Entrar
@@ -22,8 +23,6 @@
         <div onclick="open()" class='botao--container btn-excluir'>
               <span id="pp-del" class='material-icons-outlined'>delete </span> Excluir 
             </div>
-            ]
-
 
             <?php
               if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):

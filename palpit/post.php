@@ -26,25 +26,33 @@
   <main  class="center post-container" >
     <div class="p-os"> 
       <section class="cartao__container cartao-xl width-full">
-        <div id="pp-del" class="popup-container">
-          <spam>Esta ação não poderá ser desfeita. Tem certeza que deseja apagar essa publicação?</spam>
-          <div class="btn-popup">
-              <spam onclick="closepp(this);" class="botao--container botao--primario botao-envio mx-1" >Cancelar</spam>
-              <?php echo" <a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container botao--secundario botao-envio botao-aviso mx-1'>Apagar</a>"; ?>
-          </div>
-        </div>
-        <div id="pp-dwn" class='popup-dwn'>
-            <spam> Você deve estar logado para concluir esta etapa.</spam> 
-            <button class="btn-close" type="button" onclick="clspp(this);"> fechar </button>
-              <div class='btn-popup'>
-                <a href='login.php' class='botao--container botao--primario botao-envio mx-1'> 
-                  Entrar
-                </a>
-                <a href='cadastro.php' class='botao--container botao--secundario botao-envio mx-1'>
-                  Cadastrar
-                </a>
+          <div id="pp-del" class="popup-container">
+            <div class="popup">
+              <button class="btn-close" type="button" onclick="closepp(this);"> x </button>
+              <span class="pp-title">Atenção!</span>
+              <span> Esta ação não poderá ser desfeita. Tem certeza que deseja apagar essa publicação?</span>
+              <div class="btn-popup">
+                  <?php echo" <a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container botao--primario width-full'>Apagar</a>"; ?>
+                  <span onclick="closepp(this);" class="botao--container botao--secundario width-full noborder" >Cancelar</span>
+                  
               </div>
             </div>
+          </div>
+          <div id="pp-dwn" class='popup-container'>
+            <div class="popup">
+              <span class="pp-title">Não desista agora! </span>
+              <span> É necessário estar logado para concluir esta etapa.</span> 
+              <button class="btn-close" type="button" onclick="clspp(this);"> x </button>
+                  <div class='btn-popup'>
+                    <a href='login.php' class='botao--container botao--primario width-full'> 
+                      Entrar
+                    </a>
+                    <a href='cadastro.php' class='botao--container botao--secundario width-full noborder'>
+                      Cadastrar
+                    </a>
+                  </div>
+            </div>
+          </div>
         <div class="cartao-header my-0 reverse">
           <div class="flex">
             <a href="perfil.php" class="link-container avt-container avt-post">

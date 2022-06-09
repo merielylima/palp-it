@@ -48,7 +48,7 @@
                 <a href='envio.php' class='center botao--container botao--terciario btn-contribuicao mb-2'> 
                 <span class='material-icons-outlined'>add</span> Adicionar</a>
               </div>
-              <spam> Clique para adicionar sua primeira contribuição </spam>
+              <span> Clique para adicionar sua primeira contribuição </span>
             </div>";
           }
             ?>  

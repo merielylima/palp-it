@@ -106,7 +106,7 @@
                 ?>
               </li>
               <li class="info-content">
-                <spam class="material-icons-outlined info-icon">location_on </spam>
+                <span class="material-icons-outlined info-icon">location_on </span>
                 <?php
                 if($_SESSION ['cidade'] == ""):
                   echo "<span class='msg-alternativa'> Onde você mora?</span>";
@@ -177,7 +177,7 @@
                 <a href='envio.php' class='center botao--container botao--terciario btn-contribuicao mb-2'> 
                 <span class='material-icons-outlined'>add</span> Adicionar</a>
               </div>
-              <spam> Clique para adicionar sua primeira contribuição </spam>"; 
+              <span> Clique para adicionar sua primeira contribuição </span>"; 
           }
           ?>          
         </div>
