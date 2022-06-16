@@ -58,7 +58,7 @@
               </select>
             </div>
           </div>
-        <ol class="flex flex-wrap">
+        <ol class="flex flex-wrap mb-4">
           <?php
             if(isset($_POST['p_chave']) || isset($_POST['nivel1']) || isset($_POST['nivel2']) || isset($_POST['nivel3']) || isset($_POST['nivel4'])){
               //recuperação das informações formulario
@@ -149,11 +149,14 @@
             ?>
               <li class="cartao__container--item">
                 <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
-                  <div class="item-img">
-                    <img src=<?php echo $lista["foto_v"];?>>
+                  <div class="img-container">
+                    <div class="avt-content">
+                      <img class="img" src=<?php echo $lista["foto_v"];?>>
+                    </div> 
                   </div>
                   <span class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>
+                  
                 <a href="perfil.php" class="link-container flex flex-items-center "> 
                   <div class="avt-container avt-cab">
                       <div class="avt-content">
@@ -162,7 +165,7 @@
                   </div> 
                   <span class="item-user"><?php echo $lista["nome"];?></span>
                   <span class="hidden"><?php echo $lista["criado_arquivo"];?></span>
-              </a> 
+                </a> 
               </li>
             <?php
             $public = $lista;

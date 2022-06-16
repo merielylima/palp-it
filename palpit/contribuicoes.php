@@ -17,8 +17,7 @@
     <div class=" flex flex-coluna p-os"> 
       <section class="cartao__container cartao-xl width-full">
         <h2 class="cartao-header container--titulo"> Suas contribuições</h2>
-        
-        <ol class="flex flex-wrap">
+        <ol class="flex flex-wrap mb-4">
             <?php 
               $usuario = $_SESSION['id_usuario'];
               $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v FROM arquivo a
@@ -28,8 +27,10 @@
             ?>
                <li class="cartao__container--item">
                 <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
-                  <div class="item-img">
-                    <img src=<?php echo $lista["foto_v"];?>>
+                  <div class="img-container">
+                    <div class="avt-content">
+                      <img class="img" src=<?php echo $lista["foto_v"];?>>
+                    </div> 
                   </div>
                   <span class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>

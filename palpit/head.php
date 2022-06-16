@@ -26,7 +26,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   <link rel="stylesheet" href="./assets/css/componentes/inputs.css">
   <link rel="stylesheet" href="./assets/css/componentes/botao.css">
   <link rel="stylesheet" href="./assets/css/perfil.css">
-  <link rel="stylesheet" href="./assets/css/erro.css">
   <link rel="stylesheet" href="./assets/css/cabecalho.css">
   <link rel="stylesheet" href="./assets/css/envio.css">
   <link rel="stylesheet" href="./assets/css/login.css">
@@ -34,7 +33,7 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
   <link rel="stylesheet" href="./assets/css/base/padding.css">
   <link rel="stylesheet" href="./assets/css/base/margin.css">
 
-  <title>Palp-it</title>
+  
   <script>
   $(document).on("click", "li", function() {
     var aTag = $(this).find("a");

@@ -1,35 +1,56 @@
 .erro-container{
-    display: block;
+    position: fixed;
+    text-align: justify;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    line-height: 1;
+    max-width: 700px;
+    height: fit-content;
     text-align: center;
+    color: var(--contraste-medio);
+    padding: 1rem;
+
 }
-.container-global{
-	margin-top: 3vw;
-	max-width: 1024px;
-    min-width: 15rem;
-}
-.cartao-erro{
-    text-align: center;
-    padding: 5vw 1rem;
-    margin-bottom: 1rem;
-}
-.ops{
-    display: block;
-    margin: 0 auto;
-    font-size: 54px;
+
+.erro{
+    font-size:132px;
     font-weight: 700;
 }
+.erro--title{
+    font-size: 42px;
+    font-weight: 500;
+}
+.erro--description{
+    display: block;
+    font-size: 24px;
+    font-weight: 300;
+    margin: 1rem 0 ;
+}
 .btn-erro{
+    width: 15rem;
+    color: var(--contraste-claro);
+    height: 3rem;
+    font-size: 18px;
+    border-radius: 16px;
+    background-color: var(--azul-2);
     display: flex;
-    flex-direction: row;
     justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    margin-top: 0.5rem;
 }
 
 
 @media screen and (max-width: 495px) {
-    .btn-erro{
-        flex-direction: column;
-        align-items: center;
+    .erro--title{
+        font-size: 32px;
     }
-
+    .erro--description{
+        font-size: 18px;
+        margin: 1rem 0 ;
+    }
 }
 

@@ -26,33 +26,36 @@
   <main  class="center post-container" >
     <div class="p-os"> 
       <section class="cartao__container cartao-xl width-full">
-          <div id="pp-del" class="popup-container">
+        <div id="pp-del" class='fullscreen-container'>
+          <div class="popdiv">
             <div class="popup">
               <button class="btn-close" type="button" onclick="closepp(this);"> x </button>
               <span class="pp-title">Atenção!</span>
               <span> Esta ação não poderá ser desfeita. Tem certeza que deseja apagar essa publicação?</span>
               <div class="btn-popup">
-                  <?php echo" <a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container botao--primario width-full'>Apagar</a>"; ?>
-                  <span onclick="closepp(this);" class="botao--container botao--secundario width-full noborder" >Cancelar</span>
-                  
+                <?php echo" <a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container botao--primario width-full'>Apagar</a>"; ?>
+                <span onclick="closepp(this);" class="botao--container botao--secundario width-full noborder" >Cancelar</span>
               </div>
             </div>
           </div>
-          <div id="pp-dwn" class='popup-container'>
+        </div>
+        <div id="pp-dwn" class='fullscreen-container'>
+          <div class="popdiv">
             <div class="popup">
               <span class="pp-title">Não desista agora! </span>
               <span> É necessário estar logado para concluir esta etapa.</span> 
               <button class="btn-close" type="button" onclick="clspp(this);"> x </button>
-                  <div class='btn-popup'>
-                    <a href='login.php' class='botao--container botao--primario width-full'> 
-                      Entrar
-                    </a>
-                    <a href='cadastro.php' class='botao--container botao--secundario width-full noborder'>
-                      Cadastrar
-                    </a>
-                  </div>
+              <div class='btn-popup'>
+                <a href='login.php' class='botao--container botao--primario width-full'> 
+                  Entrar
+                </a>
+                <a href='cadastro.php' class='botao--container botao--secundario width-full noborder'>
+                  Cadastrar
+                </a>
+              </div>
             </div>
           </div>
+        </div>
         <div class="cartao-header my-0 reverse">
           <div class="flex">
             <a href="perfil.php" class="link-container avt-container avt-post">
@@ -86,7 +89,7 @@
             ?>
           </div>
         </div>
-        <div class="flex flex-coluna border-bottom my-0">
+        <div class="flex flex-coluna border-bottom mt-2">
           <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
           <div>
           <?php 
