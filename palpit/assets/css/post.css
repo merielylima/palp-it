@@ -152,4 +152,5 @@
 }
 .post-descricao{
     text-align: justify;
+    word-wrap: break-word;
 }
