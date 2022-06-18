@@ -92,20 +92,34 @@
         <div class="flex flex-coluna border-bottom mt-2">
           <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
           <div>
-          <?php 
-            $disciplina=$dados_arquivo["disciplinas"]; 
-            $array_d = explode(",",$disciplina);
-            $n_array = count($array_d);
-            for($i=0 ; $i < $n_array ; $i++ ){
-              echo "<span class='disciplina'> $array_d[$i] </span>";
-            }
+            <?php 
+              $disciplina=$dados_arquivo["disciplinas"]; 
+              $array_d = explode(",",$disciplina);
+              $n_array = count($array_d);
+              for($i=0 ; $i < $n_array ; $i++ ){
+                echo "<span class='disciplina'> $array_d[$i] </span>";
+              }
             ?>
           </div>
           <div>
-            <span class="tags" > <?php $tag=$dados_arquivo["tags"]; $new = preg_replace('/[\,]+/'," #",$tag); echo "#".$new;?> </span>
+            <?php 
+              $tag=$dados_arquivo["tags"]; 
+              $array_t = explode(",",$tag);
+              $t_array = count($array_t);
+              for($i=0 ; $i < $t_array ; $i++ ){
+                echo "<span class='tags'>"." #".$array_t[$i]."</span>";
+              }
+            ?>
           </div>
           <div>
-            <span class="msg-alternativa"> <?php echo $dados_arquivo["escolaridade"];?> </span>
+            <?php 
+            $esc = $dados_arquivo["escolaridade"]; 
+            $array_e = explode(",",$esc); 
+            $c_array = count($array_e); 
+            for($i=0 ; $i < $c_array ; $i++ ){
+               echo "<span class='msg-alternativa'> $array_e[$i]".","."</span>";
+            }
+            ?> 
           </div>
           <div class=" post-img_container">
             <div class="post-img_content">
