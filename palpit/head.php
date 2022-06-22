@@ -2,6 +2,9 @@
 
 //Verificar se a sessão não já está aberta.
 if (session_status() !== PHP_SESSION_ACTIVE) {
+  if(getenv('palpit_email') == "" || getenv('palpit_senha') == ""){
+    die ("Variaveis de Ambiente palpit_email e palpit_senha não inicializadas");
+  }
   session_start();
 }else{
   session_destroy();
