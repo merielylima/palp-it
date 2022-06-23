@@ -17,8 +17,8 @@
 	    $mail -> SMTPSecure = 'tls';	// SSL REQUERIDO pelo GMail
 	    $mail -> Host = 'smtp.gmail.com';	// SMTP utilizado
 	    $mail -> Port = 587;  		// A porta 587 deverá estar aberta em seu servidor
-	    $mail -> Username = getenv('palpit_email');
-	    $mail -> Password = getenv('palpit_senha');
+	    $mail -> Username = getenv('PALPIT_EMAIL');
+	    $mail -> Password = getenv('PALPIT_SENHA');
 	    $mail -> SetFrom ($de, $de_nome);
 	    $mail -> Subject = $assunto;
 	    $mail -> Body = $corpo;
