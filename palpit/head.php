@@ -95,7 +95,6 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         receber: document.getElementById("receber").value,
       },
       success: function (result) {
-        
         if (result == 0) {
           window.location.href="cadastro_submetido.php?email="+document.getElementById("email").value;
         }

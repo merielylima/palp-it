@@ -1,5 +1,3 @@
-
-
 function valida(input){
     const tipoInput = input.dataset.tipo
   }
@@ -24,6 +22,3 @@ function valida(input){
 
 
 
-function submitCadastro(){
-  
-}
