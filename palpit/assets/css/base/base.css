@@ -108,6 +108,10 @@ body {
 .border{
 	border: 2px solid var(--azul-claro-transparente);
 }
+.bold{
+	font-weight: 700;
+
+}
 .border-bottom{
 	margin-bottom: 1rem;
 	border-bottom: 1px solid var(--cinza-6);

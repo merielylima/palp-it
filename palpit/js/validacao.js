@@ -21,3 +21,9 @@ function valida(input){
       valueMissing: 'A senha deve contar no mínimo 6 caracteres'
     }
   }
+
+
+
+function submitCadastro(){
+  
+}

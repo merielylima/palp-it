@@ -46,7 +46,7 @@
           <button class="botao--container botao--primario width-full">Pesquisar </button>
         </form>
       </nav>
-      <section class=" cartao-xxl cartao__container ">
+      <section class="cartao-xxl cartao__container">
           <div class="cartao-header"> 
             <h2 class="container--titulo"> Publicações</h2>
             <div class="label--order">

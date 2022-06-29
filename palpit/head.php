@@ -74,16 +74,43 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
         email: document.getElementById("email").value,
       },
       success: function (result) {
-        console.log (result);
         if (result == 0) {
           console.log ("Email certo");
           window.location.href="reset_senha_analise.php";
         }
         else {
-          console.log ("Email errado");
           document.getElementById("email-erro").classList.remove("hidden");
         }
       }
     });
-  }</script>
+  }
+  function submitCadastro(){
+    $.post({
+      url: "cadastro_analise.php",
+      data: {
+        nome: document.getElementById("nome").value,
+        email: document.getElementById("email").value,
+        senha: document.getElementById("senha").value,
+        area: $('#area').val(),
+        receber: document.getElementById("receber").value,
+      },
+      success: function (result) {
+        
+        if (result == 0) {
+          window.location.href="cadastro_submetido.php?email="+document.getElementById("email").value;
+        }
+        else if(result==1){
+          alert("Email de confirmação não enviado, contacte comunidadepalpit@gmail.com");
+        }
+        else if(result==2){
+          alert("Já existe um usuário com o mesmo email.");
+        }
+        else{
+          alert("Ocorreu um erro inesperado, contacte comunidadepalpit@gmail.com");
+        }
+      }
+    });
+  }
+  
+  </script>
 </head>
