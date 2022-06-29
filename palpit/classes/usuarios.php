@@ -36,17 +36,30 @@
       global $msgErro;
 	  $foto_p = "assets\img\icon\avatar.svg";
   		//verificando se existe usuario cadastrado.
-  		$sql = $pdo->prepare("SELECT id_usuario FROM usuario WHERE email=:e"); //pega o id do usuario buscando pelo emial preenchido no cadastro
+  		$sql = $pdo->prepare("SELECT id_usuario, confirmacao FROM usuario WHERE email=:e"); //pega o id do usuario buscando pelo emial preenchido no cadastro
   		$sql->bindValue(":e", $email);  //substitui o :e pelo email preenchido no cadastro
   		$sql->execute();
 		
   		if($sql->rowCount()>0){ //verificando houve resposta na consulta
-			return false; // ja tem cadastro
+			$dado = $sql->fetch();
+			if($dado['confirmacao'] == 0){
+				return false;
+			}else{
+				$sql = $pdo->prepare("UPDATE usuario SET nome = :n,senha = :s, receber = :r, confirmacao = :c, foto_p = :fp WHERE id_usuario = :id");
+	  			$sql->bindValue(":id", $dado['id_usuario']);
+				$sql->bindValue(":n", $nome);
+				$sql->bindValue(":s", md5($senha));
+				$sql->bindValue(":r", $receber);
+				$sql->bindValue(":c", $confirmacao);
+				$sql->bindValue(":fp", $foto_p);
+				$sql->execute();
+				return true;
+			}
   		}
   		else{
   			//caso nao tenha
   			$sql = $pdo->prepare("INSERT INTO usuario (nome, email, senha, receber, confirmacao, foto_p) VALUES (:n, :e,:s, :r, :c, :fp)");
-	  		$sql->bindValue(":n", $nome);
+			$sql->bindValue(":n", $nome);
 	  		$sql->bindValue(":e", $email);
 			//$sql->bindValue(":p", $profissao);
 	  		$sql->bindValue(":s", md5($senha));
