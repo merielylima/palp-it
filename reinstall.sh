@@ -19,4 +19,4 @@ echo "SetEnv PALPIT_EMAIL $email" > /etc/apache2/conf-available/palpit-env.conf
 echo "SetEnv PALPIT_SENHA $senha" >> /etc/apache2/conf-available/palpit-env.conf
 a2enconf palpit-env.conf
 systemctl reload apache2
-python3 -m nltk.downloader all
+python3 -m nltk.downloader -d /usr/local/share/nltk_data all
