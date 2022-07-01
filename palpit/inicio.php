@@ -175,7 +175,7 @@
         <div class="sem-conteudo" >
           <?php
           if(empty($public)){
-            echo "n> Não há publicações para os critérios definidos </span>"; 
+            echo "<span> Não há publicações para os critérios definidos </span>"; 
           }
           ?>
         </div>

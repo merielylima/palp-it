@@ -14,32 +14,33 @@
                         <img src="assets/img/icon/Logo.svg" alt="Logo Palp-it"/>
                     </a> 
                     <h2 class="container--titulo mb-2">Cadastre-se no Palp-it</h2>
-                    </div>
-                        <?php if(isset($_SESSION['erro'])):?>
-                            <div class="mensagem-erro">
+                </div>
+                <?php if(isset($_SESSION['erro'])):?>
+                    <div class="mensagem-erro">
                                 <?= $_SESSION['erro'] ?>
                                 <?php unset($_SESSION['erro']) ?>
-                            </div>
-                        <?php endif; ?>
-                <div>    
-                </div>
+                    </div>
+                <?php endif; ?>
                 <div>
                     <form action="cadastro_analise.php" method="POST">
+                        <div id="div-erro">
+                            <span id="span-erro"></span>
+                        </div>
                         <div class="input-container">
                             <input name="nome" id="nome" class="input input-full" type="text" placeholder="Nome" required>
-                            <!-- <span class="input-mensagem-erro">Este campo não está válido</span> -->
+                            
                         </div>
                         <div class="input-container">
                             <input name="email" id="email" class="input input-full" type="email" placeholder="Email" required>
-                            <!-- <span class="input-mensagem-erro">Este campo não está válido</span> -->
+                            
                         </div>
                         <div class="input-container">
                             <input name="senha" id="senha" class="input input-full" type="password" placeholder="Senha" required>
-                            <!-- <span class="input-mensagem-erro">Este campo não está válido</span> -->
+                            
                         </div>
                         <div class="input-container">
                             <input name="senha_confirmacao" id="senha_confirmacao" class="input input-full" type="password" placeholder="Confirmação de senha" title="A senha deve conter entre 6 a 12 caracteres, deve conter pelo menos uma letra maiúscula, um número e não deve conter símbolos." required>
-                            <!-- <span class="input-mensagem-erro">Este campo não está válido</span> -->
+                            
                         </div>
                         <div class="input-container"> 
                             <label class="input--label">Área de interesse</label>

@@ -45,18 +45,33 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     }
   });
   function logar(){
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+    var spanErro = document.getElementById("span-erro");
+    var re = /\S+@\S+\.\S+/;
+
+    if ( email == "" || senha == ""){
+      spanErro.textContent = "Todos os campos devem ser preenchidos";
+      return;
+    }
+
+    if (!re.test(email)) {
+      spanErro.textContent = "O formato do email informado é incorreto";
+      return;
+    }
+
     $.post({
       url: "logar.php",
       data: {
-        email: document.getElementById ("email").value,
-        senha: document.getElementById ("senha").value,
+        email: email,
+        senha: senha,
       },
       success: function (result) {
         if (result == 0) {
           window.location.href="index.php";
         }
         else {
-          document.getElementById("login-erro").classList.remove("hidden");
+          spanErro.textContent = "Email ou senha invalida";
         }
       }
     });
@@ -85,31 +100,53 @@ if (session_status() !== PHP_SESSION_ACTIVE) {
     });
   }
   function submitCadastro(){
+    var spanErro = document.getElementById("span-erro");
+    var re = /\S+@\S+\.\S+/;
+    var nome = document.getElementById("nome").value;
+    var email = document.getElementById("email").value;
+    var senha = document.getElementById("senha").value;
+    var senhaConfirmacao = document.getElementById("senha_confirmacao").value;
+    var area = $('#area').val();
+    var receber = document.getElementById("receber").value;
+    
+    if (nome == "" || email == "" || senha == ""){
+      spanErro.textContent = "Todos os campos devem ser preenchidos";
+      return;
+    }
+
+    if (!re.test(email)) {
+      spanErro.textContent = "O formato do email informado é incorreto";
+      return;
+    }
+
+    if (senha !== senhaConfirmacao) {
+      spanErro.textContent = "As senhas devem ser iguais";
+      return;
+    }
     $.post({
       url: "cadastro_analise.php",
       data: {
-        nome: document.getElementById("nome").value,
-        email: document.getElementById("email").value,
-        senha: document.getElementById("senha").value,
-        area: $('#area').val(),
-        receber: document.getElementById("receber").value,
+        nome: nome,
+        email: email,
+        senha: senha,
+        area: area,
+        receber: receber
       },
       success: function (result) {
         if (result == 0) {
           window.location.href="cadastro_submetido.php?email="+document.getElementById("email").value;
         }
         else if(result==1){
-          alert("Email de confirmação não enviado, contacte comunidadepalpit@gmail.com");
+          spanErro.textContent = "Email de confirmação não enviado, contacte comunidadepalpit@gmail.com";
         }
         else if(result==2){
-          alert("Já existe um usuário com o mesmo email.");
+          spanErro.textContent = "Já existe um usuário com o mesmo email.";
         }
         else{
-          alert("Ocorreu um erro inesperado, contacte comunidadepalpit@gmail.com");
+          spanErro.textContent = "Ocorreu um erro inesperado, contacte comunidadepalpit@gmail.com";
         }
       }
     });
   }
-  
   </script>
 </head>

@@ -11,8 +11,8 @@
           </a> 
           <h2 class="container--titulo mb-2">Entre no Palp-it</h2>
         </div>
-        <div id="login-erro" class="mensagem-erro hidden">
-          <span > Email ou senha inválido</span>
+        <div id="div-erro" class="mensagem-erro">
+          <span id="span-erro"></span>
         </div>
         <div class="input-container ">
             <input  name="email"  id="email" class="input width-full" type="email" placeholder="Email" required>
