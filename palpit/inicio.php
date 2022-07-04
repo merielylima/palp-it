@@ -69,6 +69,10 @@
               $medio = addslashes(isset($_POST['nivel3'])) ? true : null;
               $superior = addslashes(isset($_POST['nivel4'])) ? true : null;
 
+              $newbusca = preg_replace('/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-\'\s]+/'," ",$busca);
+		          $newbusca2 = preg_replace('/\s{1,}/'," ",$newtag);
+              $busca = $u -> geraradical($newtag2);
+
               $nivel="";
               $f1="'Fundamental I'";
               $f2="'Fundamental II'";
@@ -119,13 +123,14 @@
               if($busca == ""){
                 $querybusca="";
               }else{
-                $querybusca="AND a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
+                //$querybusca="AND a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
+                $querybusca="AND a.radical_titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
               };
 
               $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,a.criado_arquivo,u.nome,u.foto_p
               FROM arquivo a
               INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
-              INNER JOIN tag t ON t.id_arquivo_fk=a.id_arquivo
+              INNER JOIN radicaltag t ON t.id_arquivo_fk=a.id_arquivo
               INNER JOIN assoc_arquivo aa ON aa.id_arquivo_fk=a.id_arquivo
               INNER JOIN assoc_ed ae ON ae.id_assoc_ed=aa.id_assoc_ed_fk
               INNER JOIN disciplina d ON d.id_disciplina=ae.id_disciplina_fk

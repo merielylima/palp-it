@@ -15,6 +15,11 @@
 	$status=0;
 	$time=time();
 
+	
+	$radical_titulo = $u->geraradical($titulo);
+	//$radical_titulo = shell_exec ("python3 radical.py ".$titulo);
+
+
   	if (isset ($_FILES ['imagem_visual']) && $_FILES ['imagem_visual']['name'] != '') {
 		$foto_v = "assets/img/visual/".$time.'_'.basename ($_FILES ['imagem_visual']['name']);
 	}
@@ -66,7 +71,7 @@
 		$pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);//Ativa o lançamento de exceptions para erros
 		$pdo->beginTransaction(); //inicia uma transação
 		
-		$u->enviar($titulo,$descricao,$foto_v,$foto_t,$status); //chamada função armazenamento tabela arquivo
+		$u->enviar($titulo,$descricao,$foto_v,$foto_t,$status,$radical_titulo); //chamada função armazenamento tabela arquivo
 		
 		//Tratamento em armazenamento tabela tag
 		$newtag = preg_replace('/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-\'\s]+/'," ",$tag);
@@ -77,6 +82,13 @@
 			$sql->bindValue(":fka", $_SESSION['id_arquivo']);
 			$sql->execute();
 		}
+		$radical_tag = $u->geraradical($newtag2);
+		foreach(explode("\n",trim($radical_tag)) as $values){
+			$sql = $pdo->prepare('INSERT INTO radicaltag (key_words, id_arquivo_fk) VALUES (:kw,:fka)');
+			$sql->bindValue(":kw", $values);
+			$sql->bindValue(":fka", $_SESSION['id_arquivo']);
+			$sql->execute();
+		}	
 
 			//Percorrer tabela do formulario de nivel, e disciplina
 			$e=0;
@@ -148,7 +160,8 @@
 
 	}catch(PDOException $exception){
 		$pdo->rollback();  //reverte uma transação
-		die('Erro ao armamzenar');
+		die('Erro ao armamzenar '.$exception);
+
 	}
 
 ?>

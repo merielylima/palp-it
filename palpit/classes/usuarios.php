@@ -103,20 +103,19 @@
   		}
   	}
 
-	public function enviar($titulo, $descricao, $foto_v, $foto_t, $status)
-  	{
-		error_reporting(E_ALL);
+	public function enviar($titulo, $descricao, $foto_v, $foto_t, $status,$radical_titulo){
         ini_set('display_errors',1);
   		global $pdo;
       	global $msgErro;
 				  		
-  		$sql= $pdo->prepare("INSERT INTO arquivo (titulo, descricao, foto_v, foto_t, id_usuario_fk, status) VALUES (:t, :d, :fv, :ft,:fku, :s)");
+  		$sql= $pdo->prepare("INSERT INTO arquivo (titulo, descricao, foto_v, foto_t, id_usuario_fk, status, radical_titulo) VALUES (:t, :d, :fv, :ft,:fku, :s, :rt)");
   		$sql->bindValue(":t", $titulo);
 		$sql->bindValue(":d", $descricao);
 		$sql->bindValue(":fv", $foto_v);
 		$sql->bindValue(":ft", $foto_t);
 		$sql->bindValue(":fku", $_SESSION['id_usuario']);
 		$sql->bindValue(":s", $status);
+		$sql->bindValue(":rt", $radical_titulo);
   		$sql->execute();
 		$_SESSION['id_arquivo'] = $pdo->lastInsertId();
 		return true;  
@@ -211,5 +210,13 @@
 		unset($_SESSION['sobre']);
 
 	}
+
+	public function geraradical($texto){
+		
+		$radical = shell_exec ("python3 radical.py ".$texto);
+		return $radical;
+
+	}
+
 	
 }
