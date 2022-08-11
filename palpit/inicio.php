@@ -5,6 +5,77 @@
   $u = new Usuarios;
   $u->conectar();
   $public = "";
+
+
+  function check_titulo ($pdo, $disciplina, $fundamental1, $fundamental2, $medio, $superior, $busca) {
+      $busca_titulo = "";
+      $busca_tag = "";
+
+      foreach(explode("\n",trim($busca)) as $value){
+         if($busca_titulo == ""){
+          $busca_titulo = $busca_titulo." a.radical_titulo LIKE '%$value%'";
+         }else{
+          $busca_titulo = $busca_titulo." AND a.radical_titulo LIKE '%$value%'";
+         }
+         if($busca_tag != ""){
+          $busca_tag = $busca_tag." AND a.radical_tag LIKE '%$value%'";
+         }else{
+          $busca_tag = $busca_tag." a.radical_tag LIKE '%$value%'";
+         }
+         
+      }
+
+      $nivel="";
+      $f1="'Fundamental I'";
+      $f2="'Fundamental II'";
+      $m="'Médio'";
+      $s="'Superior'";
+      $querynivel="";
+
+      if($fundamental1==true) $nivel= "e.nivel=$f1";
+
+      if($fundamental2==true){
+        if($nivel=="") $nivel="e.nivel=$f2";
+        else $nivel=$nivel." OR "."e.nivel=$f2";
+      }
+
+      if($medio==true){
+        if($nivel=="") $nivel="e.nivel=$m";
+        else $nivel=$nivel." OR "."e.nivel=$m";
+      }
+
+      if($superior==true){
+        if($nivel=="") $nivel="e.nivel=$s";
+        else $nivel=$nivel." OR "."e.nivel=$s";
+      }
+
+      if($nivel=="") $querynivel=$nivel;
+      else $querynivel="AND ($nivel)";
+
+      if($disciplina != 'Todas') $querydisciplina = "AND d.nome_disciplina = '$disciplina'";
+      else $querydisciplina = "";
+
+      if($busca == "") $querybusca="";
+      else $querybusca = " AND ($busca_titulo OR $busca_tag)";
+
+      $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,a.criado_arquivo,u.nome,u.foto_p
+      FROM arquivo a
+      INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
+      INNER JOIN assoc_arquivo aa ON aa.id_arquivo_fk=a.id_arquivo
+      INNER JOIN assoc_ed ae ON ae.id_assoc_ed=aa.id_assoc_ed_fk
+      INNER JOIN disciplina d ON d.id_disciplina=ae.id_disciplina_fk
+      INNER JOIN escolaridade e ON e.id_escolaridade=ae.id_escolaridade_fk
+      WHERE
+        a.status=0
+        $querynivel
+        $querydisciplina
+        $querybusca"
+      );
+
+      $sql->execute();
+      return $sql->fetchAll (PDO::FETCH_ASSOC);
+  }
+  
 ?>  
   <main  class="center container-xl" >
     <div class=" flex flex-coluna flex--row flex-start p-os"> 
@@ -70,111 +141,41 @@
               $superior = addslashes(isset($_POST['nivel4'])) ? true : null;
 
               $newbusca = preg_replace('/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-\'\s]+/'," ",$busca);
-		          $newbusca2 = preg_replace('/\s{1,}/'," ",$newtag);
-              $busca = $u -> geraradical($newtag2);
+		      $newbusca2 = preg_replace('/\s{1,}/'," ",$newbusca);
+              $busca = $u -> geraradical ($newbusca2);
 
-              $nivel="";
-              $f1="'Fundamental I'";
-              $f2="'Fundamental II'";
-              $m="'Médio'";
-              $s="'Superior'";
-              $querynivel="";
-
-              if($fundamental1==true){
-                $nivel= "e.nivel=$f1";
-              }
-
-              if($fundamental2==true){
-                if($nivel==""){
-                  $nivel="e.nivel=$f2";
-                }else{				
-                  $nivel=$nivel." OR "."e.nivel=$f2";
-                };
-              }
-
-              if($medio==true){
-                if($nivel==""){
-                  $nivel="e.nivel=$m";
-                }else{				
-                  $nivel=$nivel." OR "."e.nivel=$m";
-                };
-              }
-
-              if($superior==true){
-                if($nivel==""){
-                  $nivel="e.nivel=$s";
-                }else{				
-                  $nivel=$nivel." OR "."e.nivel=$s";
-                };
-              }
-
-              if($nivel==""){
-                $querynivel=$nivel;
-              }else{
-                $querynivel="AND ($nivel)";
-              };
-
-              if($disciplina != 'Todas'){
-                $querydisciplina = "AND d.nome_disciplina = '$disciplina'";
-              }else{
-                $querydisciplina = "";
-              };
-
-              if($busca == ""){
-                $querybusca="";
-              }else{
-                //$querybusca="AND a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
-                $querybusca="AND a.radical_titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
-              };
-
-              $sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,a.criado_arquivo,u.nome,u.foto_p
-              FROM arquivo a
-              INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
-              INNER JOIN radicaltag t ON t.id_arquivo_fk=a.id_arquivo
-              INNER JOIN assoc_arquivo aa ON aa.id_arquivo_fk=a.id_arquivo
-              INNER JOIN assoc_ed ae ON ae.id_assoc_ed=aa.id_assoc_ed_fk
-              INNER JOIN disciplina d ON d.id_disciplina=ae.id_disciplina_fk
-              INNER JOIN escolaridade e ON e.id_escolaridade=ae.id_escolaridade_fk
-              WHERE
-                a.status=0
-                $querynivel
-                $querydisciplina
-                $querybusca"
-              );
-
-              //$sql->bindValue(":b", $busca);
-              //$sql->bindValue(":d", $disciplina);
-              $sql->execute();
-
+              $lista = check_titulo ($pdo, $disciplina, $fundamental1, $fundamental2, $medio, $superior, $busca);
             }else{
               $sql= $pdo->prepare("SELECT a.id_arquivo, a.titulo, a.foto_v, a.criado_arquivo,u.nome,u.foto_p FROM arquivo a,usuario u WHERE a.status = 0 AND u.id_usuario = a.id_usuario_fk ORDER BY id_arquivo DESC;");
               $sql->execute();
+              $lista = $sql->fetchAll (PDO::FETCH_ASSOC);
             }
-            while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
+            for ($i = 0; $i < count ($lista); $i ++) {
+                $l = $lista [$i];
             ?>
               <li class="cartao__container--item">
-                <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
+                <a href="post.php?id_arquivo=<?php echo $l["id_arquivo"];?>" class="flex flex-coluna">
                   <div class="img-container">
                     <div class="avt-content">
-                      <img class="img" src=<?php echo $lista["foto_v"];?>>
+                      <img class="img" src=<?php echo $l["foto_v"];?>>
                     </div> 
                   </div>
-                  <span class="item-titulo"><?php echo $lista["titulo"];?></span>
+                  <span class="item-titulo"><?php echo $l["titulo"];?></span>
                 </a>
                   
                 <a href="perfil.php" class="link-container flex flex-items-center "> 
                   <div class="avt-container avt-cab">
                       <div class="avt-content">
-                          <img class="avt" src=<?php echo $lista["foto_p"];?> alt="Foto de perfil">
+                          <img class="avt" src=<?php echo $l["foto_p"];?> alt="Foto de perfil">
                       </div>
                   </div> 
-                  <span class="item-user"><?php echo $lista["nome"];?></span>
-                  <span class="hidden"><?php echo $lista["criado_arquivo"];?></span>
+                  <span class="item-user"><?php echo $l["nome"];?></span>
+                  <span class="hidden"><?php echo $l["criado_arquivo"];?></span>
                 </a> 
               </li>
             <?php
-            $public = $lista;
-            endwhile;
+          }
+          $public = $lista;
           ?>
         </ol>
         <div class="sem-conteudo" >

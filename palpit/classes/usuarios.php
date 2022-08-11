@@ -103,12 +103,12 @@
   		}
   	}
 
-	public function enviar($titulo, $descricao, $foto_v, $foto_t, $status,$radical_titulo){
+	public function enviar($titulo, $descricao, $foto_v, $foto_t, $status,$radical_titulo,$radical_tag){
         ini_set('display_errors',1);
   		global $pdo;
       	global $msgErro;
 				  		
-  		$sql= $pdo->prepare("INSERT INTO arquivo (titulo, descricao, foto_v, foto_t, id_usuario_fk, status, radical_titulo) VALUES (:t, :d, :fv, :ft,:fku, :s, :rt)");
+  		$sql= $pdo->prepare("INSERT INTO arquivo (titulo, descricao, foto_v, foto_t, id_usuario_fk, status, radical_titulo,radical_tag) VALUES (:t, :d, :fv, :ft,:fku, :s, :rt, :rtg)");
   		$sql->bindValue(":t", $titulo);
 		$sql->bindValue(":d", $descricao);
 		$sql->bindValue(":fv", $foto_v);
@@ -116,6 +116,7 @@
 		$sql->bindValue(":fku", $_SESSION['id_usuario']);
 		$sql->bindValue(":s", $status);
 		$sql->bindValue(":rt", $radical_titulo);
+		$sql->bindValue(":rtg", $radical_tag);
   		$sql->execute();
 		$_SESSION['id_arquivo'] = $pdo->lastInsertId();
 		return true;  
@@ -212,10 +213,95 @@
 	}
 
 	public function geraradical($texto){
-		
 		$radical = shell_exec ("python3 radical.py ".$texto);
 		return $radical;
+	}
 
+	public function recuperartitulo($busca,$disciplina,$fundamental1,$fundamental2,$medio,$superior){
+		$newbusca = preg_replace('/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-\'\s]+/'," ",$busca);
+		$newbusca2 = preg_replace('/\s{1,}/'," ",$newbusca);
+		$busca = geraradical($newbusca2);
+
+		$busca_titulo = "";
+		foreach(explode("\n",$busca) as $values){
+		if($values != ""){
+		$busca_titulo = $busca_titulo." AND a.radical_titulo LIKE '%$values%'";
+		}
+		}
+		
+		$nivel="";
+		$f1="'Fundamental I'";
+		$f2="'Fundamental II'";
+		$m="'Médio'";
+		$s="'Superior'";
+		$querynivel="";
+
+		if($fundamental1==true){
+		$nivel= "e.nivel=$f1";
+		}
+
+		if($fundamental2==true){
+		if($nivel==""){
+			$nivel="e.nivel=$f2";
+		}else{				
+			$nivel=$nivel." OR "."e.nivel=$f2";
+		};
+		}
+
+		if($medio==true){
+		if($nivel==""){
+			$nivel="e.nivel=$m";
+		}else{				
+			$nivel=$nivel." OR "."e.nivel=$m";
+		};
+		}
+
+		if($superior==true){
+		if($nivel==""){
+			$nivel="e.nivel=$s";
+		}else{				
+			$nivel=$nivel." OR "."e.nivel=$s";
+		};
+		}
+
+		if($nivel==""){
+		$querynivel=$nivel;
+		}else{
+		$querynivel="AND ($nivel)";
+		};
+
+		if($disciplina != 'Todas'){
+		$querydisciplina = "AND d.nome_disciplina = '$disciplina'";
+		}else{
+		$querydisciplina = "";
+		};
+
+		if($busca == ""){
+		$querybusca="";
+		}else{
+		//$querybusca="AND a.titulo LIKE '%$busca%' OR t.key_words LIKE '%$busca%'";
+		$querybusca="$busca_titulo";
+		};
+
+		$sql= $pdo->prepare("SELECT DISTINCT a.id_arquivo, a.titulo, a.foto_v,a.criado_arquivo,u.nome,u.foto_p
+		FROM arquivo a
+		INNER JOIN usuario u ON u.id_usuario = a.id_usuario_fk
+		/*INNER JOIN radicaltag t ON t.id_arquivo_fk=a.id_arquivo*/
+		INNER JOIN assoc_arquivo aa ON aa.id_arquivo_fk=a.id_arquivo
+		INNER JOIN assoc_ed ae ON ae.id_assoc_ed=aa.id_assoc_ed_fk
+		INNER JOIN disciplina d ON d.id_disciplina=ae.id_disciplina_fk
+		INNER JOIN escolaridade e ON e.id_escolaridade=ae.id_escolaridade_fk
+		WHERE
+		a.status=0
+		$querynivel
+		$querydisciplina
+		$querybusca"
+		);
+
+		//$sql->bindValue(":b", $busca);
+		//$sql->bindValue(":d", $disciplina);
+		$sql->execute();
+		return $sql->fetch(PDO::FETCH_ASSOC);
 	}
 
 	

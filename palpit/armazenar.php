@@ -71,20 +71,16 @@
 		$pdo->setAttribute(PDO::ATTR_ERRMODE , PDO::ERRMODE_EXCEPTION);//Ativa o lançamento de exceptions para erros
 		$pdo->beginTransaction(); //inicia uma transação
 		
-		$u->enviar($titulo,$descricao,$foto_v,$foto_t,$status,$radical_titulo); //chamada função armazenamento tabela arquivo
-		
-		//Tratamento em armazenamento tabela tag
 		$newtag = preg_replace('/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-\'\s]+/'," ",$tag);
 		$newtag2 = preg_replace('/\s{1,}/'," ",$newtag);
+		$radical_tag = $u->geraradical($newtag2);
+
+		$u->enviar($titulo,$descricao,$foto_v,$foto_t,$status,$radical_titulo,$radical_tag); //chamada função armazenamento tabela arquivo
+		
+		//Tratamento em armazenamento tabela tag
+		
 		foreach(explode(" ",trim($newtag2)) as $values){
 			$sql = $pdo->prepare('INSERT INTO tag (key_words, id_arquivo_fk) VALUES (:kw,:fka)');
-			$sql->bindValue(":kw", $values);
-			$sql->bindValue(":fka", $_SESSION['id_arquivo']);
-			$sql->execute();
-		}
-		$radical_tag = $u->geraradical($newtag2);
-		foreach(explode("\n",trim($radical_tag)) as $values){
-			$sql = $pdo->prepare('INSERT INTO radicaltag (key_words, id_arquivo_fk) VALUES (:kw,:fka)');
 			$sql->bindValue(":kw", $values);
 			$sql->bindValue(":fka", $_SESSION['id_arquivo']);
 			$sql->execute();

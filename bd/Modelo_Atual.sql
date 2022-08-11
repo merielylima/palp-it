@@ -48,6 +48,8 @@ CREATE TABLE IF NOT EXISTS `palpit`.`arquivo` (
   `foto_t` VARCHAR(245) NOT NULL,
   `id_usuario_fk` INT NOT NULL,
   `criado_arquivo` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `radical_titulo` varchar(255) NULL,
+  `radical_tag` varchar(255) NULL,
   PRIMARY KEY (`id_arquivo`),
   INDEX `fk_arquivo_usuario_idx` (`id_usuario_fk` ASC),
   CONSTRAINT `fk_arquivo_usuario`
@@ -73,7 +75,6 @@ CREATE TABLE IF NOT EXISTS `palpit`.`tag` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `palpit`.`disciplina`
