@@ -1,20 +1,20 @@
 <?php
- $page_atual = 3;
- include ("cabecalho.php");
- require_once 'classes/usuarios.php';
+$page_atual = 3;
+include ("cabecalho.php");
+require_once 'classes/usuarios.php';
   $u = new Usuarios;
   $public="";
   $u->conectar();
 
- if (!isset($_SESSION['id_usuario'])) {
+if (!isset($_SESSION['id_usuario'])) {
   // Destrói a sessão por segurança
   session_destroy();
   // Redireciona o visitante de volta para o inicio
   header("Location: index.php"); exit;
 }
 ?>
-  <main  class="center container-xl" >
-    <div class=" flex flex-coluna p-os"> 
+  <main class="center container-xl" >
+    <div class="flex flex-coluna p-os"> 
       <section class="cartao__container cartao-xl width-full">
         <h2 class="cartao-header container--titulo"> Suas contribuições</h2>
         <ol class="flex flex-wrap mb-4">
@@ -25,19 +25,19 @@
               $sql->execute();
               while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
-               <li class="cartao__container--item">
+              <li class="cartao__container--item">
                 <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
                   <div class="img-container">
                     <div class="avt-content">
                       <img class="img" src=<?php echo $lista["foto_v"];?>>
                     </div> 
                   </div>
-                  <span class="item-titulo"><?php echo $lista["titulo"];?></span>
+                  <span  class="item-titulo"><?php echo $lista["titulo"];?></span>
                 </a>
               </li>
             <?php
             $public = $lista;
-              endwhile;
+              endwhile; 
             ?>
           </ol>
           <div class="sem-conteudo flex flex-coluna" >
@@ -55,7 +55,6 @@
             ?>  
             </div>         
       </section>
-
     </div>
 </main>
 <?php

@@ -13,8 +13,9 @@
 				</div>
 				<div class="cartao-xs__txt my-3 text-justify">
 					<p>
-						Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link bold" > <?php echo $_GET["email"] ?></a></p>
-					<p>Caso não tenha recebido, verifique se o email informado está correto. Se o problema persistir, entre em contato com <span class="bold"> comunidadepalpit@gmail.com </span></p>
+						Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link semi-bold" > <?php echo $_GET["email"] ?></a></p>
+					<p>Caso não tenha recebido, verifique se o email informado está correto.</p>
+					<p>Se o problema persistir, entre em contato com <span class="semi-bold"> comunidadepalpit@gmail.com </span></p>
 				</div>
 				<a href="inicio.php"> <button class="botao--container botao--primario width-full">  Voltar para página inicial </button></a>
 			</section>

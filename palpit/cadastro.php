@@ -23,7 +23,7 @@
                 <?php endif; ?>
                 <div>
                     <form action="cadastro_analise.php" method="POST">
-                        <div id="div-erro">
+                        <div id="div-erro" class="mensagem-erro">
                             <span id="span-erro"></span>
                         </div>
                         <div class="input-container">

@@ -71,6 +71,7 @@
             </tr>
           </thead>
           <tbody id ="tabela" class="table__content"></tbody>   
+
         </table>
         <div id="conteudo" class="flex py-1 ">
           <div class="flex flex-coluna flex--row bloco-lbl">
@@ -109,7 +110,7 @@
         </div>
 
         <div class="py-1 flex flex--end ">
-          <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio botao-aviso"> Cancelar </A>
+          <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio  mr-2"> Cancelar </A>
           <button onclick="enviarFormulario()" type="button" class="botao--container botao--primario botao-envio "> Enviar </button>
         </div>
       </form>

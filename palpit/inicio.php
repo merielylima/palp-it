@@ -79,15 +79,15 @@
 ?>  
   <main  class="center container-xl" >
     <div class=" flex flex-coluna flex--row flex-start p-os"> 
-      <nav class=" cartao__container cartao-xxs ">
+    <nav class=" cartao__container cartao-xxs">
         <form  action="inicio.php"  method="POST">
-          <div class="mt-2">
+          <div class="">
             <label for="p_chave" class="input--label">Palavras-chave</label>
             <input name="p_chave" id="p_chave"  type="search" placeholder="Pesquisar" class=" mt-1 width-full input">
           </div>
           <div class="mt-2">
             <label for = "disciplina" class="input--label">Disciplina</label>
-            <select name="disciplina" id="disciplina" class=" option input width-full">
+            <select name="disciplina" id="disciplina" class=" mt-1 option input width-full">
             <?php
               $getdisciplina = $pdo->prepare("SELECT * FROM disciplina ORDER BY id_disciplina");
               $getdisciplina->execute();
@@ -114,12 +114,12 @@
               <input type="checkbox" name="nivel4"> Ensino Superior
             </label>
           </div>
-          <button class="botao--container botao--primario width-full">Pesquisar </button>
+          <button class="botao--container botao--primario width-full"><span class="material-symbols-rounded">search</span> Pesquisar </button>
         </form>
       </nav>
       <section class="cartao-xxl cartao__container">
           <div class="cartao-header"> 
-            <h2 class="container--titulo"> Publicações</h2>
+            <h2 class="container--titulo"> Feed de publicações</h2>
             <div class="label--order">
               <label for="dropdow_order" > Ordenar por: </label>
               <select id="dropdow_order" class="dropdow--order">
@@ -154,13 +154,13 @@
                 $l = $lista [$i];
             ?>
               <li class="cartao__container--item">
-                <a href="post.php?id_arquivo=<?php echo $l["id_arquivo"];?>" class="flex flex-coluna">
+                <a href="post.php?id_arquivo=<?php echo $l["id_arquivo"];?>" class=" hoverzinho flex flex-coluna">
                   <div class="img-container">
                     <div class="avt-content">
                       <img class="img" src=<?php echo $l["foto_v"];?>>
                     </div> 
                   </div>
-                  <span class="item-titulo"><?php echo $l["titulo"];?></span>
+                  <span class="item-titulo "><?php echo $l["titulo"];?></span>
                 </a>
                   
                 <a href="perfil.php" class="link-container flex flex-items-center "> 

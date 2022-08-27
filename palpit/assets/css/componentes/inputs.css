@@ -5,7 +5,7 @@
     box-sizing: border-box;
 }
 .input{
-    border: 2px solid var(--cinza-4);
+    border: 2px solid var(--cinza-5);
     background-color: var(--contraste-claro);
     border-radius: 6px;
     padding-left: 0.75rem;
@@ -17,13 +17,13 @@
 }
 
 .input::placeholder{
-    color: var(--cinza-4);
+    color: var(--cinza-5);
     font-weight: var(--fonte-peso-regular);
     padding-left: 0.05rem;
     vertical-align: middle;
 }
 .input:hover{
-    background-color: var(--azul-10);
+    background-color: var(--azul-claro-transparente);
 }
 .input:focus {
     outline: none;
@@ -58,17 +58,14 @@
     background-color: var(--contraste-claro);
     font-size: var(--fonte-tamanho-primaria);
     padding: 0 0.75rem;
-    color: var(--cinza-2);
+    color: var(--cinza-3);
 }
 .textarea{
     min-height: 4rem;
     width: 100%;
     resize: none;
-    padding: 0.5rem 1rem;
+    padding: 0.5rem 0.75rem;
 }
-
-
-
 
 .label--order{
     display: flex;
@@ -80,12 +77,12 @@
 .dropdow--order{
     margin-left: 0.5rem;
     cursor: pointer;
-    border: 1px solid var(--cinza-4);
+    border: 1px solid var(--cinza-5);
     font-family: var(--fonte-familia-corpo);
     background-color: var(--contraste-claro);
     font-size: var(--fonte-tamanho-primaria);
     padding: 0 0.75rem;
-    color: var(--cinza-2);
+    color: var(--cinza-3);
     height: 100%;
     line-height: 60px;
 }

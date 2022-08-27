@@ -11,7 +11,11 @@
                     </a> 
                     <h2 class="container--titulo">Cadastro concluído</h2>
                 </div>
-                <p class="cartao-xs__txt my-3"> Seu email foi validado com sucesso <span class="material-icons-outlined sucesso">task_alt</span></p>
+                <div class="cartao-xs__txt my-3">
+                    <p> Seja bem vindo, <span class> Usuário</span>!</p>
+                    <p>Ficamos felizes de ter você conosco.</p>
+                    <p>Seu cadastro foi concluído e sua conta já está pronta para ser acessada.</p>
+                </div>
                 <a href="login.php" > <button class="botao--container botao--primario width-full">Entrar na sua conta</button></a>
             </section>
         </div>

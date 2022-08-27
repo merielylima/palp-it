@@ -24,8 +24,11 @@
     $soma_acesso->execute();
 ?>
   <main  class="center post-container" >
-    <div class="p-os"> 
-      <section class="cartao__container cartao-xl width-full">
+    <div>
+      <span></span>
+    </div>
+    <div class="flex  collumn-reverse flex--row flex-start p-os" > 
+      <section class="cartao__container cartao-xl">
         <div id="pp-del" class='fullscreen-container'>
           <div class="popdiv">
             <div class="popup">
@@ -34,7 +37,7 @@
               <span> Esta ação não poderá ser desfeita. Tem certeza que deseja apagar essa publicação?</span>
               <div class="btn-popup">
                 <?php echo" <a href='deletearquivo.php?id_arquivo=$id_arquivo' class='botao--container botao--primario width-full'>Apagar</a>"; ?>
-                <span onclick="closepp(this);" class="botao--container botao--secundario width-full noborder" >Cancelar</span>
+                <span onclick="closepp(this);" class="botao--container botao--secundario width-full " >Cancelar</span>
               </div>
             </div>
           </div>
@@ -49,14 +52,14 @@
                 <a href='login.php' class='botao--container botao--primario width-full'> 
                   Entrar
                 </a>
-                <a href='cadastro.php' class='botao--container botao--secundario width-full noborder'>
+                <a href='cadastro.php' class='botao--container botao--secundario width-full '>
                   Cadastrar
                 </a>
               </div>
             </div>
           </div>
         </div>
-        <div class="cartao-header my-0 reverse">
+        <div class="cartao-header my-0">
           <div class="flex">
             <a href="perfil.php" class="link-container avt-container avt-post">
               <div class="avt-content">
@@ -68,39 +71,20 @@
               <span class="post-data"> <?php echo $dados_arquivo["criado_arquivo"];?> </span>
             </div>
           </div>
-          <div class="btn-order">
-            <?php
-              if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):
-                echo "<button class='botao--container btn-excluir' type='button' onclick='openpp(this);'>
-                <span class='material-icons-outlined'>delete </span> Excluir
-              </button>";
-              endif;
-            ?>
-            <?php
-              if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):
-                echo "<a href='downloadarquivo.php?id_arquivo=$id_arquivo' class='botao--container btn-download'>
-                  <span class='material-icons-outlined'>file_download </span> Download
-              </a>";
-              else:
-                echo "<button class='botao--container btn-download' type='button' onclick='opnpp(this);'>
-                <span class='material-icons-outlined'>file_download </span> Download
-                </button>";
-              endif; 
-            ?>
-          </div>
+          <?php
+          if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):
+                echo"<div>
+            <button onclick='options();' class='material-symbols-rounded options-btn'>more_vert</button>
+            <div id='options' class='options-container'> 
+                <button class='caixa-item' type='button' onclick='openpp(this);'> Excluir </button>
+                <span class='caixa-item'>Editar</span>
+            </div>
+          </div>";
+          endif;
+          ?> 
         </div>
-        <div class="flex flex-coluna border-bottom mt-2">
-          <h2 class="pt-1 container--titulo"> <?php echo $dados_arquivo["titulo"];?> </h2>
-          <div>
-            <?php 
-              $disciplina=$dados_arquivo["disciplinas"]; 
-              $array_d = explode(",",$disciplina);
-              $n_array = count($array_d);
-              for($i=0 ; $i < $n_array ; $i++ ){
-                echo "<span class='disciplina'> $array_d[$i] </span>";
-              }
-            ?>
-          </div>
+        <div class="flex flex-coluna">
+          <h3 class="pt-1 post-titulo"> <?php echo $dados_arquivo["titulo"];?> </h3>
           <div>
             <?php 
               $tag=$dados_arquivo["tags"]; 
@@ -110,25 +94,99 @@
                 echo "<span class='tags'>"." #".$array_t[$i]."</span>";
               }
             ?>
+            
           </div>
-          <div>
-            <?php 
-            $esc = $dados_arquivo["escolaridade"]; 
-            $array_e = explode(",",$esc); 
-            $c_array = count($array_e); 
-            for($i=0 ; $i < $c_array ; $i++ ){
-               echo "<span class='msg-alternativa'> $array_e[$i]".","."</span>";
-            }
-            ?> 
+          <div class="mb-2">
+            <div id="read-more--container" class="">
+              <p class="read-more"> <?php echo $dados_arquivo["descricao"];?> </p>
+              <button id="read-more" class="btn-read">Ver mais</button>
+            </div>
+            <div id="read-less--container" class="hidden">
+              <span  class="read-less"> <?php echo $dados_arquivo["descricao"];?> </span>
+              <button id="read-less" class="btn-read">Ver menos</button>
+            </div>
           </div>
           <div class=" post-img_container">
             <div class="post-img_content">
               <img class=" post-img" src="<?php echo $dados_arquivo["foto_v"];?>" alt="Foto visual">
             </div>
           </div>
-          <span class="mb-2 post-descricao"> <?php echo $dados_arquivo["descricao"];?></span>
+          
+        </div>
+        <div class="post-functions">
+          <div class="material-icons functions-items"> 
+            <span class="material-symbols-rounded">grade</span>
+            <span class="mt-1">Favoritar</span>
+          </div>
+          <div class="material-icons functions-items">
+            <span class="material-symbols-rounded eye">forum</span>
+            <span class="mt-1">Comentar</span>
+          </div>
         </div>
       </section>
+      <div class="cartao__container cartao-post ">
+        <div>
+          <div class="informacao-post">
+          <h2 class="pt-1 post-titulo"> Sobre </h2>
+          <div class="mt-1">
+            <span class="semi-bold">Título:   </span>
+            <span> <?php echo $dados_arquivo["titulo"];?></span>
+          </div>
+          <div class="mt-1">
+            <span class="semi-bold ">Disciplina:   </span>
+            <span>           <?php 
+              $disciplina=$dados_arquivo["disciplinas"]; 
+              $array_d = explode(",",$disciplina);
+              $n_array = count($array_d);
+              for($i=0 ; $i < $n_array ; $i++ ){
+                echo "<span> $array_d[$i]".","." </span>";
+              }
+            ?></span>
+            </div>
+            <div class="mt-1">
+              <span class="semi-bold">Graus de escolaridade:  </span>
+              <span> <?php 
+                $esc = $dados_arquivo["escolaridade"]; 
+                $array_e = explode(",",$esc); 
+                $c_array = count($array_e); 
+                for($i=0 ; $i < $c_array ; $i++ ){
+                echo "<span> $array_e[$i]".","."</span>";}
+                ?> 
+              </span>
+            </div>
+            <div>
+              <div class="material-icons">
+                  <span class="material-symbols-rounded">grade</span>  
+                  <span class="mr-1 mt-1">5 </span> 
+                  <span class="mt-1"> Favoritos</span>
+              </div>
+              <div class="material-icons">
+                <span class="material-symbols-rounded">download</span> 
+                <span class="mr-1 "> 16 </span> 
+                <span>Downloads</span>
+              </div>
+              <div class="material-icons" >
+                <span class="material-symbols-rounded eye">visibility</span>
+                <span class="mr-1 " > 100 </span>
+                <span>Visualizações</span>
+              </div>
+            </div>
+            
+
+          </div>
+          <?php
+            if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):
+              echo "<a href='downloadarquivo.php?id_arquivo=$id_arquivo' class='botao--container botao--secundario width-full semi-bold '>
+                <span class='material-symbols-rounded'>download </span> Download
+            </a>";
+            else:
+              echo "<button class='botao--container botao--secundario width-full semi-bold ' type='button' onclick='opnpp(this);'>
+              <span class='material-symbols-rounded'>download </span> Download
+            </button>";
+            endif; 
+          ?>
+        </div>
+      </div>
     </div>
   </main>
   <script src="js/post.js"></script>

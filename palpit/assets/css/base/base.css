@@ -8,8 +8,8 @@ body {
 	color: var(--cinza-1);
 	font-family: var(--fonte-familia-corpo);
 	overflow-x: hidden;
-	letter-spacing: -0.5px;
-	line-height: 1.2;
+	letter-spacing: -0.25px;
+	line-height: 1.1;
 	font-size: var(--fonte-tamanho-primaria);
 }
 /*Presente em todas as paginas*/
@@ -37,9 +37,9 @@ body {
 }
 
 .container--titulo{
-	font-size: var(--fonte-tamanho-titulo);
+	font-size: var(--header-3);
 	font-weight: var(--fonte-peso-medium);
-	color: var(--cinza-2);
+	color: var(--cinza-3);
 	margin-right: 0.5rem;
 }
 
@@ -58,10 +58,10 @@ body {
 	border-radius: 6px;
 	object-fit: cover;
 	position: absolute;
-	  top: 0;
-	  left: 0;
-	  width: 100%;
-	  height: 100%;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
 }
 .hidden{
 	display: none;
@@ -69,11 +69,14 @@ body {
 }
 
 
-.bold{
+.semi-bold{
 	font-weight: var(--fonte-peso-medium);
 }
 .flex {
 	display: flex;
+}
+.collumn-reverse{
+	flex-direction: column-reverse;
 }
 .space-between{
 	justify-content: space-between;
@@ -129,8 +132,8 @@ body {
 	text-align: justify;
 }
 .link-container{
-  text-decoration: none;
-  cursor: pointer;
+	text-decoration: none;
+	cursor: pointer;
 }
 .link-container:hover{
 	text-decoration: underline;
@@ -143,19 +146,48 @@ body {
 	font-size: var( --fonte-tamanho-secundaria);
 	text-transform: uppercase;
 }
-.material-icons-outlined, .material-icons{
-	vertical-align: middle;
+
+.material-icons{
+	display: flex;
+	align-items: center;
+	line-height: 1;
+}
+
+.material-symbols-rounded {
 	margin-right: 0.25rem;
+	font-variation-settings:
+	'FILL' 0,
+	'wght' 300,
+	'GRAD' 200,
+	'opsz' 32
+}
+.fill{
+	font-variation-settings:
+	'FILL' 1,
+	'wght' 300,
+	'GRAD' 200,
+	'opsz' 32
+} 
+
+.eye{
+	
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 24px;
-	height: 24px;
-	text-align: center;
+    font-size: 18px;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 400,
+    'opsz' 24
 }
 .sucesso{
 	color: var(--cor-sucesso);
 }
 
 
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 769px) {
 	.flex--row{
 		flex-direction: row;
 	}
@@ -175,7 +207,7 @@ body {
 		margin-top: 1rem;
 	}
 	.container--titulo{
-		font-size: 22px;
+		font-size: var(--header-2);
 	}
 }
 @media screen and (min-width:  1024px) {

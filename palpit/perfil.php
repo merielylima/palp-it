@@ -15,7 +15,7 @@
 ?>
   <main class="center container-xl">
     <div class="flex flex-coluna flex--row flex-start p-os">
-      <nav class="cartao__container cartao-xxs">
+      <nav class="cartao__container cartao-xxs mr-card">
         <!-- Editar perfil = opacity: 0-->
         <form id="perfil-edit" class="hidden" action="alterarperfil.php" enctype='multipart/form-data' method="POST">
           <div class="info-user mb-3 flex-items-center"> 
@@ -35,7 +35,7 @@
           </div>
           <div class="mb-1 flex flex-coluna">
             <label for="user_profile_bio" class="input--label  ">Sobre</label>
-            <textarea class="input  textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você..." aria-label="Add a bio" rows="3" data-input-max-length="160"><?php echo ''.$_SESSION ['sobre'].''?></textarea>
+            <textarea class="input textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você..."><?php echo ''.$_SESSION ['sobre'].''?></textarea>
           </div>
           <div class=" mb-1">
               <label for="" class="input--label ">Cidade</label>
@@ -93,9 +93,9 @@
           </div>
 
           <div class="flex flex-coluna">
-            <ul class="my-2">
+            <ul class="mt-2">
               <li class="info-content">
-                <span class="material-icons-outlined info-icon">info</span>
+              <span class="material-symbols-rounded">info</span>
                 <?php
                 if($_SESSION ['sobre'] == ""):
                   echo "<span class='msg-alternativa'> Conte mais sobre você... </span>";
@@ -106,7 +106,7 @@
                 ?>
               </li>
               <li class="info-content">
-                <span class="material-icons-outlined info-icon">location_on </span>
+              <span class="material-symbols-rounded">location_on</span>
                 <?php
                 if($_SESSION ['cidade'] == ""):
                   echo "<span class='msg-alternativa'> Onde você mora?</span>";
@@ -115,10 +115,9 @@
                   echo "<span>$cidade_atual</span>";
                 endif; 
                 ?>               
-                 
               </li> 
               <li class="info-content">
-                <span class="material-icons-outlined info-icon">mail </span>
+              <span class="material-symbols-rounded">mail</span>
                 <span><?php echo ''.$_SESSION ['email'].''?></span>  
               </li>
             </ul>

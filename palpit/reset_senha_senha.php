@@ -20,7 +20,7 @@
             <!--<span class="input-mensagem-erro">Este campo não está válido</span> -->
           </div>
           <div class="input-container">
-              <input name="senha" id="senha" class="input width-full" type="password" placeholder="Confirmação de senha" title=""A senha deve conter entre 6 a 12 caracteres, com uma letra maiúscula e um número." required>
+              <input name="senha" id="senha" class="input width-full" type="password" placeholder="Confirmação de senha" required>
               <!--<span class="input-mensagem-erro">Este campo não está válido</span> -->
           </div>
           <input name="email" id=email type="hidden" value="<?php echo $email; ?>">

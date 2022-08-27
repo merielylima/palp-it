@@ -28,7 +28,7 @@
     height: 15rem;
     width: 100%;
     border-radius: 6px;
-    border: 1px solid var(--cinza-4);
+    border: 1px solid var(--cinza-5);
 }
 
 .item-img img{
@@ -40,29 +40,29 @@
     border-radius: 6px;
 }
 .item-titulo{
-    font-size: var(--fonte-tamanho-titulo);
+    font-size: var(--header-3);
     font-weight: var(--fonte-peso-medium);
-    color:var(--cinza-2);
+    color:var(--cinza-3);
     padding-left: 0.25rem;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    margin-top: 0.5rem;
-
+    margin-top: 0.25rem;
 }
+
 .item-user{
     font-size: var(--fonte-tamanho-secundaria);
 }
 .post span{
-    line-height: 1.5rem;
+    line-height: 1.5;
     font-size: 20px;
     font-weight: 500;
-    color: var(--cinza-2);
+    color: var(--cinza-3);
 }
 
 .sem-conteudo{
     font-size: var(--fonte-tamanho-secundaria);
-    color:var(--cinza-3);
+    color:var(--cinza-4);
     position: absolute;
     top:39%;
     right:0%;
@@ -90,28 +90,29 @@
     margin-bottom: 1rem;
 }
 @media screen and (min-width: 440px) {
-   .cartao-xs{
-    padding: 1rem 2rem;
-    }
+    .cartao-xs{
+        padding: 1rem 2rem;
+        }
 
-.cartao__container--item{ /* Remover a margin dos elementos multiplos de 2*/
-    margin-left:0.5%;
-    margin-right: 0.5%;
-    cursor: pointer;
-    width: 49.5%;
-    margin-bottom: 0.5rem;
+    .cartao__container--item{ /* Remover a margin dos elementos multiplos de 2*/
+        margin-left:0.5%;
+        margin-right: 0.5%;
+        cursor: pointer;
+        width: 49.5%;
+        margin-bottom: 0.5rem;
+    }
+    .cartao__container--item:nth-child(2n){
+        margin-right: 0;
+    }
+    .cartao__container--item:nth-child(2n+1){
+        margin-left: 0;
+    }
 }
-.cartao__container--item:nth-child(2n){
-    margin-right: 0;
- }
- .cartao__container--item:nth-child(2n+1){
-    margin-left: 0;
-}
-}
+
 @media screen and (min-width: 768px) {
     .cartao-xxs{
-        margin-right: 1%;
         min-width:30%;
+        margin-right: 1%;
     }
     .cartao-xxl{
         margin-top: 0;
@@ -121,7 +122,7 @@
         padding: 1rem 1.5rem;
     }
     .sem-conteudo{
-        font-size: var(--fonte-tamanho-titulo-secundario);
+        font-size: var(--header-2);
     }
 }
 @media screen and (min-width: 1024px) {
@@ -132,7 +133,6 @@
     .cartao-xxl{
         padding: 1rem 1.5rem;
         min-width: 76%;
-       
     }  
     .cartao-header{
         margin-top: 0.5rem;

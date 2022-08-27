@@ -1,9 +1,7 @@
 <?php
-
 include ("head.php");
 require_once 'classes/Functions.php';
 $f = new Functions;
-
 /*
     if (session_status() !== PHP_SESSION_ACTIVE) {//Verificar se a sessão não já está aberta.
         session_start();
@@ -35,13 +33,13 @@ $f = new Functions;
                 <nav class="cabecalho--navegacao items-xl">
                     <ul class="flex flex-items-center">
                         <li id="btn-inicio" class="botao--container <?php if($page_atual == 1){echo ("active");}?>">
-                            <a href="inicio.php" class="user__link"> <span class="material-icons ">home</span> Início</a>
+                            <a href="inicio.php" class="user__link"> <span class="material-symbols-rounded fill">home</span> Início</a>
                         </li>
                         <li id="btn-perfil" class="botao--container <?php if($page_atual == 2){echo ("active");}?>">
-                            <a href="perfil.php" class="user__link"> <span class="material-icons">person</span> Perfil</a>
+                            <a href="perfil.php" class="user__link"> <span class="material-symbols-rounded fill">person</span> Perfil</a>
                         </li>
                         <li id="btn-contribuicoes" class="botao--container <?php if($page_atual == 3){echo ("active");}?>">
-                            <a href="contribuicoes.php" class="user__link "><span class="material-icons">file_upload</span> Contribuições</a>
+                            <a href="contribuicoes.php" class="user__link "><span class="material-symbols-rounded fill">upload</span> Contribuições</a>
                         </li>
                     </ul>
                 </nav>
@@ -49,20 +47,20 @@ $f = new Functions;
             <div class="items-xl cabecalho__right-side flex">
                 <a href="envio.php">
                     <div class=" botao-cabecalho botao--container border">
-                        <span class="material-icons-outlined">add</span> 
+                        <span class="material-symbols-rounded">add</span> 
                         Novo envio
                     </div>
                 </a>
-                 <!-- <span class="material-icons-outlined notifications">notifications_none </span> -->
+                <!-- <span class="material-icons-outlined notifications">notifications_none </span> -->
                 <div class="avt-container avt-cab ml-3">
                     <div class="avt-content">
                         <img class="avt " src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>  alt="Foto de perfil">
                     </div>
                 </div>
-                <div class="dropdown">
-                    <button onclick="myFunction()" class="dropbtn material-icons-outlined"> expand_more  
+                <div>
+                    <button onclick="myFunction()" class="hover material-symbols-rounded">expand_more</button>  
                     </button>
-                    <div id="myDropdown" class="caixa user__menu "> 
+                    <div id="myDropdown" class="caixa"> 
                         <ul>
                             <li class="caixa-item"><a href="perfil.php?editar=1" >Editar Perfil</a></li>
                             <li class="caixa-item"><a href="logout.php" class="">Sair</a></li>

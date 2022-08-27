@@ -8,14 +8,14 @@
   margin: 0.5rem;
 }
 .msg-alternativa{
-  color: var(--cinza-3);
+  color: var(--cinza-4);
   font-weight: 300;
 }
 .avt-container{
   margin: auto;
   width: 237px;
   border-radius: 50%;
-  border: 1px solid var(--cinza-4);
+  border: 1px solid var(--cinza-5);
 }
 .avt-content{
   position: relative;
@@ -50,7 +50,7 @@
   word-break: break-word;
 }
 .info-icon{
-  color: var(--cinza-2);
+  color: var(--cinza-3);
   font-size: 22px;
 }
 .avt-hover_container:hover .avt-hover{
@@ -81,7 +81,7 @@
 }
 .avatar{
   display: inline-block;
-  box-shadow: 0 0 0 1px var(--cinza-4);
+  box-shadow: 0 0 0 1px var(--cinza-5);
   flex-shrink: 0;
   width: 16.66667%;
   height: auto;
@@ -105,7 +105,7 @@
   line-height: 1;
 }
 .vcard-username{
-  color: var(--cinza-2);
+  color: var(--cinza-3);
   word-break: break-all;
   font-size: 16px;
   font-weight: var( --fonte-peso-light);

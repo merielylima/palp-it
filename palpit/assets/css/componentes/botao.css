@@ -7,7 +7,7 @@
     outline: none;
     padding: 0 0.5rem ;
     cursor: pointer;
-    font-size: var(--fonte-tamanho-botao);
+    font-size: var(--fonte-tamanho-secundaria);
 }
 .btn-contribuicao{
     width: 180px;
@@ -17,20 +17,32 @@
 .botao--primario{
     background-color: var(--azul-1);
     color: var(--contraste-claro);    
+    font-size: var(--fonte-tamanho-primaria);
     margin-top: 0.5rem
 }
 .botao--secundario{
-    background-color: var(--azul-10);
+    background-color: var(--azul-claro-transparente);
     color: var(--azul-1);
-    border: 1px solid var(--cinza-4);
+    font-size: var(--fonte-tamanho-primaria);
+    border: none;
     margin-top: 0.5rem
+}
+.botao--secundario:hover{
+    border: 1px solid var(--cinza-5);
 }
 .botao--terciario{
     background-color: var(--azul-5);
     color: var(--azul-1);
-    
+    font-size: var(--fonte-tamanho-primaria);
+}
+.botao--terciario:hover{
+    background-color: var(--azul-4);
 }
 
+.hoverzinho:hover{
+    border: 1px solid white;
+
+}
 .botao-envio{
     display: flex;
     min-width: 5rem;
@@ -46,7 +58,11 @@
     background-color: var(--cor-aviso-fundo);
     box-shadow: var(--borda-aviso);
     border: none;
-   
+}
+@media screen and (min-width: 1024px) {
+    .botao--container{
+        padding:  0 1rem;
+    }
 }
 @media screen and (min-width: 1024px) {
     .botao--container{

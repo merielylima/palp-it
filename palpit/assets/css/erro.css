@@ -10,9 +10,8 @@
     max-width: 700px;
     height: fit-content;
     text-align: center;
-    color: var(--contraste-medio);
+    color: var(--cinza-2);
     padding: 1rem;
-
 }
 
 .erro{
