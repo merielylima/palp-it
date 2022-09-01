@@ -14,7 +14,7 @@
         <div id="div-erro" class="mensagem-erro">
           <span id="span-erro"></span>
         </div>
-        <div class="input-container ">
+        <div class="input-container mt-2">
             <input  name="email"  id="email" class="input width-full" type="email" placeholder="Email" required>
         </div>
         <div class="input-container"> 

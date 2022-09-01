@@ -15,7 +15,7 @@
           <h2 class="container--titulo mb-2">Recuperar senha</h2>
         </div>
         <form action="redefinir.php" method="POST">
-          <div class="input-container">
+          <div class="input-container mt-2">
             <input name="senha" id="senha" class="input width-full" type="password" placeholder="Senha" title="A senha deve conter entre 6 a 12 caracteres, com uma letra maiúscula e um número." required>
             <!--<span class="input-mensagem-erro">Este campo não está válido</span> -->
           </div>

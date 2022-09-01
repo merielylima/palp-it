@@ -20,6 +20,9 @@
     font-size: var(--fonte-tamanho-primaria);
     margin-top: 0.5rem
 }
+.botao--primario:hover{
+    background-color: var(--azul-12);
+}
 .botao--secundario{
     background-color: var(--azul-claro-transparente);
     color: var(--azul-1);

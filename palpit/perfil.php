@@ -165,7 +165,7 @@
         <div class="show-more">
         <?php
           if($public > 1){
-            echo "<a href='contribuicoes.php' class='botao--container link-color btn-show-more'> Mostrar mais</a>"; 
+            echo "<a href='contribuicoes.php' class='botao--container link-color btn-show-more link-container'> Mostrar mais</a>"; 
           }
           ?>     
         </div>

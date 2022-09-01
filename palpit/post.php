@@ -74,7 +74,7 @@
           <?php
           if($f->logado() && $dados_arquivo["id_usuario_fk"] == $_SESSION['id_usuario']):
                 echo"<div>
-            <button onclick='options();' class='material-symbols-rounded options-btn'>more_vert</button>
+            <button onclick='options();' class='material-symbols-rounded options-btn'>more_horiz</button>
             <div id='options' class='options-container'> 
                 <button class='caixa-item' type='button' onclick='openpp(this);'> Excluir </button>
                 <span class='caixa-item'>Editar</span>

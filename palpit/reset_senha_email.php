@@ -15,8 +15,8 @@
           <div id="email-erro" class="mensagem-erro hidden">
             <span > Email ou senha inválido</span>
           </div>
-          <p class="text-justify my-3"> Ao confirmar a redefinição da senha, será necessário seguir o procedimento a partir do e-mail enviado.</p>
-          <div class="input-container ">
+          <p class="cartao-xs__txt my-2 text-justify"> Ao confirmar a redefinição da senha, será necessário seguir o procedimento a partir do e-mail enviado.</p>
+          <div class="input-container mt-2">
             <input name="email" id="email" class="input width-full" type="email" placeholder="Email" required>
           </div>
           <button onClick="recuperar()" class="botao--container botao--primario width-full"> Redefinir senha</button>

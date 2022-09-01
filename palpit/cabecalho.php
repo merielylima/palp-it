@@ -69,7 +69,7 @@ $f = new Functions;
                 </div>
             </div>
             <div id="js-menu" class="botao--container menu">
-                <span class="menu-icon material-icons-outlined">menu</span>
+                <span class="menu-icon material-symbols-rounded">menu</span>
             </div>
         </div>
         

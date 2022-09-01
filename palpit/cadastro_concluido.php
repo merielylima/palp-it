@@ -9,9 +9,9 @@
                     <a href="inicio.php">
                         <img src="assets/img/icon/Logo.svg" alt="Logo Palp-it"/>
                     </a> 
-                    <h2 class="container--titulo">Cadastro concluído</h2>
+                    <h2 class="container--titulo mb-2">Cadastro concluído</h2>
                 </div>
-                <div class="cartao-xs__txt my-3">
+                <div class="cartao-xs__txt my-2">
                     <p> Seja bem vindo, <span class> Usuário</span>!</p>
                     <p>Ficamos felizes de ter você conosco.</p>
                     <p>Seu cadastro foi concluído e sua conta já está pronta para ser acessada.</p>

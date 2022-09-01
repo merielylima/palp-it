@@ -11,8 +11,8 @@
                 </a> 
                 <h2 class="container--titulo mb-2">Recuperar senha</h2> 
             </div>
-            <div class="cartao-xs__txt my-3 text-justify">
-                <p class="text-justify">  Um email de confirmação foi enviado para o endereço <a class="link" > <?php echo $_SESSION['email'] ?> </a>. </p>
+            <div class="cartao-xs__txt my-2 text-justify">
+                <p class="text-justify">  Um email de confirmação foi enviado para o endereço <a class="link semi-bold" > <?php echo $_SESSION['email'] ?> </a>. </p>
                 <p>Caso não tenha recebido, verifique se o email informado está correto.</p>
 				<p>Se o problema persistir, entre em contato com <span class="semi-bold"> comunidadepalpit@gmail.com </span></p>
             </div>

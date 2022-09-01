@@ -11,7 +11,7 @@
 					</a> 
 					<h2 class="container--titulo mb-2">Falta pouco...</h2>
 				</div>
-				<div class="cartao-xs__txt my-3 text-justify">
+				<div class="cartao-xs__txt my-2 text-justify">
 					<p>
 						Para concluir seu cadastro, é necessário clicar no link de confirmação enviado para o endereço <a class="link semi-bold" > <?php echo $_GET["email"] ?></a></p>
 					<p>Caso não tenha recebido, verifique se o email informado está correto.</p>
