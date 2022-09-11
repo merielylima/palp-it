@@ -63,7 +63,7 @@
           <div class="flex">
             <a href="perfil.php" class="link-container avt-container avt-post">
               <div class="avt-content">
-                <img id="js-file-uploader" class="avt" src="<?php echo $dados_arquivo["foto_p"];?>" class="user-img" >
+                <img id="js-file-uploader" src="<?php echo $dados_arquivo["foto_p"];?>" class="avt user-img" >
               </div>
             </a>  
             <div class="flex flex-coluna bloco-inf">

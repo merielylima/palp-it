@@ -16,12 +16,9 @@ cancel.addEventListener('click',() =>{
     
 })
 
-
 /* When the user clicks on the button, 
 toggle between hiding and showing the dropdown content */
 
-
-  
 function userPicture(input) {
     if (input.files && input.files [0]) {
         var reader = new FileReader ();

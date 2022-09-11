@@ -18,21 +18,20 @@
       <nav class="cartao__container cartao-xxs mr-card">
         <!-- Editar perfil = opacity: 0-->
         <form id="perfil-edit" class="hidden" action="alterarperfil.php" enctype='multipart/form-data' method="POST">
-          <div class="info-user mb-3 flex-items-center"> 
             <div class="avt-container">
-              <label for="avatar" >
+              <label for="avatar">
                 <div class="avt-content avt-hover_container">
                   <span class="avt-hover"> Atualizar <br/> foto de perfil</span>
-                  <img id="js-file-uploader" class="avt"  class="avt" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
+                  <img id="js-file-uploader" class="avt" src=<?php echo '"'.$_SESSION ['foto_p'].'"'?>>
                 </div> 
               </label>
               <input id="avatar" multiple accept=".jpg, .jpeg, .png" onchange="userPicture(this);" name="avatar" type="file" class=" input--img input-hidden"/>   
             </div>
-            <div class="mb-1">
+
+          <div class="mb-1">
               <label for="user_profile_name" class="input--label  ">Nome</label>
               <input class="input width-full " id="user_profile_name" name="user_profile_name" value="<?php echo ''.$_SESSION ['nome'].''?>">
             </div>
-          </div>
           <div class="mb-1 flex flex-coluna">
             <label for="user_profile_bio" class="input--label  ">Sobre</label>
             <textarea class="input textarea" id="user_profile_bio" name="user_profile_bio" placeholder="Conte mais sobre você..."><?php echo ''.$_SESSION ['sobre'].''?></textarea>
@@ -146,7 +145,7 @@
               $sql->execute();
               while($lista = $sql->fetch(PDO::FETCH_ASSOC)):
             ?>
-               <li class="cartao__container--item">
+              <li class="cartao__container--item">
                 <a href="post.php?id_arquivo=<?php echo $lista["id_arquivo"];?>" class="flex flex-coluna">
                   <div class="img-container">
                     <div class="avt-content">
