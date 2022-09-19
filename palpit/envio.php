@@ -71,8 +71,10 @@
             </tr>
           </thead>
           <tbody id ="tabela" class="table__content"></tbody>   
-
         </table>
+        <div>
+          Não há disciplinas adicionadas no momento
+        </div>
         <div id="conteudo" class="flex py-1 ">
           <div class="flex flex-coluna flex--row bloco-lbl">
             <div class="input-container bloco-lbl--f">
@@ -108,7 +110,6 @@
             <A id="adiciona-lista" onClick="adicionarItem()" value="Adicionar" class="botao--container btn-adc botao--terciario">Adicionar</A>
           </div>
         </div>
-
         <div class="py-1 flex flex--end ">
           <A onclick="voltarPrincipal()" class="botao--container botao--secundario botao-envio  mr-2"> Cancelar </A>
           <button onclick="enviarFormulario()" type="button" class="botao--container botao--primario botao-envio "> Enviar </button>
