@@ -22,8 +22,8 @@ CREATE TABLE IF NOT EXISTS `palpit`.`usuario` (
   `nome` VARCHAR(200) NOT NULL,
   `email` VARCHAR(200) NOT NULL,
   `senha` VARCHAR(200) NOT NULL,
-  `sobre` VARCHAR(200) NULL DEFAULT ' ',
-  `cidade` VARCHAR(200) NULL DEFAULT ' ',
+  `sobre` VARCHAR(200) NULL DEFAULT '',
+  `cidade` VARCHAR(200) NULL DEFAULT '',
   `receber` VARCHAR(1) NULL,
   `confirmacao` VARCHAR(45) NULL,
   `foto_p` VARCHAR(245) NULL,
@@ -48,8 +48,8 @@ CREATE TABLE IF NOT EXISTS `palpit`.`arquivo` (
   `foto_t` VARCHAR(245) NOT NULL,
   `id_usuario_fk` INT NOT NULL,
   `criado_arquivo` TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `radical_titulo` VARCHAR(245) NULL,
-  `radical_tag` VARCHAR(245) NULL,
+  `radical_titulo` varchar(255) NULL,
+  `radical_tag` varchar(255) NULL,
   PRIMARY KEY (`id_arquivo`),
   INDEX `fk_arquivo_usuario_idx` (`id_usuario_fk` ASC),
   CONSTRAINT `fk_arquivo_usuario`
@@ -75,7 +75,6 @@ CREATE TABLE IF NOT EXISTS `palpit`.`tag` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
-
 
 -- -----------------------------------------------------
 -- Table `palpit`.`disciplina`
@@ -178,29 +177,6 @@ CREATE TABLE IF NOT EXISTS `palpit`.`assoc_area` (
 ENGINE = InnoDB;
 
 
--- -----------------------------------------------------
--- Table `palpit`.`favorito`
--- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `palpit`.`favorito` (
-  `idfavorito` INT NOT NULL,
-  `usuario_id_usuario` INT NOT NULL,
-  `arquivo_id_arquivo` INT NOT NULL,
-  PRIMARY KEY (`idfavorito`),
-  INDEX `fk_favorito_usuario1_idx` (`usuario_id_usuario` ASC),
-  INDEX `fk_favorito_arquivo1_idx` (`arquivo_id_arquivo` ASC),
-  CONSTRAINT `fk_favorito_usuario1`
-    FOREIGN KEY (`usuario_id_usuario`)
-    REFERENCES `palpit`.`usuario` (`id_usuario`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
-  CONSTRAINT `fk_favorito_arquivo1`
-    FOREIGN KEY (`arquivo_id_arquivo`)
-    REFERENCES `palpit`.`arquivo` (`id_arquivo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
-
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
@@ -247,3 +223,4 @@ INSERT INTO `palpit`.`escolaridade` (`id_escolaridade`, `nivel`) VALUES (3, 'Mé
 INSERT INTO `palpit`.`escolaridade` (`id_escolaridade`, `nivel`) VALUES (4, 'Superior');
 
 COMMIT;
+
