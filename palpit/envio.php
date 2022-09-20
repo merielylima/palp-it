@@ -72,7 +72,7 @@
           </thead>
           <tbody id ="tabela" class="table__content"></tbody>   
         </table>
-        <div>
+        <div class="tb-empty">
           Não há disciplinas adicionadas no momento
         </div>
         <div id="conteudo" class="flex py-1 ">

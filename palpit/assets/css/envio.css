@@ -18,6 +18,16 @@
   vertical-align: middle;
   height: 2.15rem;
 }
+.tb-empty{
+
+  color: var(--cinza-3);
+  padding: 0.5rem 0;
+  border: 2px solid var(--azul-5);
+  border-top: none;
+  text-align: center;
+  height: 2.15rem;
+
+}
 .input-envio{
   margin-top: 0.25rem;
   box-sizing: border-box;

@@ -46,11 +46,11 @@
     color: var(--cor-aviso);
     content: "";
     padding-left: 5px;
-  }
+}
 .checkbox--label{
     display: block;
     text-align: justify;
-    line-height: 1.25;
+    letter-spacing: -0.5px;
 
 }
 .option{
