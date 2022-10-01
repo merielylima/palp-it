@@ -14,6 +14,7 @@ body {
 }
 ::selection {
 	background-color: var(--azul-5);
+	color: var(--cinza-1);
 }
 /*Presente em todas as paginas*/
 .center { 

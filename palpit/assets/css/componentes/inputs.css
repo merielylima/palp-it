@@ -10,6 +10,7 @@
     border-radius: 6px;
     padding-left: 0.75rem;
     height: 2.5rem;
+    color: var(--cinza-1);
 }
 
 .input-full{
@@ -53,13 +54,7 @@
     letter-spacing: -0.5px;
 
 }
-.option{
-    font-family: var(--fonte-familia-corpo);
-    background-color: var(--contraste-claro);
-    font-size: var(--fonte-tamanho-primaria);
-    padding: 0 0.75rem;
-    color: var(--cinza-3);
-}
+
 .textarea{
     min-height: 4rem;
     width: 100%;
@@ -71,13 +66,14 @@
     display: flex;
     justify-content: end;
     align-items: center;
+    color: var(--cinza-1);
+    border-bottom: 1px solid var(--cinza-3);
     line-height: 2;
     width: 100%;
 }
 .dropdow--order{
-    margin-left: 0.5rem;
     cursor: pointer;
-    border: 1px solid var(--cinza-5);
+    border: none;
     font-family: var(--fonte-familia-corpo);
     background-color: var(--contraste-claro);
     font-size: var(--fonte-tamanho-primaria);
@@ -86,11 +82,13 @@
     height: 100%;
     line-height: 60px;
 }
-
 .dropdow--order:focus {
     outline: none;
     line-height: 60px;
+    border: none;
 }
+
+
 @media screen and (min-width: 495px) {
     .label--order{
     justify-content: unset;

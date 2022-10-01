@@ -12,17 +12,16 @@
       $busca_tag = "";
 
       foreach(explode("\n",trim($busca)) as $value){
-         if($busca_titulo == ""){
+        if($busca_titulo == ""){
           $busca_titulo = $busca_titulo." a.radical_titulo LIKE '%$value%'";
-         }else{
+        }else{
           $busca_titulo = $busca_titulo." AND a.radical_titulo LIKE '%$value%'";
-         }
-         if($busca_tag != ""){
+        }
+        if($busca_tag != ""){
           $busca_tag = $busca_tag." AND a.radical_tag LIKE '%$value%'";
-         }else{
+        }else{
           $busca_tag = $busca_tag." a.radical_tag LIKE '%$value%'";
-         }
-         
+        }  
       }
 
       $nivel="";
@@ -87,7 +86,7 @@
           </div>
           <div class="mt-2">
             <label for = "disciplina" class="input--label">Disciplina</label>
-            <select name="disciplina" id="disciplina" class=" mt-1 option input width-full">
+            <select name="disciplina" id="disciplina" class=" mt-1  input width-full">
             <?php
               $getdisciplina = $pdo->prepare("SELECT * FROM disciplina ORDER BY id_disciplina");
               $getdisciplina->execute();
@@ -120,14 +119,16 @@
       <section class="cartao-xxl cartao__container">
           <div class="cartao-header"> 
             <h2 class="container--titulo"> Feed de publicações</h2>
+            
             <div class="label--order">
-              <label for="dropdow_order" > Ordenar por: </label>
+              <label id="label_order" for="dropdow_order" >Ordenar: </label>
               <select id="dropdow_order" class="dropdow--order">
                 <option value="order1"> Novos</option>
                 <option value="order2"> Antigos</option>
                 <option value="order3"> Popuares</option>
               </select>
             </div>
+
           </div>
         <ol class="flex flex-wrap mb-4">
           <?php
@@ -141,7 +142,7 @@
               $superior = addslashes(isset($_POST['nivel4'])) ? true : null;
 
               $newbusca = preg_replace('/[^A-Za-záàâãéèêíïóôõöúçñÁÀÂÃÉÈÍÏÓÔÕÖÚÇÑ\-\'\s]+/'," ",$busca);
-		      $newbusca2 = preg_replace('/\s{1,}/'," ",$newbusca);
+              $newbusca2 = preg_replace('/\s{1,}/'," ",$newbusca);
               $busca = $u -> geraradical ($newbusca2);
 
               $lista = check_titulo ($pdo, $disciplina, $fundamental1, $fundamental2, $medio, $superior, $busca);
@@ -188,6 +189,7 @@
       </section>
     </div>
   </main>
+  <script src="js/order.js"></script>
   <?php
     include ("rodape.php");
   ?>  
